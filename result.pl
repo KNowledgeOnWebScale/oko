@@ -165,8 +165,8 @@
 'https://github.com/IDLabResearch/Heiseneye#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],[[9,8],[9,7],[9,6],[9,5],[8,5],[7,5],[6,5],[5,5],[5,4],[5,3],[5,2],[4,2],[3,2],[2,2],[1,2],[1,1]]) => yes.
 
 % running etc/likes.pl
-'https://github.com/IDLabResearch/Heiseneye#likes'('http://example.org/etc#Peter','https://josd.github.io/heiseneye/etc/likes#sk1'('http://example.org/etc#Peter')) => yes.
-'https://github.com/IDLabResearch/Heiseneye#likes'('http://example.org/etc#Bob','https://josd.github.io/heiseneye/etc/likes#sk1'('http://example.org/etc#Bob')) => yes.
+'https://github.com/IDLabResearch/Heiseneye#likes'('http://example.org/etc#Peter','https://github.com/IDLabResearch/Heiseneye/etc/likes#sk1'('http://example.org/etc#Peter')) => yes.
+'https://github.com/IDLabResearch/Heiseneye#likes'('http://example.org/etc#Bob','https://github.com/IDLabResearch/Heiseneye/etc/likes#sk1'('http://example.org/etc#Bob')) => yes.
 
 % running etc/matrix.pl
 'https://github.com/IDLabResearch/Heiseneye#determinant'([[2,-1,0],[-1,2,-1],[0,-1,2]],3.999999999999999) => yes.

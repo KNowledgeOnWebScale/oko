@@ -24,8 +24,8 @@ Heiseneye is using [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#IS
 - Uniform resource identifiers are atoms like `'http://example.org/etc#socrates'`
 - Literals are strings like `"Hello world!"`, numbers like `1.52` and booleans like `true`
 - Typed literals are predicates like `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
-- Blank nodes are Skolem functions like `'https://josd.github.io/heiseneye/etc/likes#sk1'(A,B,C)`
-- Classes are unary predicates like `'http://example.org/etc#Woman'('http://example.org/etc#Emmy_Noether').`
+- Blank nodes are Skolem functions like `'https://github.com/IDLabResearch/Heiseneye/etc/likes#sk1'(A,B,C)`
+- Classes are unary predicates like `'http://example.org/etc#Woman'('http://example.org/etc#Emmy_Noether')`
 - Triples are binary predicates like `'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent').`
 
 ### Background
