@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -n "" | tee result.pl
+for f in etc/*.pl
+do
+    echo "% running $f" | tee -a result.pl
+    scryer-prolog -g run,halt heiseneye.pl "$f" | tee -a result.pl
+    echo "" | tee -a result.pl
+done
