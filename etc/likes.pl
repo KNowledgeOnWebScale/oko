@@ -5,8 +5,8 @@
 'http://example.org/etc#Person'('http://example.org/etc#Peter').
 'http://example.org/etc#Person'('http://example.org/etc#Bob').
 
-'https://josd.github.io/heiseneye/etc#likes'(P,'https://josd.github.io/heiseneye/etc/likes#sk1'(P)) :-
+'https://github.com/IDLabResearch/Heiseneye#likes'(P,'https://josd.github.io/heiseneye/etc/likes#sk1'(P)) :-
     'http://example.org/etc#Person'(P).
 
 % query
-'https://josd.github.io/heiseneye/etc#likes'(_X,_Y) => yes.
+'https://github.com/IDLabResearch/Heiseneye#likes'(_X,_Y) => yes.

@@ -6,10 +6,10 @@
 
 % interpreter for Univeral Turing Machine
 
-'https://josd.github.io/heiseneye/etc#compute'([],OutTape) :-
+'https://github.com/IDLabResearch/Heiseneye#compute'([],OutTape) :-
     start(_MACHINE,I),
     find(I,[],#,[ ],OutTape).
-'https://josd.github.io/heiseneye/etc#compute'([Head|Tail],OutTape) :-
+'https://github.com/IDLabResearch/Heiseneye#compute'([Head|Tail],OutTape) :-
     start(_MACHINE,I),
     find(I,[],Head,Tail,OutTape).
 
@@ -47,7 +47,7 @@ t([1,1,0,l],1).
 t([1,#,1,s],halt).
 
 % query
-'https://josd.github.io/heiseneye/etc#compute'([1,0,1,0,0,1],_ANSWER) => yes.
-'https://josd.github.io/heiseneye/etc#compute'([1,0,1,1,1,1],_ANSWER) => yes.
-'https://josd.github.io/heiseneye/etc#compute'([1,1,1,1,1,1],_ANSWER) => yes.
-'https://josd.github.io/heiseneye/etc#compute'([],_ANSWER) => yes.
+'https://github.com/IDLabResearch/Heiseneye#compute'([1,0,1,0,0,1],_ANSWER) => yes.
+'https://github.com/IDLabResearch/Heiseneye#compute'([1,0,1,1,1,1],_ANSWER) => yes.
+'https://github.com/IDLabResearch/Heiseneye#compute'([1,1,1,1,1,1],_ANSWER) => yes.
+'https://github.com/IDLabResearch/Heiseneye#compute'([],_ANSWER) => yes.

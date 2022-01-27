@@ -5,7 +5,7 @@
 
 :- op(1150,xfx,=>).
 
-'https://josd.github.io/heiseneye/etc#route'([Source,Destination,Obstacles],Path) :-
+'https://github.com/IDLabResearch/Heiseneye#route'([Source,Destination,Obstacles],Path) :-
     waves(Destination,[[Source],[]],Obstacles,Waves),
     path(Source,Destination,Waves,Path).
 
@@ -69,4 +69,4 @@ path(A,B,[Wave|Waves],[B|Path]) :-
     path(A,B1,Waves,Path).
 
 % query
-'https://josd.github.io/heiseneye/etc#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],_ANSWER) => yes.
+'https://github.com/IDLabResearch/Heiseneye#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],_ANSWER) => yes.

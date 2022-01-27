@@ -4,7 +4,7 @@
 
 :- op(1150,xfx,=>).
 
-'https://josd.github.io/heiseneye/etc#colors'(_Map,Places) :-
+'https://github.com/IDLabResearch/Heiseneye#colors'(_Map,Places) :-
     findall([Place,_],neighbours(Place,_),Places),
     places(Places).
 
@@ -23,4 +23,4 @@ neighbours(p4,[p1,p2,p3]).
 neighbours(p5,[p1,p3]).
 
 % query
-'https://josd.github.io/heiseneye/etc#colors'(map1,_X) => yes.
+'https://github.com/IDLabResearch/Heiseneye#colors'(map1,_X) => yes.

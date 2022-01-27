@@ -92,13 +92,13 @@ bob([X,Y],3) :-
     id(X,Y).
 
 % sdcoding appearing an odd number of times
-:- dynamic('https://josd.github.io/heiseneye/etc#sdcoding'/2).
+:- dynamic('https://github.com/IDLabResearch/Heiseneye#sdcoding'/2).
 
 sdc(X,Y),
-(   'https://josd.github.io/heiseneye/etc#sdcoding'(X,Y)
-->  retract('https://josd.github.io/heiseneye/etc#sdcoding'(X,Y))
-;   assertz('https://josd.github.io/heiseneye/etc#sdcoding'(X,Y))
+(   'https://github.com/IDLabResearch/Heiseneye#sdcoding'(X,Y)
+->  retract('https://github.com/IDLabResearch/Heiseneye#sdcoding'(X,Y))
+;   assertz('https://github.com/IDLabResearch/Heiseneye#sdcoding'(X,Y))
 ) => true.
 
 % query
-'https://josd.github.io/heiseneye/etc#sdcoding'(_X,_Y) => yes.
+'https://github.com/IDLabResearch/Heiseneye#sdcoding'(_X,_Y) => yes.

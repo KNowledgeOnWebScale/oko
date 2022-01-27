@@ -3,7 +3,7 @@
 
 :- op(1150,xfx,=>).
 
-'https://josd.github.io/heiseneye/etc#pi'(A,B) :-
+'https://github.com/IDLabResearch/Heiseneye#pi'(A,B) :-
     pi(1,A,0,C,1),
     B is 3+4*C.
 
@@ -16,4 +16,4 @@ pi(A,B,C,D,E) :-
     pi(F,B,L,D,M).
 
 % query
-'https://josd.github.io/heiseneye/etc#pi'(100000,_ANSWER) => yes.
+'https://github.com/IDLabResearch/Heiseneye#pi'(100000,_ANSWER) => yes.

@@ -3,10 +3,10 @@
 
 :- op(1150,xfx,=>).
 
-'https://josd.github.io/heiseneye/etc#gcc'([[],_],[]).
-'https://josd.github.io/heiseneye/etc#gcc'([[C|Cs],S],[N|Ns]) :-
+'https://github.com/IDLabResearch/Heiseneye#gcc'([[],_],[]).
+'https://github.com/IDLabResearch/Heiseneye#gcc'([[C|Cs],S],[N|Ns]) :-
     gcc(C,S,N),
-    'https://josd.github.io/heiseneye/etc#gcc'([Cs,N],Ns).
+    'https://github.com/IDLabResearch/Heiseneye#gcc'([Cs,N],Ns).
 
 gcc(C,[Qa,Qb,Qc],[Za,Zb,Zc]) :-
     neta(Qa,Qb,D1),
@@ -48,4 +48,4 @@ inv(0,1).
 inv(1,0).
 
 % query
-'https://josd.github.io/heiseneye/etc#gcc'([[1,1,1,1,1,1,1,1,1],[0,0,0]],_ANSWER) => yes.
+'https://github.com/IDLabResearch/Heiseneye#gcc'([[1,1,1,1,1,1,1,1,1],[0,0,0]],_ANSWER) => yes.
