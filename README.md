@@ -10,7 +10,8 @@ Queries are posed and answered as `PREM => yes` so the answers are also
 queries be it with some parts substituted and eventually containing more  
 variables than in the original query.  
 
-Install [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) and run the [examples and test cases](./etc) via
+Install [Rust](https://www.rust-lang.org/) based [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog)
+and run the [examples and test cases](./etc) via
 ```
 $ ./test
 ```
