@@ -20,6 +20,9 @@
 % occurs in one or the other branch but not both.
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
 
 % |R) = |0, 0) + |1, 1)
 r(false,false).
@@ -56,39 +59,39 @@ k(true,false).
 k(true,true).
 
 % KG
-kg(X,Y) :-
+kg(X,Y) <=
     g(X,Z),
     k(Z,Y).
 
 % GK
-gk(X,Y) :-
+gk(X,Y) <=
     k(X,Z),
     g(Z,Y).
 
 % superdense coding
-sdc(N,M) :-
+sdc(N,M) <=
     r(X,Y),
     alice(N,[X,B]),
     bob([B,Y],M).
 
 % alice
-alice(0,[X,Y]) :-
+alice(0,[X,Y]) <=
     id(X,Y).
-alice(1,[X,Y]) :-
+alice(1,[X,Y]) <=
     g(X,Y).
-alice(2,[X,Y]) :-
+alice(2,[X,Y]) <=
     k(X,Y).
-alice(3,[X,Y]) :-
+alice(3,[X,Y]) <=
     kg(X,Y).
 
 % bob
-bob([X,Y],0) :-
+bob([X,Y],0) <=
     gk(X,Y).
-bob([X,Y],1) :-
+bob([X,Y],1) <=
     k(X,Y).
-bob([X,Y],2) :-
+bob([X,Y],2) <=
     g(X,Y).
-bob([X,Y],3) :-
+bob([X,Y],3) <=
     id(X,Y).
 
 % sdcoding appearing an odd number of times

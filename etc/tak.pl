@@ -1,11 +1,14 @@
 % Takeuchi function
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
 
-'https://github.com/IDLabResearch/Heiseneye#tak'([X,Y,Z],Z) :-
+term_expansion((X <= Y),(X :- Y)).
+
+'https://github.com/IDLabResearch/Heiseneye#tak'([X,Y,Z],Z) <=
     X =< Y,
     !.
-'https://github.com/IDLabResearch/Heiseneye#tak'([X,Y,Z],A) :-
+'https://github.com/IDLabResearch/Heiseneye#tak'([X,Y,Z],A) <=
     X1 is X-1,
     'https://github.com/IDLabResearch/Heiseneye#tak'([X1,Y,Z],A1),
     Y1 is Y-1,

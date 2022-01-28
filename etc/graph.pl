@@ -1,6 +1,9 @@
 % Traversing graph paths
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
 
 :- dynamic('https://github.com/IDLabResearch/Heiseneye#path'/2).
 

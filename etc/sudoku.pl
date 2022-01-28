@@ -5,6 +5,9 @@
 :- use_module(library(lists)).
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
 
 %  P97 (**) Sudoku
 %
@@ -48,11 +51,11 @@
 
 % --------------------------------------------------------------------------
 
-% sudoku(Puzzle) :- solve the given Sudoku puzzle and print the
+% sudoku(Puzzle) <= solve the given Sudoku puzzle and print the
 %    problem statement as well as the solution to the standard output
 %   (list-of-integers, partially instantiated)
 
-sudoku(Puzzle) :-
+sudoku(Puzzle) <=
     printPuzzle(Puzzle),
     nl,
     connect(Spots),
@@ -62,7 +65,7 @@ sudoku(Puzzle) :-
     printPuzzle(Puzzle),
     flag(counter,N,N+1),
     fail.
-sudoku(_) :-
+sudoku(_) <=
     flag(counter,N,N),
     nl,
     printCounter(N).
@@ -76,112 +79,112 @@ sudoku(_) :-
 % same list in order to check whether a new number can be placed
 % in the row. The same is true for the columns and the squares.
 
-% connect(Spots) :- Spots = [spot(_,R1,C1,S1),spot(_,R1,C2,S1),.....].
+% connect(Spots) <= Spots = [spot(_,R1,C1,S1),spot(_,R1,C2,S1),.....].
 
-connect(Spots) :-
+connect(Spots) <=
     length(Spots,81),
     connectRows(Spots),
     connectCols(Spots),
     connectSquares(Spots).
 
-% connectRows(Spots) :- connect the spots of all rows in the list Spot
+% connectRows(Spots) <= connect the spots of all rows in the list Spot
 
 connectRows([]).
-connectRows(Spots) :-
+connectRows(Spots) <=
     connectRow(Spots,_,9),
     skip(Spots,9,Spots1),
     connectRows(Spots1).
 
-% connectRow(Spots,R,K) :- the first K elements of Spot
+% connectRow(Spots,R,K) <= the first K elements of Spot
 % are in the same row R
 
 connectRow(_,_,0).
-connectRow([spot(_,R,_,_)|Spots],R,K) :- K > 0,
+connectRow([spot(_,R,_,_)|Spots],R,K) <= K > 0,
     K1 is K-1,
     connectRow(Spots,R,K1).
 
-% connectCols(Spots) :- connect the spots of the same column
+% connectCols(Spots) <= connect the spots of the same column
 
-connectCols(Spots) :-
+connectCols(Spots) <=
     connectCols(Spots,9).
 
-% connectCols(Spots,K) :- connect K more columns columns
+% connectCols(Spots,K) <= connect K more columns columns
 
-connectCols(_,0) :-
+connectCols(_,0) <=
     !.
-connectCols(Spots,K) :-
+connectCols(Spots,K) <=
     K > 0,
     connectCol(Spots,_),
     skip(Spots,1,Spots1),
     K1 is K-1,
     connectCols(Spots1,K1).
 
-% connectCol(Spots,C) :- connect the first spot in Spots with
+% connectCol(Spots,C) <= connect the first spot in Spots with
 % the other spots in its column C
 
 connectCol([],_).
-connectCol([spot(_,_,C,_)|Spots],C) :-
+connectCol([spot(_,_,C,_)|Spots],C) <=
     skip(Spots,8,Spots1),
     connectCol(Spots1,C).
 
-% connectSquares(Spots) :- connect all three bands
+% connectSquares(Spots) <= connect all three bands
 % The nine squares are arranged in three horizontal bands,
 % three squares in each band.
 
-connectSquares(Spots) :-
+connectSquares(Spots) <=
     connectBand(Spots),
     skip(Spots,27,Spots1),
     connectBand(Spots1),
     skip(Spots1,27,Spots2),
     connectBand(Spots2).
 
-% connectBand(Spots) :- connect the next band (of three squares
+% connectBand(Spots) <= connect the next band (of three squares
 
-connectBand(Spots) :-
+connectBand(Spots) <=
     connectSq(Spots,_),
     skip(Spots,3,Spots1),
     connectSq(Spots1,_),
     skip(Spots1,3,Spots2),
     connectSq(Spots2,_).
 
-% connectSq(Spots,S) :- connect the spots of square S. In the Spots
+% connectSq(Spots,S) <= connect the spots of square S. In the Spots
 %    list each square is composed of three spot-triplets which
 %    are separated by 6 spots.
 
 connectSq([],_).
-connectSq(Spots,S) :-
+connectSq(Spots,S) <=
   connectTriplet(Spots,S),
   skip(Spots,9,Spots1),
   connectTriplet(Spots1,S),
   skip(Spots1,9,Spots2),
   connectTriplet(Spots2,S).
 
-% connectTriplet(Spots,S) :- connect the next three spots in the Spots
+% connectTriplet(Spots,S) <= connect the next three spots in the Spots
 %    list with the square S
 
 connectTriplet([spot(_,_,_,S),spot(_,_,_,S),spot(_,_,_,S)|_],S).
 
-% skip(List,N,List1) :- skip the first N elements from a List
+% skip(List,N,List1) <= skip the first N elements from a List
 %    and return the rest of the list in List1. If the List is
 %    too short, then succeed and return [] as rest.
 
-skip([],_,[]) :-
+skip([],_,[]) <=
     !.
-skip(Xs,0,Xs) :-
+skip(Xs,0,Xs) <=
     !.
-skip([_|Xs],K,Zs) :-
+skip([_|Xs],K,Zs) <=
     K > 0,
     K1 is K-1,
     skip(Xs,K1,Zs).
 
 % -----------------------------------------------------------
 
-% init(Puzzle,Spots) :- initialize the Spots list on the
+% init(Puzzle,Spots) <= initialize the Spots list on the
 %    basis of the problem statement (Puzzle) and link the
 %    Puzzle list to the Spots list
 
 init([],[]).
-init([X|Xs],[Sp|Spots]) :-
+init([X|Xs],[Sp|Spots]) <=
     initSpot(X,Sp),
     init(Xs,Spots).
 
@@ -191,10 +194,10 @@ init([X|Xs],[Sp|Spots]) :-
 % the puzzle into the spot and insert it into the spot's
 % correct row, column, and square, if this is legal.
 
-initSpot(X,spot(X,_,_,_)) :-
+initSpot(X,spot(X,_,_,_)) <=
     var(X),
     !.
-initSpot(X,spot(X,R,C,S)) :-
+initSpot(X,spot(X,R,C,S)) <=
     integer(X),
     insert(X,R),
     insert(X,C),
@@ -202,20 +205,20 @@ initSpot(X,spot(X,R,C,S)) :-
 
 % ----------------------------------------------------------
 
-% solve(Spots) :- solve the problem using backtrack
+% solve(Spots) <= solve the problem using backtrack
 
 solve([]).
-solve([Spot|Spots]) :-
+solve([Spot|Spots]) <=
     bind(Spot),
     solve(Spots).
 
-% bind(Spot) :- bind the data field in Spot to an
+% bind(Spot) <= bind the data field in Spot to an
 % available non-conflicting digit.
 
-bind(spot(X,_,_,_)) :-
+bind(spot(X,_,_,_)) <=
     nonvar(X),
     !.
-bind(spot(X,R,C,S)) :-
+bind(spot(X,R,C,S)) <=
     var(X),
     between(1,9,X),  % try a digit
     insert(X,R),
@@ -224,22 +227,22 @@ bind(spot(X,R,C,S)) :-
 
 % ---------------------------------------------------------
 
-% insert(X,L) :- X can be inserted into the list without
+% insert(X,L) <= X can be inserted into the list without
 % conflict, i.e. X is not yet in the list, when insert/2
 % is called. Otherwise the predicate fails.
 
-insert(X,L) :-
+insert(X,L) <=
     var(L),
     !,
     L = [X|_].
-insert(X,[Y|Ys]) :-
+insert(X,[Y|Ys]) <=
     X \= Y,
     insert(X,Ys).
 
 % ---------------------------------------------------------
 
 printPuzzle([]).
-printPuzzle(Xs) :-
+printPuzzle(Xs) <=
     nl,
     printBand(Xs,Xs1),
     write('--------+---------+--------'),
@@ -249,7 +252,7 @@ printPuzzle(Xs) :-
     nl,
     printBand(Xs2,_).
 
-printBand(Xs,Xs3) :-
+printBand(Xs,Xs3) <=
     printRow(Xs,Xs1),
     nl,
     write('        |         |'),
@@ -261,74 +264,74 @@ printBand(Xs,Xs3) :-
     printRow(Xs2,Xs3),
     nl.
 
-printRow(Xs,Xs3) :-
+printRow(Xs,Xs3) <=
     printTriplet(Xs,Xs1),
     write(' | '),
     printTriplet(Xs1,Xs2),
     write(' | '),
     printTriplet(Xs2,Xs3).
 
-printTriplet(Xs,Xs3) :-
+printTriplet(Xs,Xs3) <=
     printElement(Xs,Xs1),
     write('  '),
     printElement(Xs1,Xs2),
     write('  '),
     printElement(Xs2,Xs3).
 
-printElement([X|Xs],Xs) :-
+printElement([X|Xs],Xs) <=
     var(X),
     !,
     write('.').
-printElement([X|Xs],Xs) :-
+printElement([X|Xs],Xs) <=
     write(X).
 
-printCounter(0) :-
+printCounter(0) <=
     !,
     write('No solution'),
     nl.
-printCounter(1) :-
+printCounter(1) <=
     !,
     write('1 solution'),
     nl.
-printCounter(K) :-
+printCounter(K) <=
     write(K),
     write(' solutions'),
     nl.
 
 % ---------------------------------------------------------
 
-test(N) :-
+test(N) <=
     puzzle(N,P),
     sudoku(P).
 
-puzzle(1,P) :-
+puzzle(1,P) <=
     P = [_,_,4,8,_,_,_,1,7, 6,7,_,9,_,_,_,_,_, 5,_,8,_,3,_,_,_,4,
          3,_,_,7,4,_,1,_,_, _,6,9,_,_,_,7,8,_, _,_,1,_,6,9,_,_,5,
          1,_,_,_,8,_,3,_,6, _,_,_,_,_,6,_,9,1, 2,4,_,_,_,1,5,_,_].
 
-puzzle(2,P) :-
+puzzle(2,P) <=
     P = [3,_,_,_,7,1,_,_,_, _,5,_,_,_,_,1,8,_, _,4,_,8,_,_,_,_,_,
          _,_,6,2,_,_,3,_,_, _,_,1,_,5,_,8,_,_, _,_,3,_,_,8,2,_,_,
          _,_,_,_,_,3,_,4,_, _,6,4,_,_,_,_,7,_, _,_,_,9,6,_,_,_,1].
 
-puzzle(3,P) :-
+puzzle(3,P) <=
     P = [1,7,_,_,_,9,_,_,4, _,_,_,_,_,_,7,_,_, 5,_,_,3,_,_,2,_,_,
          _,8,_,_,_,_,5,3,6, _,_,_,_,8,_,_,_,_, 6,9,1,_,_,_,_,8,_,
          _,_,7,_,_,4,_,_,2, _,_,2,_,_,_,_,_,_, 3,_,_,5,_,_,_,7,1].
 
 % an example with many solutions
 
-puzzle(4,P) :-
+puzzle(4,P) <=
     P = [1,_,_,_,_,9,_,_,4, _,_,_,_,_,_,7,_,_, 5,_,_,3,_,_,2,_,_,
          _,8,_,_,_,_,5,_,6, _,_,_,_,8,_,_,_,_, 6,9,1,_,_,_,_,8,_,
          _,_,7,_,_,4,_,_,2, _,_,2,_,_,_,_,_,_, 3,_,_,5,_,_,_,7,1].
 
-puzzle(5,P) :-
+puzzle(5,P) <=
     P = [_,6,5,_,_,_,7,2,_, 3,_,7,_,_,_,1,_,8, 2,9,_,_,1,_,_,3,4,
          _,_,_,5,_,7,_,_,_, _,_,1,_,_,_,8,_,_, _,_,_,2,_,1,_,_,_,
          8,1,_,_,2,_,_,5,7, 7,_,2,_,_,_,9,_,1, _,5,4,_,_,_,6,8,_].
 
-puzzle(6,P) :-
+puzzle(6,P) <=
     P = [5,_,2,_,_,3,_,_,_, 4,6,_,_,7,_,9,_,_, _,_,3,4,_,_,_,_,_,
          9,5,_,_,6,_,_,_,_, _,4,_,_,_,_,_,9,_, _,_,_,_,9,_,_,1,7,
          _,_,_,_,_,7,2,_,_, _,_,9,_,4,_,_,3,5, _,_,_,3,_,_,7,_,6].
@@ -336,7 +339,7 @@ puzzle(6,P) :-
 % an example with an error in the problem statement (5 appears
 % twice in the top left square)
 
-puzzle(e1,P) :-
+puzzle(e1,P) <=
     P = [5,_,2,_,_,3,_,_,_, 4,6,5,_,7,_,9,_,_, _,_,3,4,_,_,_,_,_,
          9,5,_,_,6,_,_,_,_, _,4,_,_,_,_,_,9,_, _,_,_,_,9,_,_,1,7,
          _,_,_,_,_,7,2,_,_, _,_,9,_,4,_,_,3,5, _,_,_,3,_,_,7,_,6].
@@ -344,24 +347,24 @@ puzzle(e1,P) :-
 % another example with an error in the problem statement (garbage
 % in the first row
 
-puzzle(e2,P) :-
+puzzle(e2,P) <=
     P = [x,_,2,_,_,3,_,_,_, 4,6,_,_,7,_,9,_,_, _,_,3,4,_,_,_,_,_,
          9,5,_,_,6,_,_,_,_, _,4,_,_,_,_,_,9,_, _,_,_,_,9,_,_,1,7,
          _,_,_,_,_,7,2,_,_, _,_,9,_,4,_,_,3,5, _,_,_,3,_,_,7,_,6].
 
 % some more examples from the Sonntagszeitung
 
-puzzle(8,P) :-
+puzzle(8,P) <=
     P = [4,8,_,_,7,_,_,_,_, _,_,9,6,8,_,3,_,7, 3,_,7,4,_,_,_,5,_,
          _,_,_,3,_,_,_,2,_, 9,5,_,7,2,1,_,6,8, _,1,_,_,_,4,_,_,_,
          _,4,_,_,_,2,7,_,1, 8,_,2,_,4,7,5,_,_, _,_,_,_,5,_,_,8,4].
 
-puzzle(9,P) :-
+puzzle(9,P) <=
     P = [_,1,_,_,_,_,_,2,4, 5,_,_,_,4,_,_,8,6, 6,_,4,1,_,_,_,_,_,
          _,_,_,8,_,6,9,_,_, 8,_,_,_,_,_,_,_,2, _,_,6,4,_,3,_,_,_,
          _,_,_,_,_,7,2,_,8, 1,6,_,_,9,_,_,_,5, 7,4,_,_,_,_,_,9,_].
 
-puzzle(10,P) :-
+puzzle(10,P) <=
     P = [_,9,7,_,_,5,_,_,4, _,_,_,_,_,9,_,_,_, _,_,5,_,4,_,2,_,7,
          _,8,6,_,_,3,_,_,_, _,_,_,_,2,_,_,_,_, _,_,_,5,_,_,3,4,_,
          5,_,3,_,7,_,6,_,_, _,_,_,6,_,_,_,_,_, 9,_,_,8,_,_,1,7,_].
@@ -369,7 +372,7 @@ puzzle(10,P) :-
 % a puzzle rated "not fun" by
 % http://dingo.sbs.arizona.edu/~sandiway/sudoku/examples.html
 
-puzzle(11,P) :-
+puzzle(11,P) <=
     P = [_,2,_,_,_,_,_,_,_, _,_,_,6,_,_,_,_,3, _,7,4,_,8,_,_,_,_,
          _,_,_,_,_,3,_,_,2, _,8,_,_,4,_,_,1,_, 6,_,_,5,_,_,_,_,_,
          _,_,_,_,1,_,7,8,_, 5,_,_,_,_,9,_,_,_, _,_,_,_,_,_,_,4,_].
@@ -377,7 +380,7 @@ puzzle(11,P) :-
 % a "super hard puzzle" by
 % http://www.menneske.no/sudoku/eng/showpuzzle.html?number=2155141
 
-puzzle(12,P) :-
+puzzle(12,P) <=
     P = [_,_,_,6,_,_,4,_,_, 7,_,_,_,_,3,6,_,_, _,_,_,_,9,1,_,8,_,
          _,_,_,_,_,_,_,_,_, _,5,_,1,8,_,_,_,3, _,_,_,3,_,6,_,4,5,
          _,4,_,2,_,_,_,6,_, 9,_,3,_,_,_,_,_,_, _,2,_,_,_,_,1,_,_].
@@ -385,45 +388,45 @@ puzzle(12,P) :-
 % some puzzles from Spektrum der Wissenschaft 3/2006, p.100
 
 % leicht
-puzzle(13,P) :-
+puzzle(13,P) <=
     P = [_,2,6,4,5,8,3,_,_, 1,7,_,_,_,_,_,4,_, _,8,_,_,_,_,_,_,_,
          _,_,_,_,_,_,9,8,_, _,_,_,5,9,_,1,_,4, 7,_,_,2,_,1,_,5,_,
          _,_,_,_,4,_,_,3,_, _,_,_,8,_,_,5,_,_, 6,_,_,_,_,7,_,9,1].
 
 % mittel
-puzzle(14,P) :-
+puzzle(14,P) <=
     P = [9,_,_,6,3,_,_,_,4, _,1,_,2,5,8,_,_,_, _,_,_,7,_,_,_,_,8,
          6,4,_,_,2,_,5,_,_, _,_,_,_,_,_,_,_,_, 8,2,_,5,_,_,_,9,_,
          _,_,_,_,_,_,8,7,_, 3,_,_,_,_,5,_,4,_, _,_,1,_,7,6,_,_,_].
 
 % schwer
-puzzle(15,P) :-
+puzzle(15,P) <=
     P = [_,_,_,_,_,_,_,_,7, _,_,_,_,_,_,6,3,4, _,_,_,9,4,_,_,2,_,
          5,_,1,7,_,_,8,6,_, _,_,9,_,_,_,_,_,3, _,_,_,_,8,_,_,_,_,
          4,3,_,5,_,_,_,_,_, _,1,_,_,6,8,_,_,_, _,_,_,_,_,3,1,_,9].
 
 % hoellisch (!)
-puzzle(16,P) :-
+puzzle(16,P) <=
     P = [_,_,_,_,3,_,_,_,_, _,1,5,_,_,_,6,_,_, 6,_,_,2,_,_,3,4,_,
          _,_,_,6,_,_,_,8,_, _,3,9,_,_,_,5,_,_, 5,_,_,_,_,_,9,_,2,
          _,_,_,_,_,_,_,_,_, _,_,_,9,7,_,2,5,_, 1,_,_,_,5,_,_,7,_].
 
 % Spektrum der Wissenschaft 3/2006 Preisraetsel (angeblich hoellisch !)
 
-puzzle(17,P) :-
+puzzle(17,P) <=
     P = [_,1,_,_,6,5,4,_,_, _,_,_,_,8,4,1,_,_, 4,_,_,_,_,_,_,7,_,
          _,5,_,1,9,_,_,_,_, _,_,3,_,_,_,7,_,_, _,_,_,_,3,7,_,5,_,
          _,8,_,_,_,_,_,_,3, _,_,2,6,5,_,_,_,_, _,_,9,8,1,_,_,2,_].
 
 % the (almost) empty grid
 
-puzzle(99,P) :-
+puzzle(99,P) <=
     P = [1,2,3,4,5,6,7,8,9, _,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_,
          _,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_,
          _,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_].
 
 % sudoku
-'https://github.com/IDLabResearch/Heiseneye#sudoku'(Puzzle,Solution) :-
+'https://github.com/IDLabResearch/Heiseneye#sudoku'(Puzzle,Solution) <=
     copy_term(Puzzle,Solution),
     connect(Spots),
     init(Solution,Spots),

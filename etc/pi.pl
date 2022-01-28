@@ -2,14 +2,17 @@
 % See http://www.wikihow.com/Calculate-Pi
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
 
-'https://github.com/IDLabResearch/Heiseneye#pi'(A,B) :-
+term_expansion((X <= Y),(X :- Y)).
+
+'https://github.com/IDLabResearch/Heiseneye#pi'(A,B) <=
     pi(1,A,0,C,1),
     B is 3+4*C.
 
-pi(A,A,B,B,_) :-
+pi(A,A,B,B,_) <=
     !.
-pi(A,B,C,D,E) :-
+pi(A,B,C,D,E) <=
     F is A+1,
     L is C+E/(2*A*(2*A+1)*(2*A+2)),
     M is -E,

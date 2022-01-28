@@ -1,20 +1,23 @@
 % See https://en.wikipedia.org/wiki/Padovan_sequence
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
 
-'https://github.com/IDLabResearch/Heiseneye#padovan'(A,B) :-
+term_expansion((X <= Y),(X :- Y)).
+
+'https://github.com/IDLabResearch/Heiseneye#padovan'(A,B) <=
     padovan(A,0,1,1,B).
 
 padovan(0,A,_,_,A).
 padovan(1,_,A,_,A).
 padovan(2,_,_,A,A).
-padovan(A,B,C,D,E) :-
+padovan(A,B,C,D,E) <=
     A > 2,
     F is A-1,
     G is B+C,
     padovan(F,C,D,G,E).
 
-'https://github.com/IDLabResearch/Heiseneye#plastic_ratio'(A,B) :-
+'https://github.com/IDLabResearch/Heiseneye#plastic_ratio'(A,B) <=
     'https://github.com/IDLabResearch/Heiseneye#padovan'(A,C),
     D is A+1,
     'https://github.com/IDLabResearch/Heiseneye#padovan'(D,E),

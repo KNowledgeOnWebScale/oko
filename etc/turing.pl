@@ -3,25 +3,28 @@
 :- use_module(library(lists)).
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
 
 % interpreter for Univeral Turing Machine
 
-'https://github.com/IDLabResearch/Heiseneye#compute'([],OutTape) :-
+'https://github.com/IDLabResearch/Heiseneye#compute'([],OutTape) <=
     start(_MACHINE,I),
     find(I,[],#,[ ],OutTape).
-'https://github.com/IDLabResearch/Heiseneye#compute'([Head|Tail],OutTape) :-
+'https://github.com/IDLabResearch/Heiseneye#compute'([Head|Tail],OutTape) <=
     start(_MACHINE,I),
     find(I,[],Head,Tail,OutTape).
 
-find(State,Left,Cell,Right,OutTape) :-
+find(State,Left,Cell,Right,OutTape) <=
     t([State,Cell,Write,Move],Next),
     move(Move,Left,Write,Right,A,B,C),
     continue(Next,A,B,C,OutTape).
 
-continue(halt,Left,Cell,Right,OutTape) :-
+continue(halt,Left,Cell,Right,OutTape) <=
     rev(Left,R),
     append(R,[Cell|Right],OutTape).
-continue(State,Left,Cell,Right,OutTape) :-
+continue(State,Left,Cell,Right,OutTape) <=
     find(State,Left,Cell,Right,OutTape).
 
 move(l,[],Cell,Right,[],#,[Cell|Right]).
@@ -31,7 +34,7 @@ move(r,Left,Cell,[],[Cell|Left],#,[] ).
 move(r,Left,Cell,[Head|Tail],[Cell|Left],Head,Tail).
 
 rev([],[]).
-rev([A|B],C) :-
+rev([A|B],C) <=
     rev(B,D),
     append(D,[A],C).
 

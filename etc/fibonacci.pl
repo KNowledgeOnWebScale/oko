@@ -1,19 +1,22 @@
 % See https://en.wikipedia.org/wiki/Fibonacci_number
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
 
-'https://github.com/IDLabResearch/Heiseneye#fibonacci'(A,B) :-
+term_expansion((X <= Y),(X :- Y)).
+
+'https://github.com/IDLabResearch/Heiseneye#fibonacci'(A,B) <=
     fibonacci(A,0,1,B).
 
 fibonacci(0,A,_,A).
 fibonacci(1,_,A,A).
-fibonacci(A,B,C,D) :-
+fibonacci(A,B,C,D) <=
     A > 1,
     E is A-1,
     F is B+C,
     fibonacci(E,C,F,D).
 
-'https://github.com/IDLabResearch/Heiseneye#golden_ratio'(A,B) :-
+'https://github.com/IDLabResearch/Heiseneye#golden_ratio'(A,B) <=
     'https://github.com/IDLabResearch/Heiseneye#fibonacci'(A,C),
     D is A+1,
     'https://github.com/IDLabResearch/Heiseneye#fibonacci'(D,E),

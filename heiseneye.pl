@@ -2,9 +2,9 @@
 % Heiseneye -- Jos De Roo
 % -----------------------
 %
-% Heiseneye performs backward chaining for Prolog rules like HEAD :- BODY and
-% forward chaining for rules like PREM => CONC where CONC is a conjunction.
-% There is no principle to tell whether to use backward or forward chaining.
+% Heiseneye performs forward chaining for rules like PREM => CONC and
+% backward chaining for rules like CONC <= PREM.
+% There is no principle to tell whether to use forward or backward chaining.
 %
 % Queries are posed and answered as PREM => yes so the answers are also
 % queries be it with some parts substituted and eventually containing more
@@ -15,6 +15,9 @@
 :- use_module(library(terms)).
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
 
 :- dynamic((=>)/2).
 :- dynamic(yes/0).

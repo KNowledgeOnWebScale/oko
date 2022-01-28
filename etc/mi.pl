@@ -2,16 +2,19 @@
 % Original code from https://www.youtube.com/watch?v=nmBkU-l1zyc&t=1870s
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
 
 'https://github.com/IDLabResearch/Heiseneye#mi'([],true).
-'https://github.com/IDLabResearch/Heiseneye#mi'([G|Gs],true) :-
+'https://github.com/IDLabResearch/Heiseneye#mi'([G|Gs],true) <=
     head_body_(G,Goals,Gs),
     'https://github.com/IDLabResearch/Heiseneye#mi'(Goals,true).
 
 head_body_('https://github.com/IDLabResearch/Heiseneye#mi'([],true),Rs,Rs).
 head_body_('https://github.com/IDLabResearch/Heiseneye#mi'([G|Gs],true),[head_body_(G,Goals,Gs),'https://github.com/IDLabResearch/Heiseneye#mi'(Goals,true)|Rs],Rs).
 
-head_body_(head_body_(Head,Goals0,Goals),Rs,Rs) :-
+head_body_(head_body_(Head,Goals0,Goals),Rs,Rs) <=
     head_body_(Head,Goals0,Goals).
 
 head_body_(natnum(0),Rs,Rs).

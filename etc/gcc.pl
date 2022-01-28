@@ -2,27 +2,30 @@
 % Code from the book "Clause and Effect" Chapter 8
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
 
 'https://github.com/IDLabResearch/Heiseneye#gcc'([[],_],[]).
-'https://github.com/IDLabResearch/Heiseneye#gcc'([[C|Cs],S],[N|Ns]) :-
+'https://github.com/IDLabResearch/Heiseneye#gcc'([[C|Cs],S],[N|Ns]) <=
     gcc(C,S,N),
     'https://github.com/IDLabResearch/Heiseneye#gcc'([Cs,N],Ns).
 
-gcc(C,[Qa,Qb,Qc],[Za,Zb,Zc]) :-
+gcc(C,[Qa,Qb,Qc],[Za,Zb,Zc]) <=
     neta(Qa,Qb,D1),
     netb(Qa,Qb,Qc,D2,D3),
     dff(D1,C,Qc,Zc),
     dff(D2,C,Qa,Za),
     dff(D3,C,Qb,Zb).
 
-neta(A,B,Q) :-
+neta(A,B,Q) <=
     and(A,B,T1),
     inv(A,NA),
     inv(B,NB),
     and(NA,NB,T2),
     or(T1,T2,Q).
 
-netb(A,B,C,Q1,Q2) :-
+netb(A,B,C,Q1,Q2) <=
     and(A,C,T1),
     inv(C,NC),
     and(B,NC,T2),

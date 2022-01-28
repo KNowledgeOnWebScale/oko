@@ -1,9 +1,12 @@
 % Calculating the area of a polygon
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
 
 'https://github.com/IDLabResearch/Heiseneye#area'([_],0).
-'https://github.com/IDLabResearch/Heiseneye#area'([[A,B],[C,D]|E],F) :-
+'https://github.com/IDLabResearch/Heiseneye#area'([[A,B],[C,D]|E],F) <=
     'https://github.com/IDLabResearch/Heiseneye#area'([[C,D]|E],G),
     F is (A*D-B*C)/2+G.
 

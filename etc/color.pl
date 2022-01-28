@@ -3,13 +3,16 @@
 :- use_module(library(lists)).
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
 
-'https://github.com/IDLabResearch/Heiseneye#colors'(_Map,Places) :-
+term_expansion((X <= Y),(X :- Y)).
+
+'https://github.com/IDLabResearch/Heiseneye#colors'(_Map,Places) <=
     findall([Place,_],neighbours(Place,_),Places),
     places(Places).
 
 places([]).
-places([[Place,Color]|Tail]) :-
+places([[Place,Color]|Tail]) <=
     places(Tail),
     neighbours(Place,Neighbours),
     member(Color,[c1,c2,c3,c4]),

@@ -3,8 +3,11 @@
 :- use_module(library(between)).
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
 
-'https://github.com/IDLabResearch/Heiseneye#easter'(Year,[Month,Day]) :-
+term_expansion((X <= Y),(X :- Y)).
+
+'https://github.com/IDLabResearch/Heiseneye#easter'(Year,[Month,Day]) <=
     A is Year rem 19,
     B is Year//100,
     C is Year rem 100,
@@ -15,5 +18,5 @@
     Day is F rem 31+1.
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#easter'(Year,[_Month,_Day]) => yes :-
+'https://github.com/IDLabResearch/Heiseneye#easter'(Year,[_Month,_Day]) => yes <=
     between(2021,2050,Year).
