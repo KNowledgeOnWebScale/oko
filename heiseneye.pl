@@ -3,8 +3,8 @@
 % -----------------------
 %
 % Heiseneye performs forward chaining for rules like PREM => CONC and
-% backward chaining for rules like CONC <= PREM.
-% There is no principle to tell whether to use forward or backward chaining.
+% backward chaining for rules like CONC <= PREM. There is no principle
+% to tell whether to use forward chaining or backward chaining.
 %
 % Queries are posed and answered as PREM => yes so the answers are also
 % queries be it with some parts substituted and eventually containing more

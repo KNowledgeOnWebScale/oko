@@ -7,8 +7,7 @@
 term_expansion((X <= Y),(X :- Y)).
 
 % Liste des racines dun polynome
-'https://github.com/IDLabResearch/Heiseneye#roots'(P,L) <=
-    findall(Z,racine(P,Z),L).
+'https://github.com/IDLabResearch/Heiseneye#roots'(P,L) <= findall(Z,racine(P,Z),L).
 
 % Racine dun polynome
 racine([A,B],Z) <=

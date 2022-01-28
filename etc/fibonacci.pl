@@ -5,8 +5,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://github.com/IDLabResearch/Heiseneye#fibonacci'(A,B) <=
-    fibonacci(A,0,1,B).
+'https://github.com/IDLabResearch/Heiseneye#fibonacci'(A,B) <= fibonacci(A,0,1,B).
 
 fibonacci(0,A,_,A).
 fibonacci(1,_,A,A).

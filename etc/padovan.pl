@@ -5,8 +5,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://github.com/IDLabResearch/Heiseneye#padovan'(A,B) <=
-    padovan(A,0,1,1,B).
+'https://github.com/IDLabResearch/Heiseneye#padovan'(A,B) <= padovan(A,0,1,1,B).
 
 padovan(0,A,_,_,A).
 padovan(1,_,A,_,A).

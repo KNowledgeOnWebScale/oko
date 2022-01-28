@@ -7,8 +7,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://github.com/IDLabResearch/Heiseneye#primerange'([A,B],L) <=
-    findall(I,(between(A,B,I),prime(I)),L).
+'https://github.com/IDLabResearch/Heiseneye#primerange'([A,B],L) <= findall(I,(between(A,B,I),prime(I)),L).
 
 prime(2).
 prime(3).
@@ -37,9 +36,7 @@ factor(N,L) <=
 % for the argument N.
 %   (integer,integer) (+,?)
 
-'https://github.com/IDLabResearch/Heiseneye#totient'(N,Phi) <=
-    prime_factors_mult(N,L),
-    to_phi(L,Phi).
+'https://github.com/IDLabResearch/Heiseneye#totient'(N,Phi) <= prime_factors_mult(N,L), to_phi(L,Phi).
 
 to_phi([],1).
 to_phi([[F,1]|L],Phi) <=
