@@ -22,27 +22,18 @@ giving [result](./result.pl).
 TERM     | Examples
 ---------|---------
 IRI      | `'http://example.org/etc#socrates'`
-literal  | `"This is OK."`
-         | `1.52`
-         | `true`
-         | `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
+literal  | `"This is OK."` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
 bnode    | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
-quickvar | `X`
-         | `_abc`
-         | `_`
-list     | `[TERM,...]`
-         | `[TERM,...|LIST]`
+quickvar | `X` `_abc` `_`
+list     | `[TERM,...]` `[TERM,...|LIST]`
 class    | `'http://example.org/etc#Woman'(TERM)`
 triple   | `'http://example.org/etc#location'(TERM,TERM)`
-graph    | `TRIPLE,TRIPLE,...`
-         | `(TRIPLE,TRIPLE,...)`
+graph    | `TRIPLE,TRIPLE,...` `(TRIPLE,TRIPLE,...)`
 
 CLAUSE   | Examples
 ---------|---------
-fact     | `'http://example.org/etc#Woman'(TERM)`.
-         | `'http://example.org/etc#location'(TERM,TERM).`
-rule     | `GRAPH => GRAPH.`
-         | `TRIPLE <= GRAPH.`
+fact     | `'http://example.org/etc#Woman'(TERM).` `'http://example.org/etc#location'(TERM,TERM).`
+rule     | `GRAPH => GRAPH.` `TRIPLE <= GRAPH.`
 
 ## Background
 
