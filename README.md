@@ -22,7 +22,7 @@ giving [result](./result.pl).
 TERM     | Examples
 ---------|---------
 IRI      | `'http://example.org/etc#socrates'`
-literal  | `"This is OK."` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
+literal  | `"abc"` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
 bnode    | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 quickvar | `X` `_abc` `_`
 list     | `[TERM,...]` `[TERM,...\|LIST]`
