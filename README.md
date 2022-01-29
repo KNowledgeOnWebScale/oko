@@ -5,7 +5,7 @@
 [Heiseneye](https://github.com/IDLabResearch/Heiseneye) performs forward chaining for rules like `PREM => CONC` and backward chaining for rules like `CONC <= PREM`.
 There is no principle to tell whether to use forward chaining or backward chaining.
 
-Queries are posed and answered as `PREM => yes` so the answers are also queries be it with some parts
+Queries are posed and answered as `PREM => true` so the answers are also queries be it with some parts
 substituted and eventually containing more variables than in the original query.
 
 Install [Rust](https://www.rust-lang.org/) based [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog)
@@ -34,7 +34,7 @@ CLAUSE   | Examples
 fact     | `TRIPLE.`
 rule     | `GRAPH => GRAPH.` `TRIPLE <= GRAPH.`
 fuse     | `GRAPH => false.`
-query    | `GRAPH => yes.`
+query    | `GRAPH => true.`
 
 ## Background
 

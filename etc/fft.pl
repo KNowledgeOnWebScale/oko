@@ -58,4 +58,4 @@ node(n(A1,N1),[n(A,N)|T]-[n(A1,N1),n(A,N)|T]) <=
     A1 is A+1.
 
 % query
-'https://idlabresearch.github.io/etc#fft'([0,1,2,3,4,5,6,7],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#fft'([0,1,2,3,4,5,6,7],_ANSWER) => true.

@@ -86,7 +86,7 @@ sdc(X,Y),
 (   'https://idlabresearch.github.io/etc#sdcoding'(X,Y)
 ->  retract('https://idlabresearch.github.io/etc#sdcoding'(X,Y))
 ;   assertz('https://idlabresearch.github.io/etc#sdcoding'(X,Y))
-) => true.
+) => \+false.
 
 % query
-'https://idlabresearch.github.io/etc#sdcoding'(_X,_Y) => yes.
+'https://idlabresearch.github.io/etc#sdcoding'(_X,_Y) => true.

@@ -50,7 +50,7 @@ t([1,1,0,l],1).
 t([1,#,1,s],halt).
 
 % query
-'https://idlabresearch.github.io/etc#compute'([1,0,1,0,0,1],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#compute'([1,0,1,1,1,1],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#compute'([1,1,1,1,1,1],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#compute'([],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#compute'([1,0,1,0,0,1],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#compute'([1,0,1,1,1,1],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#compute'([1,1,1,1,1,1],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#compute'([],_ANSWER) => true.

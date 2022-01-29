@@ -27,8 +27,8 @@ head_body_(sum(0,M,M),Rs,Rs).
 head_body_(sum(s(N),M,s(K)),[sum(N,M,K)|Rs],Rs).
 
 % query
-'https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'([factorial(s(s(s(s(s(s(0)))))),_X)],true)],true)],true)],true)],true) => yes.
-'https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'([natnum(_X)],true)],true)],true)],true)],true) => yes.
+'https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'([factorial(s(s(s(s(s(s(0)))))),_X)],true)],true)],true)],true)],true) => true.
+'https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'([natnum(_X)],true)],true)],true)],true)],true) => true.
 
 % 10 answers are fine
 limited_answer(10).

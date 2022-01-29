@@ -26,4 +26,4 @@ neighbours(p4,[p1,p2,p3]).
 neighbours(p5,[p1,p3]).
 
 % query
-'https://idlabresearch.github.io/etc#colors'(map1,_X) => yes.
+'https://idlabresearch.github.io/etc#colors'(map1,_X) => true.

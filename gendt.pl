@@ -25,5 +25,5 @@ run :-
     ),
     write(Out,'\n'),
     write(Out,'% query\n'),
-    write(Out,'\'http://example.org/etc#N10000\'(_ELEMENT,true) => yes.\n'),
+    write(Out,'\'http://example.org/etc#N10000\'(_ELEMENT,true) => true.\n'),
     close(Out).

@@ -286,12 +286,12 @@ lists_fr([[A|B]|C],[A|D],[B|E]) <=
     lists_fr(C,D,E).
 
 % query
-'https://idlabresearch.github.io/etc#determinant'([[2,-1,0],[-1,2,-1],[0,-1,2]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#matrix_inversion'([[2,-1,0],[-1,2,-1],[0,-1,2]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#matrix_inversion'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#matrix_inv_triang'([[2,0,0],[-1,2,0],[0,-1,2]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#matrix_multiply'([[[1,2],[3,4],[5,6]],[[1,1,1],[1,1,1]]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#matrix_multiply'([[[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],[[2.515624999999984,0.4843749999999933,-1.296874999999973,0.3593749999999767],[0.4843749999999933,0.1406249999999978,-0.3281249999999918,0.1406249999999936],[-1.296874999999973,-0.3281249999999918,1.015624999999971,-0.5781249999999781],[0.3593749999999767,0.1406249999999936,-0.5781249999999781,0.5156249999999853]]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#matrix_sum'([[[1,2],[3,4],[5,6]],[[1,2],[3,4],[5,6]]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#cholesky_decomposition'([[25,15,-5],[15,18,0],[-5,0,11]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#cholesky_decomposition'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#determinant'([[2,-1,0],[-1,2,-1],[0,-1,2]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#matrix_inversion'([[2,-1,0],[-1,2,-1],[0,-1,2]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#matrix_inversion'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#matrix_inv_triang'([[2,0,0],[-1,2,0],[0,-1,2]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#matrix_multiply'([[[1,2],[3,4],[5,6]],[[1,1,1],[1,1,1]]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#matrix_multiply'([[[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],[[2.515624999999984,0.4843749999999933,-1.296874999999973,0.3593749999999767],[0.4843749999999933,0.1406249999999978,-0.3281249999999918,0.1406249999999936],[-1.296874999999973,-0.3281249999999918,1.015624999999971,-0.5781249999999781],[0.3593749999999767,0.1406249999999936,-0.5781249999999781,0.5156249999999853]]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#matrix_sum'([[[1,2],[3,4],[5,6]],[[1,2],[3,4],[5,6]]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#cholesky_decomposition'([[25,15,-5],[15,18,0],[-5,0,11]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#cholesky_decomposition'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],_ANSWER) => true.

@@ -121,9 +121,9 @@ divi(N,F,M,R,K) <=
 divi(N,_,M,N,M).
 
 % query
-'https://idlabresearch.github.io/etc#primerange'([0,100],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#primerange'([1000000,1000100],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#totient'(271,_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#totient'(2718281,_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#totient'(27182818284,_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#totient'(271828182845904,_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#primerange'([0,100],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#primerange'([1000000,1000100],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#totient'(271,_ANSWER) => true.
+'https://idlabresearch.github.io/etc#totient'(2718281,_ANSWER) => true.
+'https://idlabresearch.github.io/etc#totient'(27182818284,_ANSWER) => true.
+'https://idlabresearch.github.io/etc#totient'(271828182845904,_ANSWER) => true.

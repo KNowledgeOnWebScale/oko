@@ -6,7 +6,7 @@
 % backward chaining for rules like CONC <= PREM. There is no principle
 % to tell whether to use forward chaining or backward chaining.
 %
-% Queries are posed and answered as PREM => yes so the answers are also
+% Queries are posed and answered as PREM => true so the answers are also
 % queries be it with some parts substituted and eventually containing more
 % variables than in the original query.
 %
@@ -20,7 +20,7 @@
 term_expansion((X <= Y),(X :- Y)).
 
 :- dynamic((=>)/2).
-:- dynamic(yes/0).
+:- dynamic(goal/0).
 :- dynamic(label/1).
 :- dynamic(limited_answer/1).
 :- dynamic(linear_select/0).
@@ -29,19 +29,19 @@ term_expansion((X <= Y),(X :- Y)).
 %
 % 1/ Select rule P => C
 % 2/ Prove P & ~C via backward chaining and if it fails backtrack to 1/
-% 3/ If C = yes
-%       answer with P => yes and if limited_answer stop, else backtrack to 2/
-%    else assert step C via forward chaining, retract yes and backtrack to 2/
-% 4/ If yes or linear_select stop, else assert yes and start again at 1/
+% 3/ If C = true
+%       answer with P => true and if limited_answer stop, else backtrack to 2/
+%    else assert step C via forward chaining, retract goal and backtrack to 2/
+% 4/ If goal or linear_select stop, else assert goal and start again at 1/
 %
 run :-
     (Prem => Conc),
     Prem,
-    \+Conc,
-    (   Conc = yes
-    ->  labelvars(Prem),
+    (   Conc = true
+    ->  \+goal,
+        labelvars(Prem),
         writeq(Prem),
-        write(' => yes.'),
+        write(' => true.'),
         nl,
         (   limited_answer(1)
         ;   true
@@ -50,17 +50,18 @@ run :-
             assertz(limited_answer(M)),
             fail
         )
-    ;   labelvars(Conc),
+    ;   \+Conc,
+        labelvars(Conc),
         astep(Conc),
-        retract(yes),
+        retract(goal),
         fail
     ).
 run :-
-    (   (   yes
+    (   (   goal
         ;   linear_select
         )
     ->  true
-    ;   assertz(yes),
+    ;   assertz(goal),
         run
     ).
 

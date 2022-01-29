@@ -30010,4 +30010,4 @@ term_expansion((X <= Y),(X :- Y)).
 'http://example.org/etc#J10000'(X,true) <= 'http://example.org/etc#N9999'(X,true).
 
 % query
-'http://example.org/etc#N10000'(_ELEMENT,true) => yes.
+'http://example.org/etc#N10000'(_ELEMENT,true) => true.

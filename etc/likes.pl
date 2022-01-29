@@ -13,4 +13,4 @@ term_expansion((X <= Y),(X :- Y)).
 'http://example.org/etc#Person'(P) => 'https://idlabresearch.github.io/etc#likes'(P,_Q).
 
 % query
-'https://idlabresearch.github.io/etc#likes'(_X,_Y) => yes.
+'https://idlabresearch.github.io/etc#likes'(_X,_Y) => true.

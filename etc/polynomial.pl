@@ -233,5 +233,5 @@ nulreel(0.0) <=
 nulreel(-0.0).
 
 % query
-'https://idlabresearch.github.io/etc#roots'([[1,0],[-10,0],[35,0],[-50,0],[24,0]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#roots'([[1,0],[-9,-5],[14,33],[24,-44],[-26,0]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#roots'([[1,0],[-10,0],[35,0],[-50,0],[24,0]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#roots'([[1,0],[-9,-5],[14,33],[24,-44],[-26,0]],_ANSWER) => true.

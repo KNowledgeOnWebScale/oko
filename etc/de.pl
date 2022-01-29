@@ -21,7 +21,7 @@ not_('https://idlabresearch.github.io/etc#saying'(S,'A')) => 'https://idlabresea
 not_('https://idlabresearch.github.io/etc#saying'(S,'B')) => 'https://idlabresearch.github.io/etc#saying'(S,'A').
 
 % query
-'https://idlabresearch.github.io/etc#saying'(_WHO,'C') => yes.
+'https://idlabresearch.github.io/etc#saying'(_WHO,'C') => true.
 
 % assuming the negation of the query so that it can be discharged when the query succeeds
 not_('https://idlabresearch.github.io/etc#saying'(someone,'C')).

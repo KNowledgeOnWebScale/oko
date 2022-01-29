@@ -10,4 +10,4 @@ term_expansion((X <= Y),(X :- Y)).
 'http://example.org/etc#Mortal'(X,true) <= 'http://example.org/etc#Man'(X,true).
 
 % query
-'http://example.org/etc#Mortal'(_IND,true) => yes.
+'http://example.org/etc#Mortal'(_IND,true) => true.

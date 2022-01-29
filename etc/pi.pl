@@ -19,4 +19,4 @@ pi(A,B,C,D,E) <=
     pi(F,B,L,D,M).
 
 % query
-'https://idlabresearch.github.io/etc#pi'(100000,_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#pi'(100000,_ANSWER) => true.

@@ -9,7 +9,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-% find paths in the state space from initial state to yes state within limits
+% find paths in the state space from initial state to goal state within limits
 'https://idlabresearch.github.io/etc#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=
     findpaths([],Goal,[],0.0,0.0,1.0,1.0,Path,Duration,Cost,Belief,Comfort,Limits).
 
@@ -131,4 +131,4 @@ conj_list((A,B),[A|C]) <=
         _COMFORT,
         [5000.0,5.0,0.2,0.4,1]
     ]
-) => yes.
+) => true.

@@ -18,5 +18,5 @@ term_expansion((X <= Y),(X :- Y)).
     Day is F rem 31+1.
 
 % query
-'https://idlabresearch.github.io/etc#easter'(Year,[_Month,_Day]) => yes <=
+'https://idlabresearch.github.io/etc#easter'(Year,[_Month,_Day]) => true <=
     between(2021,2050,Year).

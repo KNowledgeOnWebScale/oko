@@ -96,13 +96,13 @@ divide([A,B],C) <=
     multiply([A,D],C).
 
 % query
-'https://idlabresearch.github.io/etc#exp'([[-1,0],[0.5,0]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#exp'([[e,0],[0,pi]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#log'([[e,0],[-1,0]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#log'([[0,1],[0,1]],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#sin'([1.570796326794897,1.316957896924817],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#cos'([0,-1.316957896924817],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#tan'([1.338972522294493,0.4023594781085251],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#asin'([2,0],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#acos'([2,0],_ANSWER) => yes.
-'https://idlabresearch.github.io/etc#atan'([1,2],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#exp'([[-1,0],[0.5,0]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#exp'([[e,0],[0,pi]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#log'([[e,0],[-1,0]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#log'([[0,1],[0,1]],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#sin'([1.570796326794897,1.316957896924817],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#cos'([0,-1.316957896924817],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#tan'([1.338972522294493,0.4023594781085251],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#asin'([2,0],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#acos'([2,0],_ANSWER) => true.
+'https://idlabresearch.github.io/etc#atan'([1,2],_ANSWER) => true.

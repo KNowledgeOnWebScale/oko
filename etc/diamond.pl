@@ -42,7 +42,7 @@ not_(r(X,Y)),not_(e(X,Y)) => not_('https://idlabresearch.github.io/etc#re'(X,Y))
 r(X,Y),r(X,Z) => dom(U),r(Y,U),r(Z,U).
 
 % query
-'https://idlabresearch.github.io/etc#re'(b,X),'https://idlabresearch.github.io/etc#re'(c,X) => yes.
+'https://idlabresearch.github.io/etc#re'(b,X),'https://idlabresearch.github.io/etc#re'(c,X) => true.
 
 % assuming the negation of the query so that it can be discharged when the query succeeds
 'https://idlabresearch.github.io/etc#re'(b,X) => not_('https://idlabresearch.github.io/etc#re'(c,X)).

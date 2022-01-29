@@ -22,4 +22,4 @@ term_expansion((X <= Y),(X :- Y)).
 'https://idlabresearch.github.io/etc#path'(A,B),'https://idlabresearch.github.io/etc#path'(B,C) => 'https://idlabresearch.github.io/etc#path'(A,C).
 
 % query
-'https://idlabresearch.github.io/etc#path'(_CITY,'http://example.org/etc#nantes') => yes.
+'https://idlabresearch.github.io/etc#path'(_CITY,'http://example.org/etc#nantes') => true.
