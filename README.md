@@ -25,7 +25,7 @@ giving [result](./result.pl).
 - Blank nodes are Skolem IRIs like `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 - Classes are unary predicates like `'http://example.org/etc#Woman'('http://example.org/etc#Emmy_Noether')`
 - Triples are binary predicates like `'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent')`
-- Graph are conjunctions like `(pred1(args),...)` where predicate arguments are IRIs, literals, lists, classes, triples and graphs
+- Graphs are conjunctions like `(pred1(args),...)` where predicate arguments are IRIs, literals, lists, classes, triples and graphs
 
 ## Background
 
