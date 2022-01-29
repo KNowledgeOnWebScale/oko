@@ -28,7 +28,7 @@ quickvar | `X` `_abc` `_`
 list     | `[TERM,...]` `[TERM,...\|LIST]`
 class    | `'http://example.org/etc#C1'(TERM)`
 triple   | `'http://example.org/etc#p3'(TERM,TERM)`
-graph    | `TRIPLE,TRIPLE,...` `(TRIPLE,TRIPLE,...)`
+graph    | `TRIPLE,...`
 
 CLAUSE   | Examples
 ---------|---------
