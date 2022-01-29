@@ -17,18 +17,28 @@ giving [result](./result.pl).
 
 ## Webizing
 
-[Heiseneye](https://github.com/IDLabResearch/Heiseneye) is using the following [ISO Prolog](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog) *terms*:
+[Heiseneye](https://github.com/IDLabResearch/Heiseneye) is using the following [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog):
 
-| Term     | Examples                                                                                        |
-| -------- | ----------------------------------------------------------------------------------------------- |
-| IRI      | `'http://example.org/etc#socrates'`                                                             |
-| literal  | `"Hello world!"` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`          |
-| bnode    | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`                   |
-| quickvar | `X` `_var2` `_`                                                                                 |
-| list     | `[`*`terms`*`]` and `[`*`terms`*`|`*`list`*`]`                                                  |
-| class    | `'http://example.org/etc#Woman'('http://example.org/etc#Emmy_Noether')`                         |
-| triple   | `'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent')`  |
-| graph    | `('http://example.org/etc#pred1'(`*`terms`*`),'http://example.org/etc#pred9'(`*`terms`*`),...)` |
+| Term     | Examples                                                                                            |
+| -------- | --------------------------------------------------------------------------------------------------- |
+| IRI      | `'http://example.org/etc#socrates'`                                                                 |
+| literal  | `"Hello world!"`                                                                                    |
+|          | `1.52`                                                                                              |
+|          | `true`                                                                                              |
+|          | `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`                                             |
+| bnode    | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`                       |
+| quickvar | `X` `_var2` `_`                                                                                     |
+| list     | `[`**`terms`**`]`                                                                                   |
+|          | `[`**`terms`**`|`**`list`**`]`                                                                      |
+| class    | `'http://example.org/etc#Woman'(`**`term`**`)`                                                      |
+| triple   | `'http://example.org/etc#location'(`**`term`**`,`**`term`**`)`                                      |
+| graph    | `('http://example.org/etc#pred1'(`**`terms`**`),'http://example.org/etc#pred9'(`**`terms`**`),...)` |
+
+| Clause   | Examples                                                                                            |
+| -------- | --------------------------------------------------------------------------------------------------- |
+| fact     | `'http://example.org/etc#location'(`**`term`**`,`**`term`**`).`                                     |
+| rule     | **`graph`**` => `**`graph`**`.`                                                                     |
+|          | **`triple`**` <= `**`graph`**`.`                                                                     |
 
 ## Background
 
