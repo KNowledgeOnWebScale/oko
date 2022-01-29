@@ -22,7 +22,7 @@ giving [result](./result.pl).
 - Uniform resource identifiers are atoms like `'http://example.org/etc#socrates'`
 - Literals are strings like `"Hello world!"`, numbers like `1.52` and booleans like `true`
 - Typed literals are predicates like `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
-- Blank nodes are Skolem IRIs like `'https://idlabresearch.github.io/.well-known/genid/6wSAnCUIVlStLSXYxCEnAsMz7rw#sk1'`
+- Blank nodes are Skolem IRIs like `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 - Classes are unary predicates like `'http://example.org/etc#Woman'('http://example.org/etc#Emmy_Noether')`
 - Triples are binary predicates like `'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent').`
 
