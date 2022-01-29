@@ -26,13 +26,12 @@ literal  | `"abc"` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-
 bnode    | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 quickvar | `X` `_abc` `_`
 list     | `[TERM,...]` `[TERM,...\|LIST]`
-class    | `'http://example.org/etc#C1'(TERM)`
-triple   | `'http://example.org/etc#p3'(TERM,TERM)`
+triple   | `IRI(TERM,TERM)`
 graph    | `TRIPLE,...`
 
 CLAUSE   | Examples
 ---------|---------
-fact     | `'http://example.org/etc#C1'(TERM).` `'http://example.org/etc#p3'(TERM,TERM).`
+fact     | `TRIPLE.`
 rule     | `GRAPH => GRAPH.` `TRIPLE <= GRAPH.`
 
 ## Background

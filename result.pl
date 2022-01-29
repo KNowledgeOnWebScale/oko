@@ -67,7 +67,7 @@
 'https://idlabresearch.github.io/etc#re'(b,B),'https://idlabresearch.github.io/etc#re'(c,B) => yes.
 
 % running etc/dt.pl
-'http://example.org/etc#N10000'('http://example.org/etc#z') => yes.
+'http://example.org/etc#N10000'('http://example.org/etc#z',true) => yes.
 
 % running etc/easter.pl
 'https://idlabresearch.github.io/etc#easter'(2021,[4,4]) => yes.
@@ -245,7 +245,7 @@
 'https://idlabresearch.github.io/etc#sdcoding'(2,2) => yes.
 
 % running etc/socrates.pl
-'http://example.org/etc#Mortal'('http://example.org/etc#socrates') => yes.
+'http://example.org/etc#Mortal'('http://example.org/etc#socrates',true) => yes.
 
 % running etc/sudoku.pl
 'https://idlabresearch.github.io/etc#sudoku'([8,A,B,4,C,5,D,E,F,6,G,4,H,I,J,K,L,1,M,N,O,P,1,Q,R,S,2,T,3,7,2,U,V,W,X,Y,Z,A1,B1,C1,5,1,D1,E1,9,F1,G1,H1,I1,J1,4,K1,3,L1,9,M1,2,N1,O1,8,1,P1,7,7,Q1,R1,S1,T1,U1,V1,W1,X1,Y1,Z1,1,A2,B2,2,C2,D2,E2],[8,1,3,4,2,5,7,9,6,6,2,4,8,9,7,3,5,1,5,7,9,6,1,3,8,4,2,4,3,7,2,8,9,6,1,5,2,8,6,3,5,1,4,7,9,1,9,5,7,6,4,2,3,8,9,4,2,5,3,8,1,6,7,7,5,8,1,4,6,9,2,3,3,6,1,9,7,2,5,8,4]) => yes.

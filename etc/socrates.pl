@@ -5,9 +5,9 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'http://example.org/etc#Man'('http://example.org/etc#socrates').
+'http://example.org/etc#Man'('http://example.org/etc#socrates',true).
 
-'http://example.org/etc#Mortal'(X) <= 'http://example.org/etc#Man'(X).
+'http://example.org/etc#Mortal'(X,true) <= 'http://example.org/etc#Man'(X,true).
 
 % query
-'http://example.org/etc#Mortal'(_IND) => yes.
+'http://example.org/etc#Mortal'(_IND,true) => yes.
