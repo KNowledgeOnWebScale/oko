@@ -6,7 +6,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://github.com/IDLabResearch/Heiseneye#pi'(A,B) <=
+'https://idlabresearch.github.io/etc#pi'(A,B) <=
     pi(1,A,0,C,1),
     B is 3+4*C.
 
@@ -19,4 +19,4 @@ pi(A,B,C,D,E) <=
     pi(F,B,L,D,M).
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#pi'(100000,_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#pi'(100000,_ANSWER) => yes.

@@ -7,7 +7,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://github.com/IDLabResearch/Heiseneye#colors'(_Map,Places) <=
+'https://idlabresearch.github.io/etc#colors'(_Map,Places) <=
     findall([Place,_],neighbours(Place,_),Places),
     places(Places).
 
@@ -26,4 +26,4 @@ neighbours(p4,[p1,p2,p3]).
 neighbours(p5,[p1,p3]).
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#colors'(map1,_X) => yes.
+'https://idlabresearch.github.io/etc#colors'(map1,_X) => yes.

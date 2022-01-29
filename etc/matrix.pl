@@ -42,15 +42,15 @@ matrix_mult_scal(A,V,B) <=
 mult(A,B,C) <=
     C is A*B.
 
-%% 'https://github.com/IDLabResearch/Heiseneye#determinant'(+A,-D) is det.
+%% 'https://idlabresearch.github.io/etc#determinant'(+A,-D) is det.
 % computes the determinant for a positive semi-definite matrix.
 % Uses the Cholenski decomposition
 % ==
-% ?- 'https://github.com/IDLabResearch/Heiseneye#determinant'([[2,-1,0],[-1,2,-1],[0,-1,2]],D).
+% ?- 'https://idlabresearch.github.io/etc#determinant'([[2,-1,0],[-1,2,-1],[0,-1,2]],D).
 % D = 3.999999999999999.
 % ==
-'https://github.com/IDLabResearch/Heiseneye#determinant'(A,Det) <=
-    'https://github.com/IDLabResearch/Heiseneye#cholesky_decomposition'(A,L),
+'https://idlabresearch.github.io/etc#determinant'(A,Det) <=
+    'https://idlabresearch.github.io/etc#cholesky_decomposition'(A,L),
     get_diagonal(L,D),
     foldl(prod,D,1,DetL),
     Det is DetL*DetL.
@@ -58,42 +58,42 @@ mult(A,B,C) <=
 prod(A,P0,P) <=
     P is P0*A.
 
-%% 'https://github.com/IDLabResearch/Heiseneye#matrix_inversion'(+M,-IM) is det.
+%% 'https://idlabresearch.github.io/etc#matrix_inversion'(+M,-IM) is det.
 % inversion of a positive semi-definite matrix. Uses the Cholenski
 % decomposition
 % ==
-% ?- 'https://github.com/IDLabResearch/Heiseneye#matrix_inversion'([[2,-1,0],[-1,2,-1],[0,-1,2]],L).
+% ?- 'https://idlabresearch.github.io/etc#matrix_inversion'([[2,-1,0],[-1,2,-1],[0,-1,2]],L).
 % L = [[0.7499999999999999,0.5000000000000001,0.2500000000000001],[0.5000000000000001,1.0000000000000004,0.5000000000000002],[0.2500000000000001,0.5000000000000002,0.7500000000000001]].
 % ==
-'https://github.com/IDLabResearch/Heiseneye#matrix_inversion'(A,B) <=
-    'https://github.com/IDLabResearch/Heiseneye#cholesky_decomposition'(A,L),
-    'https://github.com/IDLabResearch/Heiseneye#matrix_inv_triang'(L,LI),
+'https://idlabresearch.github.io/etc#matrix_inversion'(A,B) <=
+    'https://idlabresearch.github.io/etc#cholesky_decomposition'(A,L),
+    'https://idlabresearch.github.io/etc#matrix_inv_triang'(L,LI),
     transpose_local(LI,LIT),
-    'https://github.com/IDLabResearch/Heiseneye#matrix_multiply'([LIT,LI],B).
+    'https://idlabresearch.github.io/etc#matrix_multiply'([LIT,LI],B).
 
-%% 'https://github.com/IDLabResearch/Heiseneye#matrix_inv_triang'(+M,-IM) is det.
+%% 'https://idlabresearch.github.io/etc#matrix_inv_triang'(+M,-IM) is det.
 % inversion of a lower triangular matrix
 % code from
 % http://www.mymathlib.com/c_source/matrices/linearsystems/unit_lower_triangular.c
 % http://www.mcs.csueastbay.edu/~malek/TeX/Triangle.pdf
 % code from
 % ==
-% ?- 'https://github.com/IDLabResearch/Heiseneye#matrix_inv_triang'([[2,0,0],[-1,2,0],[0,-1,2]],L).
+% ?- 'https://idlabresearch.github.io/etc#matrix_inv_triang'([[2,0,0],[-1,2,0],[0,-1,2]],L).
 % L = [[0.5,0.0,0.0],[0.25,0.5,0.0],[0.125,0.25,0.5]].
 % ==
-'https://github.com/IDLabResearch/Heiseneye#matrix_inv_triang'(L1,L2) <=
+'https://idlabresearch.github.io/etc#matrix_inv_triang'(L1,L2) <=
     get_diagonal(L1,D),
     maplist(inv,D,ID),
     length(ID,N),
     NN is N*N,
     listd(NN,N,ID,L0),
     identify_rows(L0,N,IDM),
-    'https://github.com/IDLabResearch/Heiseneye#matrix_multiply'([IDM,L1],LL1),
+    'https://idlabresearch.github.io/etc#matrix_multiply'([IDM,L1],LL1),
     append(LL1,LT),
     length(LL1,N),
     matrix_inv_i(1,N,LT,LTT),
     identify_rows(LTT,N,LL2),
-    'https://github.com/IDLabResearch/Heiseneye#matrix_multiply'([LL2,IDM],L2).
+    'https://idlabresearch.github.io/etc#matrix_multiply'([LL2,IDM],L2).
 
 matrix_inv_i(N,N,LT,LT) <=
     !.
@@ -140,15 +140,15 @@ get_diag(N0,N,L,[H|R]) <=
     N1 is N0+1,
     get_diag(N1,N,L,R).
 
-%% 'https://github.com/IDLabResearch/Heiseneye#matrix_multiply'([+X,+Y],-M) is det.
+%% 'https://idlabresearch.github.io/etc#matrix_multiply'([+X,+Y],-M) is det.
 %
 %   X(N*P),Y(P*M),M(N*M)
 % ==
-% ?- 'https://github.com/IDLabResearch/Heiseneye#matrix_multiply'([[[1,2],[3,4],[5,6]],[[1,1,1],[1,1,1]]],R).
+% ?- 'https://idlabresearch.github.io/etc#matrix_multiply'([[[1,2],[3,4],[5,6]],[[1,1,1],[1,1,1]]],R).
 % R = [[3,3,3],[7,7,7],[11,11,11]].
 % ==
 % code from http://stackoverflow.com/questions/34206275/matrix-multiplication-with-prolog
-'https://github.com/IDLabResearch/Heiseneye#matrix_multiply'([X,Y],M) <=
+'https://idlabresearch.github.io/etc#matrix_multiply'([X,Y],M) <=
     matrix_mul(X,Y,M0),
     maplist(maplist(is),M,M0).
 
@@ -174,26 +174,26 @@ matrix_diff(X,Y,S) <=
 diff(A,B,C) <=
     C is A-B.
 
-%% 'https://github.com/IDLabResearch/Heiseneye#matrix_sum'([+A,+B],-C) is det
+%% 'https://idlabresearch.github.io/etc#matrix_sum'([+A,+B],-C) is det
 % ==
-% ?- 'https://github.com/IDLabResearch/Heiseneye#matrix_sum'([[[1,2],[3,4],[5,6]],[[1,2],[3,4],[5,6]]],M).
+% ?- 'https://idlabresearch.github.io/etc#matrix_sum'([[[1,2],[3,4],[5,6]],[[1,2],[3,4],[5,6]]],M).
 % ==
-'https://github.com/IDLabResearch/Heiseneye#matrix_sum'([X,Y],S) <=
+'https://idlabresearch.github.io/etc#matrix_sum'([X,Y],S) <=
     maplist(maplist(sum),X,Y,S).
 
 sum(A,B,C) <=
     C is A+B.
 
-%% 'https://github.com/IDLabResearch/Heiseneye#cholesky_decomposition'(+A,-L) is det.
+%% 'https://idlabresearch.github.io/etc#cholesky_decomposition'(+A,-L) is det.
 % computes the Cholesky decomposition of a positive semi-definite matrix
 % code from https://rosettacode.org/wiki/Cholesky_decomposition#C
 % ==
-% ?- 'https://github.com/IDLabResearch/Heiseneye#cholesky_decomposition'([[25,15,-5],[15,18,0],[-5,0,11]],L).
+% ?- 'https://idlabresearch.github.io/etc#cholesky_decomposition'([[25,15,-5],[15,18,0],[-5,0,11]],L).
 % L = [[5.0,0,0],[3.0,3.0,0],[-1.0,1.0,3.0]].
-% ?- 'https://github.com/IDLabResearch/Heiseneye#cholesky_decomposition'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],L).
+% ?- 'https://idlabresearch.github.io/etc#cholesky_decomposition'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],L).
 % L = [[4.242640687119285,0,0,0],[5.185449728701349,6.565905201197403,0,0],[12.727922061357857,3.0460384954008553,1.6497422479090704,0],[9.899494936611667,1.624553864213788,1.8497110052313648,1.3926212476456026]].
 % ==
-'https://github.com/IDLabResearch/Heiseneye#cholesky_decomposition'(A,L) <=
+'https://idlabresearch.github.io/etc#cholesky_decomposition'(A,L) <=
     append(A,AL),
     length(AL,NL),
     list0(NL,LL),
@@ -286,12 +286,12 @@ lists_fr([[A|B]|C],[A|D],[B|E]) <=
     lists_fr(C,D,E).
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#determinant'([[2,-1,0],[-1,2,-1],[0,-1,2]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#matrix_inversion'([[2,-1,0],[-1,2,-1],[0,-1,2]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#matrix_inversion'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#matrix_inv_triang'([[2,0,0],[-1,2,0],[0,-1,2]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#matrix_multiply'([[[1,2],[3,4],[5,6]],[[1,1,1],[1,1,1]]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#matrix_multiply'([[[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],[[2.515624999999984,0.4843749999999933,-1.296874999999973,0.3593749999999767],[0.4843749999999933,0.1406249999999978,-0.3281249999999918,0.1406249999999936],[-1.296874999999973,-0.3281249999999918,1.015624999999971,-0.5781249999999781],[0.3593749999999767,0.1406249999999936,-0.5781249999999781,0.5156249999999853]]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#matrix_sum'([[[1,2],[3,4],[5,6]],[[1,2],[3,4],[5,6]]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#cholesky_decomposition'([[25,15,-5],[15,18,0],[-5,0,11]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#cholesky_decomposition'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#determinant'([[2,-1,0],[-1,2,-1],[0,-1,2]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#matrix_inversion'([[2,-1,0],[-1,2,-1],[0,-1,2]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#matrix_inversion'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#matrix_inv_triang'([[2,0,0],[-1,2,0],[0,-1,2]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#matrix_multiply'([[[1,2],[3,4],[5,6]],[[1,1,1],[1,1,1]]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#matrix_multiply'([[[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],[[2.515624999999984,0.4843749999999933,-1.296874999999973,0.3593749999999767],[0.4843749999999933,0.1406249999999978,-0.3281249999999918,0.1406249999999936],[-1.296874999999973,-0.3281249999999918,1.015624999999971,-0.5781249999999781],[0.3593749999999767,0.1406249999999936,-0.5781249999999781,0.5156249999999853]]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#matrix_sum'([[[1,2],[3,4],[5,6]],[[1,2],[3,4],[5,6]]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#cholesky_decomposition'([[25,15,-5],[15,18,0],[-5,0,11]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#cholesky_decomposition'([[18,22,54,42],[22,70,86,62],[54,86,174,134],[42,62,134,106]],_ANSWER) => yes.

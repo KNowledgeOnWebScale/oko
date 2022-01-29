@@ -7,7 +7,7 @@
 term_expansion((X <= Y),(X :- Y)).
 
 % Liste des racines dun polynome
-'https://github.com/IDLabResearch/Heiseneye#roots'(P,L) <= findall(Z,racine(P,Z),L).
+'https://idlabresearch.github.io/etc#roots'(P,L) <= findall(Z,racine(P,Z),L).
 
 % Racine dun polynome
 racine([A,B],Z) <=
@@ -78,7 +78,7 @@ solutionLagrange(P,Q,R,Z) <=
     est(B,fois([2,0],P)),
     est(C,moins(carre(P),fois([4,0],R))),
     est(D,moins(carre(Q))),
-    'https://github.com/IDLabResearch/Heiseneye#roots'([A,B,C,D],[Y1,Y2,Y3]),
+    'https://idlabresearch.github.io/etc#roots'([A,B,C,D],[Y1,Y2,Y3]),
     est(Y1p,racine(2,Y1)),
     est(Y2p,racine(2,Y2)),
     est(Y3p,racine(2,Y3)),
@@ -233,5 +233,5 @@ nulreel(0.0) <=
 nulreel(-0.0).
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#roots'([[1,0],[-10,0],[35,0],[-50,0],[24,0]],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#roots'([[1,0],[-9,-5],[14,33],[24,-44],[-26,0]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#roots'([[1,0],[-10,0],[35,0],[-50,0],[24,0]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#roots'([[1,0],[-9,-5],[14,33],[24,-44],[-26,0]],_ANSWER) => yes.

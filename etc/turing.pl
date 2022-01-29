@@ -9,10 +9,10 @@ term_expansion((X <= Y),(X :- Y)).
 
 % interpreter for Univeral Turing Machine
 
-'https://github.com/IDLabResearch/Heiseneye#compute'([],OutTape) <=
+'https://idlabresearch.github.io/etc#compute'([],OutTape) <=
     start(_MACHINE,I),
     find(I,[],#,[ ],OutTape).
-'https://github.com/IDLabResearch/Heiseneye#compute'([Head|Tail],OutTape) <=
+'https://idlabresearch.github.io/etc#compute'([Head|Tail],OutTape) <=
     start(_MACHINE,I),
     find(I,[],Head,Tail,OutTape).
 
@@ -50,7 +50,7 @@ t([1,1,0,l],1).
 t([1,#,1,s],halt).
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#compute'([1,0,1,0,0,1],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#compute'([1,0,1,1,1,1],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#compute'([1,1,1,1,1,1],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#compute'([],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#compute'([1,0,1,0,0,1],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#compute'([1,0,1,1,1,1],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#compute'([1,1,1,1,1,1],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#compute'([],_ANSWER) => yes.

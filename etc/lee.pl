@@ -8,7 +8,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://github.com/IDLabResearch/Heiseneye#route'([Source,Destination,Obstacles],Path) <=
+'https://idlabresearch.github.io/etc#route'([Source,Destination,Obstacles],Path) <=
     waves(Destination,[[Source],[]],Obstacles,Waves),
     path(Source,Destination,Waves,Path).
 
@@ -72,4 +72,4 @@ path(A,B,[Wave|Waves],[B|Path]) <=
     path(A,B1,Waves,Path).
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],_ANSWER) => yes.

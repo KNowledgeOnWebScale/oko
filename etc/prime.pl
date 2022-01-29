@@ -7,7 +7,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://github.com/IDLabResearch/Heiseneye#primerange'([A,B],L) <= findall(I,(between(A,B,I),prime(I)),L).
+'https://idlabresearch.github.io/etc#primerange'([A,B],L) <= findall(I,(between(A,B,I),prime(I)),L).
 
 prime(2).
 prime(3).
@@ -36,7 +36,7 @@ factor(N,L) <=
 % for the argument N.
 %   (integer,integer) (+,?)
 
-'https://github.com/IDLabResearch/Heiseneye#totient'(N,Phi) <= prime_factors_mult(N,L), to_phi(L,Phi).
+'https://idlabresearch.github.io/etc#totient'(N,Phi) <= prime_factors_mult(N,L), to_phi(L,Phi).
 
 to_phi([],1).
 to_phi([[F,1]|L],Phi) <=
@@ -121,9 +121,9 @@ divi(N,F,M,R,K) <=
 divi(N,_,M,N,M).
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#primerange'([0,100],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#primerange'([1000000,1000100],_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#totient'(271,_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#totient'(2718281,_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#totient'(27182818284,_ANSWER) => yes.
-'https://github.com/IDLabResearch/Heiseneye#totient'(271828182845904,_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#primerange'([0,100],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#primerange'([1000000,1000100],_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#totient'(271,_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#totient'(2718281,_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#totient'(27182818284,_ANSWER) => yes.
+'https://idlabresearch.github.io/etc#totient'(271828182845904,_ANSWER) => yes.

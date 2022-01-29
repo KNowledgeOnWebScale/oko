@@ -5,10 +5,12 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
+:- dynamic('https://idlabresearch.github.io/etc#likes'/2).
+
 'http://example.org/etc#Person'('http://example.org/etc#Peter').
 'http://example.org/etc#Person'('http://example.org/etc#Bob').
 
-'https://github.com/IDLabResearch/Heiseneye#likes'(P,'https://github.com/IDLabResearch/Heiseneye/etc/likes#sk1'(P)) <= 'http://example.org/etc#Person'(P).
+'http://example.org/etc#Person'(P) => 'https://idlabresearch.github.io/etc#likes'(P,_Q).
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#likes'(_X,_Y) => yes.
+'https://idlabresearch.github.io/etc#likes'(_X,_Y) => yes.

@@ -7,7 +7,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://github.com/IDLabResearch/Heiseneye#easter'(Year,[Month,Day]) <=
+'https://idlabresearch.github.io/etc#easter'(Year,[Month,Day]) <=
     A is Year rem 19,
     B is Year//100,
     C is Year rem 100,
@@ -18,5 +18,5 @@ term_expansion((X <= Y),(X :- Y)).
     Day is F rem 31+1.
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#easter'(Year,[_Month,_Day]) => yes <=
+'https://idlabresearch.github.io/etc#easter'(Year,[_Month,_Day]) => yes <=
     between(2021,2050,Year).

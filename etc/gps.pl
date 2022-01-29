@@ -10,7 +10,7 @@
 term_expansion((X <= Y),(X :- Y)).
 
 % find paths in the state space from initial state to yes state within limits
-'https://github.com/IDLabResearch/Heiseneye#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=
+'https://idlabresearch.github.io/etc#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=
     findpaths([],Goal,[],0.0,0.0,1.0,1.0,Path,Duration,Cost,Belief,Comfort,Limits).
 
 findpaths(_Maps,Goal,Path,Duration,Cost,Belief,Comfort,Path,Duration,Cost,Belief,Comfort,_Limits) <=
@@ -18,10 +18,10 @@ findpaths(_Maps,Goal,Path,Duration,Cost,Belief,Comfort,Path,Duration,Cost,Belief
     !.
 findpaths(Maps_s,Goal,Path_s,Duration_s,Cost_s,Belief_s,Comfort_s,Path,Duration,Cost,Belief,Comfort,Limits) <=
     Limits = [MaxDuration,MaxCost,MinBelief,MinComfort,MaxStagecount],
-    clause('https://github.com/IDLabResearch/Heiseneye#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),Where),
+    clause('https://idlabresearch.github.io/etc#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),Where),
     From,
     Where,
-    'https://github.com/IDLabResearch/Heiseneye#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),
+    'https://idlabresearch.github.io/etc#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),
     append(Maps_s,[Map],Maps_t),
     stagecount(Maps_t,Stagecount),
     Stagecount =< MaxStagecount,
@@ -64,11 +64,11 @@ conj_list((A,B),[A|C]) <=
     conj_list(B,C).
 
 % test data
-:- dynamic('https://github.com/IDLabResearch/Heiseneye#description'/2).
+:- dynamic('https://idlabresearch.github.io/etc#description'/2).
 :- dynamic('http://example.org/etc#location'/2).
 
 % partial map of Belgium
-'https://github.com/IDLabResearch/Heiseneye#description'(
+'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
     [   'http://example.org/etc#location'(S,'http://example.org/etc#gent'),
         true,
@@ -80,7 +80,7 @@ conj_list((A,B),[A|C]) <=
         0.99
     ]
 ).
-'https://github.com/IDLabResearch/Heiseneye#description'(
+'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
     [   'http://example.org/etc#location'(S,'http://example.org/etc#gent'),
         true,
@@ -92,7 +92,7 @@ conj_list((A,B),[A|C]) <=
         0.99
     ]
 ).
-'https://github.com/IDLabResearch/Heiseneye#description'(
+'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
     [   'http://example.org/etc#location'(S,'http://example.org/etc#kortrijk'),
         true,
@@ -104,7 +104,7 @@ conj_list((A,B),[A|C]) <=
         0.99
     ]
 ).
-'https://github.com/IDLabResearch/Heiseneye#description'(
+'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
     [   'http://example.org/etc#location'(S,'http://example.org/etc#brugge'),
         true,
@@ -121,7 +121,7 @@ conj_list((A,B),[A|C]) <=
 'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent').
 
 % query
-'https://github.com/IDLabResearch/Heiseneye#findpath'(
+'https://idlabresearch.github.io/etc#findpath'(
     'http://example.org/etc#map_be',
     [   'http://example.org/etc#location'(_SUBJECT,'http://example.org/etc#oostende'),
         _PATH,
