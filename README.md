@@ -25,14 +25,16 @@ IRI      | `'http://example.org/etc#socrates'`
 literal  | `"abc"` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
 bnode    | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 quickvar | `X` `_abc` `_`
-list     | `[TERM,...]` `[TERM,...\|LIST]`
+list     | `[TERM,...]` `[TERM,...\|LIST]` `[]`
 triple   | `IRI(TERM,TERM)`
-graph    | `TRIPLE,...`
+graph    | `TRIPLE,...` `true`
 
 CLAUSE   | Examples
 ---------|---------
 fact     | `TRIPLE.`
 rule     | `GRAPH => GRAPH.` `TRIPLE <= GRAPH.`
+fuse     | `GRAPH => false.`
+query    | `GRAPH => yes.`
 
 ## Background
 
