@@ -17,15 +17,16 @@ giving [result](./result.pl).
 
 ## Webizing
 
-[Heiseneye](https://github.com/IDLabResearch/Heiseneye) is using [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog):
+[Heiseneye](https://github.com/IDLabResearch/Heiseneye) is using [ISO Prolog](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog) **terms**:
 
-- Uniform resource identifiers are atoms like `'http://example.org/etc#socrates'`
-- Literals are strings like `"Hello world!"`, numbers like `1.52` and booleans like `true`
-- Typed literals are predicates like `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
-- Blank nodes are Skolem IRIs like `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
-- Classes are unary predicates like `'http://example.org/etc#Woman'('http://example.org/etc#Emmy_Noether')`
-- Triples are binary predicates like `'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent')`
-- Graphs are conjunctions like `(pred1(args),...)` where predicate arguments are IRIs, literals, lists, classes, triples and graphs
+- **IRIs** like the atom `'http://example.org/etc#socrates'`
+- **Literals** like `"Hello world!"`, `1.52`, `true` and `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
+- **Bnodes** like the Skolem IRI `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
+- **Quickvars** like `X`, `_var2` and `_`
+- **Lists** like `[**terms**]` and `[**terms**|**list**]`
+- **Classes** like the unary predicate `'http://example.org/etc#Woman'('http://example.org/etc#Emmy_Noether')`
+- **Triples** like the binary predicate `'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent')`
+- **Graphs** like the conjunction `('http://example.org/etc#pred1'(**terms**),'http://example.org/etc#pred9'(**terms**),...)`
 
 ## Background
 
