@@ -24,7 +24,7 @@ giving [result](./result.pl).
 - Typed literals are predicates like `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
 - Blank nodes are Skolem IRIs like `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 - Classes are unary predicates like `'http://example.org/etc#Woman'('http://example.org/etc#Emmy_Noether')`
-- Triples are binary predicates like `'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent').`
+- Triples are binary predicates like `'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent')`
 
 ## Background
 
