@@ -15,7 +15,7 @@ run :-
     write(Out,'\n'),
     write(Out,'\'http://example.org/etc#N0\'(\'http://example.org/etc#z\',true).\n'),
     write(Out,'\n'),
-    (   between(0,9999,I),
+    (   between(0,999,I),
         J is I+1,
         format(Out,"'http://example.org/etc#N~d'(X,true) <= 'http://example.org/etc#N~d'(X,true).~n",[J,I]),
         format(Out,"'http://example.org/etc#I~d'(X,true) <= 'http://example.org/etc#N~d'(X,true).~n",[J,I]),
@@ -25,5 +25,5 @@ run :-
     ),
     write(Out,'\n'),
     write(Out,'% query\n'),
-    write(Out,'\'http://example.org/etc#N10000\'(_ELEMENT,true) => true.\n'),
+    write(Out,'\'http://example.org/etc#N1000\'(_ELEMENT,true) => true.\n'),
     close(Out).

@@ -67,7 +67,7 @@
 'https://idlabresearch.github.io/etc#re'(b,B),'https://idlabresearch.github.io/etc#re'(c,B) => true.
 
 % running etc/dt.pl
-'http://example.org/etc#N10000'('http://example.org/etc#z',true) => true.
+'http://example.org/etc#N1000'('http://example.org/etc#z',true) => true.
 
 % running etc/easter.pl
 'https://idlabresearch.github.io/etc#easter'(2021,[4,4]) => true.
