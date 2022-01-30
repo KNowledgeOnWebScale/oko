@@ -24,10 +24,10 @@ TERM            | Examples
 IRI             | `'http://example.org/etc#socrates'`
 LITERAL         | `"abc"` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
 BLANK_NODE      | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
-VARIABLE        | `X` `_abc` `_`
-LIST            | `[TERM,...]` `[TERM,...\|LIST]` `[]`
+VARIABLE        | `X` `_abc`
+LIST            | `[TERM,...]` `[TERM,...\|LIST]`
 TRIPLE          | `IRI(TERM,TERM)`
-GRAPH           | `TRIPLE,...` `true`
+GRAPH           | `TRIPLE,...`
 
 CLAUSE          | Examples
 ----------------|---------
