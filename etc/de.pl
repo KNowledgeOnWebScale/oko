@@ -1,9 +1,6 @@
 % Disjunction elimination
 
 :- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
 
 :- dynamic('https://idlabresearch.github.io/etc#saying'/2).
 :- dynamic(not_/1).

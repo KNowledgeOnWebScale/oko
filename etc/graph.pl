@@ -1,9 +1,6 @@
 % Traversing graph paths
 
 :- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
 
 :- dynamic('https://idlabresearch.github.io/etc#path'/2).
 

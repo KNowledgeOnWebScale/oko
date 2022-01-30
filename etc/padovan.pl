@@ -10,7 +10,7 @@ term_expansion((X <= Y),(X :- Y)).
 padovan(0,A,_,_,A).
 padovan(1,_,A,_,A).
 padovan(2,_,_,A,A).
-padovan(A,B,C,D,E) <=
+padovan(A,B,C,D,E) :-
     A > 2,
     F is A-1,
     G is B+C,

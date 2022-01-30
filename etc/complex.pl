@@ -49,49 +49,49 @@ term_expansion((X <= Y),(X :- Y)).
     'https://idlabresearch.github.io/etc#log'([[e,0],E],F),
     divide([F,[0,2]],B).
 
-polar([A,B],[C,D]) <=
+polar([A,B],[C,D]) :-
     C is sqrt(A^2+B^2),
     E is acos(abs(A)/C),
     angular(A,B,E,D).
 
-angular(A,B,C,D) <=
+angular(A,B,C,D) :-
     A >= 0,
     B >= 0,
     D = C.
-angular(A,B,C,D) <=
+angular(A,B,C,D) :-
     A < 0,
     B >= 0,
     D is pi-C.
-angular(A,B,C,D) <=
+angular(A,B,C,D) :-
     A < 0,
     B < 0,
     D is C+pi.
-angular(A,B,C,D) <=
+angular(A,B,C,D) :-
     A >= 0,
     B < 0,
     D is 2*pi-C.
 
-minus([A,B],[C,D]) <=
+minus([A,B],[C,D]) :-
     C is -A,
     D is -B.
 
-subtract([[A,B],[C,D]],[E,F]) <=
+subtract([[A,B],[C,D]],[E,F]) :-
     E is A-C,
     F is B-D.
 
-add([[A,B],[C,D]],[E,F]) <=
+add([[A,B],[C,D]],[E,F]) :-
     E is A+C,
     F is B+D.
 
-multiply([[A,B],[C,D]],[E,F]) <=
+multiply([[A,B],[C,D]],[E,F]) :-
     E is A*C-B*D,
     F is A*D+B*C.
 
-inverse([A,B],[C,D]) <=
+inverse([A,B],[C,D]) :-
     C is A/(A^2+B^2),
     D is -B/(A^2+B^2).
 
-divide([A,B],C) <=
+divide([A,B],C) :-
     inverse(B,D),
     multiply([A,D],C).
 

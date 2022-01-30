@@ -13,10 +13,10 @@ term_expansion((X <= Y),(X :- Y)).
 'https://idlabresearch.github.io/etc#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=
     findpaths([],Goal,[],0.0,0.0,1.0,1.0,Path,Duration,Cost,Belief,Comfort,Limits).
 
-findpaths(_Maps,Goal,Path,Duration,Cost,Belief,Comfort,Path,Duration,Cost,Belief,Comfort,_Limits) <=
+findpaths(_Maps,Goal,Path,Duration,Cost,Belief,Comfort,Path,Duration,Cost,Belief,Comfort,_Limits) :-
     Goal,
     !.
-findpaths(Maps_s,Goal,Path_s,Duration_s,Cost_s,Belief_s,Comfort_s,Path,Duration,Cost,Belief,Comfort,Limits) <=
+findpaths(Maps_s,Goal,Path_s,Duration_s,Cost_s,Belief_s,Comfort_s,Path,Duration,Cost,Belief,Comfort,Limits) :-
     Limits = [MaxDuration,MaxCost,MinBelief,MinComfort,MaxStagecount],
     clause('https://idlabresearch.github.io/etc#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),Where),
     From,
@@ -39,16 +39,16 @@ findpaths(Maps_s,Goal,Path_s,Duration_s,Cost_s,Belief_s,Comfort_s,Path,Duration,
 
 % counting the number of stages (a stage is a sequence of steps in the same map)
 stagecount([],1).
-stagecount([C,E|_],B) <=
+stagecount([C,E|_],B) :-
     C \= E,
     !,
     stagecount(_,G),
     B is G+1.
-stagecount([_|D],B) <=
+stagecount([_|D],B) :-
     stagecount(D,B).
 
 % linear implication
-becomes(A,B) <=
+becomes(A,B) :-
     catch(A,_,fail),
     conj_list(A,C),
     forall(member(D,C),retract(D)),
@@ -56,11 +56,11 @@ becomes(A,B) <=
     forall(member(F,E),assertz(F)).
 
 conj_list(true,[]).
-conj_list(A,[A]) <=
+conj_list(A,[A]) :-
     A \= (_,_),
     A \= false,
     !.
-conj_list((A,B),[A|C]) <=
+conj_list((A,B),[A|C]) :-
     conj_list(B,C).
 
 % test data

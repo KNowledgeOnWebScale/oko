@@ -10,19 +10,19 @@ term_expansion((X <= Y),(X :- Y)).
 'https://idlabresearch.github.io/etc#roots'(P,L) <= findall(Z,racine(P,Z),L).
 
 % Racine dun polynome
-racine([A,B],Z) <=
+racine([A,B],Z) :-
     est(Z,moins(div(B,A))).
-racine([A,B,C],Z) <=
+racine([A,B,C],Z) :-
     est(P,div(B,fois([2,0],A))),
     est(Q,div(C,A)),
     est(Z,add(moins(P),fois(racarreeun,racine(2,moins(carre(P),Q))))).
-racine([A,B,C,D],Zp) <=
+racine([A,B,C,D],Zp) :-
     est(T,div(B,fois([-3,0],A))),
     est(P,div(add(fois([3,0],fois(A,carre(T))),add(fois([2,0],fois(B,T)),C)),A)),
     est(Q,div(add(fois(A,cube(T)),add(fois(B,carre(T)),add(fois(C,T),D))),A)),
     solutionCardan(P,Q,Z),
     est(Zp,add(Z,T)).
-racine([A,B,C,D,E],Zp) <=
+racine([A,B,C,D,E],Zp) :-
     est(T,div(B,fois([-4,0],A))),
     est(P,div(add(fois([6,0],fois(A,carre(T))),add(fois([3,0],fois(B,T)),C)),A)),
     est(Q,div(add(fois(fois([4,0],A),cube(T)),add(fois(fois([3,0],B),carre(T)),add(fois(fois([2,0],C),T),D))),A)),
@@ -31,11 +31,11 @@ racine([A,B,C,D,E],Zp) <=
     est(Zp,add(Z,T)).
 
 % Polynome a partir de ses racines
-polynome(L,P) <=
+polynome(L,P) :-
     polynome(L,[[1,0]],P).
 
 polynome([],P0,P0).
-polynome([X|L],P0,P4) <=
+polynome([X|L],P0,P4) :-
     conc(P0,[[0,0]],P1),
     est(Xp,moins(X)),
     foisl(Xp,P0,P2),
@@ -43,29 +43,29 @@ polynome([X|L],P0,P4) <=
     polynome(L,P3,P4).
 
 conc([],L,L).
-conc([E|L],Lp,[E|Lpp]) <=
+conc([E|L],Lp,[E|Lpp]) :-
     conc(L,Lp,Lpp).
 
 foisl(_,[],[]).
-foisl(X,[Y|L],[Z|Lp]) <=
+foisl(X,[Y|L],[Z|Lp]) :-
     est(Z,fois(X,Y)),
     foisl(X,L,Lp).
 
 addl(_,[],[]).
-addl(X,[Y|L],[Z|Lp]) <=
+addl(X,[Y|L],[Z|Lp]) :-
     est(Z,addl(X,Y)),
     addl(X,L,Lp).
 
 addll([],[],[]).
-addll([X|L],[Y|Lp],[Z|Lpp]) <=
+addll([X|L],[Y|Lp],[Z|Lpp]) :-
     est(Z,add(X,Y)),
     addll(L,Lp,Lpp).
 
 % Solution de lequation du troisieme degre selon Cardan
-solutionCardan(P,Q,Z) <=
+solutionCardan(P,Q,Z) :-
     nul(P),
     est(Z,fois(racubiqueun,racine(3,moins(Q)))).
-solutionCardan(Pp,Qp,Z) <=
+solutionCardan(Pp,Qp,Z) :-
     nonnul(Pp),
     est(P,div(Pp,[3,0])),
     est(Q,div(Qp,[2,0])),
@@ -73,7 +73,7 @@ solutionCardan(Pp,Qp,Z) <=
     est(Z,moins(Raccubique,div(P,Raccubique))).
 
 % Solutions de lequation du quatrieme degre selon Lagrange
-solutionLagrange(P,Q,R,Z) <=
+solutionLagrange(P,Q,R,Z) :-
     est(A,[1,0]),
     est(B,fois([2,0],P)),
     est(C,moins(carre(P),fois([4,0],R))),
@@ -94,30 +94,30 @@ solutionLagrange(P,Q,R,Z) <=
     dans(U,[U1,U2,U3,U4]),
     est(Z,fois(E,U)).
 
-epsilon([1,0],_,Q) <=
+epsilon([1,0],_,Q) :-
     nul(Q).
-epsilon(E,S,Q) <=
+epsilon(E,S,Q) :-
     nonnul(Q),
     est(E,div(S,Q)).
 
 dans(U,[U|_]).
-dans(U,[_|L]) <=
+dans(U,[_|L]) :-
     dans(U,L).
 
 % Valeurs de lenchainement des operations sur les complexes
-est(Z,Z) <=
+est(Z,Z) :-
     Z = [_,_].
-est(Z,T) <=
+est(Z,T) :-
     T =.. [F],
     atom(F),
     Tp =.. [F,Z],
     Tp.
-est(Z,T) <=
+est(Z,T) :-
     T =.. [F,X],
     est(Xp,X),
     Tp =.. [F,Xp,Z],
     Tp.
-est(Z,T) <=
+est(Z,T) :-
     T =.. [F,X,Y],
     F \== racine,
     F \== .,
@@ -125,43 +125,43 @@ est(Z,T) <=
     est(Yp,Y),
     Tp =.. [F,Xp,Yp,Z],
     Tp.
-est(Z,racine(N,X)) <=
+est(Z,racine(N,X)) :-
     est(Xp,X),
     racine(N,Xp,Z).
 
 % Operations sur les complexes
-moins([X1,X2],[Y1,Y2]) <=
+moins([X1,X2],[Y1,Y2]) :-
     Y1 is -X1,
     Y2 is -X2.
 
-moins([X1,X2],[Y1,Y2],[Z1,Z2]) <=
+moins([X1,X2],[Y1,Y2],[Z1,Z2]) :-
     Z1 is X1-Y1,
     Z2 is X2-Y2.
 
-add([X1,X2],[Y1,Y2],[Z1,Z2]) <=
+add([X1,X2],[Y1,Y2],[Z1,Z2]) :-
     Z1 is X1+Y1,
     Z2 is X2+Y2.
 
-fois([X1,X2],[Y1,Y2],[Z1,Z2]) <=
+fois([X1,X2],[Y1,Y2],[Z1,Z2]) :-
     Z1 is X1*Y1-X2*Y2,
     Z2 is X1*Y2+X2*Y1.
 
-invers([X1,X2],[Y1,Y2]) <=
+invers([X1,X2],[Y1,Y2]) :-
     Y1 is X1/(X1**2+X2**2),
     Y2 is -X2/(X1**2+X2**2).
 
-div(X,Y,Z) <=
+div(X,Y,Z) :-
     invers(Y,Yp),
     fois(X,Yp,Z).
 
-carre(X,Y) <=
+carre(X,Y) :-
     fois(X,X,Y).
 
-cube(X,Y) <=
+cube(X,Y) :-
     carre(X,Xp),
     fois(X,Xp,Y).
 
-pquatre(X,Y) <=
+pquatre(X,Y) :-
     carre(X,Xp),
     carre(Xp,Y).
 
@@ -169,66 +169,66 @@ racarreeun([1,0]).
 racarreeun([-1,0]).
 
 racubiqueun([1,0]).
-racubiqueun([X,Y]) <=
+racubiqueun([X,Y]) :-
     X is -1/2,
     Y is sqrt(3)/2.
-racubiqueun([X,Y]) <=
+racubiqueun([X,Y]) :-
     X is -1/2,
     Y is -sqrt(3)/2.
 
-racine(_,X,[0,0]) <=
+racine(_,X,[0,0]) :-
     nul(X).
-racine(N,X,Y) <=
+racine(N,X,Y) :-
     nonnul(X),
     polaire(X,[R,T]),
     root(N,R,Rp),
     Tp is T/N,
     cartesien([Rp,Tp],Y).
 
-root(N,X,Y) <=
+root(N,X,Y) :-
     Y is exp(log(X)/N).
 
-polaire([X,Y],[R,Tp]) <=
+polaire([X,Y],[R,Tp]) :-
     R is sqrt(X**2+Y**2),
     T is acos(abs(X)/R),
     cadran(X,Y,T,Tp).
 
-cadran(X,Y,T,Tp) <=
+cadran(X,Y,T,Tp) :-
     X >= 0,
     Y >= 0,
     Tp = T.
-cadran(X,Y,T,Tp) <=
+cadran(X,Y,T,Tp) :-
     X < 0,
     Y >= 0,
     Tp is pi-T.
-cadran(X,Y,T,Tp) <=
+cadran(X,Y,T,Tp) :-
     X < 0,
     Y < 0,
     Tp is T+pi.
-cadran(X,Y,T,Tp) <=
+cadran(X,Y,T,Tp) :-
     X >= 0,
     Y < 0,
     Tp is 2*pi-T.
 
-cartesien([R,T],[X1,X2]) <=
+cartesien([R,T],[X1,X2]) :-
     X1 is R*cos(T),
     X2 is R*sin(T).
 
 % Problemes de zero
-nul([X,Y]) <=
+nul([X,Y]) :-
     nulreel(X),
     nulreel(Y),
     !.
 
-nonnul(Z) <=
+nonnul(Z) :-
     nul(Z),
     !,
     fail.
 nonnul(_).
 
-nulreel(0) <=
+nulreel(0) :-
     !.
-nulreel(0.0) <=
+nulreel(0.0) :-
     !.
 nulreel(-0.0).
 

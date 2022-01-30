@@ -7,12 +7,15 @@
 term_expansion((X <= Y),(X :- Y)).
 
 'https://idlabresearch.github.io/etc#mi'([],true).
-'https://idlabresearch.github.io/etc#mi'([G|Gs],true) <= head_body_(G,Goals,Gs), 'https://idlabresearch.github.io/etc#mi'(Goals,true).
+'https://idlabresearch.github.io/etc#mi'([G|Gs],true) <=
+    head_body_(G,Goals,Gs),
+    'https://idlabresearch.github.io/etc#mi'(Goals,true).
 
 head_body_('https://idlabresearch.github.io/etc#mi'([],true),Rs,Rs).
 head_body_('https://idlabresearch.github.io/etc#mi'([G|Gs],true),[head_body_(G,Goals,Gs),'https://idlabresearch.github.io/etc#mi'(Goals,true)|Rs],Rs).
 
-head_body_(head_body_(Head,Goals0,Goals),Rs,Rs) <= head_body_(Head,Goals0,Goals).
+head_body_(head_body_(Head,Goals0,Goals),Rs,Rs) :-
+    head_body_(Head,Goals0,Goals).
 
 head_body_(natnum(0),Rs,Rs).
 head_body_(natnum(s(X)),[natnum(X)|Rs],Rs).

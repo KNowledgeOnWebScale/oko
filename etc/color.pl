@@ -12,7 +12,7 @@ term_expansion((X <= Y),(X :- Y)).
     places(Places).
 
 places([]).
-places([[Place,Color]|Tail]) <=
+places([[Place,Color]|Tail]) :-
     places(Tail),
     neighbours(Place,Neighbours),
     member(Color,[c1,c2,c3,c4]),

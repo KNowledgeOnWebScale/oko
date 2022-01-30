@@ -19,22 +19,23 @@ giving [result](./result.pl).
 
 [Heiseneye](https://github.com/IDLabResearch/Heiseneye) is using [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog):
 
-TERM     | Examples
----------|---------
-IRI      | `'http://example.org/etc#socrates'`
-literal  | `"abc"` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
-bnode    | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
-quickvar | `X` `_abc` `_`
-list     | `[TERM,...]` `[TERM,...\|LIST]` `[]`
-triple   | `IRI(TERM,TERM)`
-graph    | `TRIPLE,...` `true`
+TERM            | Examples
+----------------|---------
+IRI             | `'http://example.org/etc#socrates'`
+LITERAL         | `"abc"` `1.52` `true` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
+BLANK_NODE      | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
+VARIABLE        | `X` `_abc` `_`
+LIST            | `[TERM,...]` `[TERM,...\|LIST]` `[]`
+TRIPLE          | `IRI(TERM,TERM)`
+GRAPH           | `TRIPLE,...` `true`
 
-CLAUSE   | Examples
----------|---------
-fact     | `TRIPLE.`
-rule     | `GRAPH => GRAPH.` `TRIPLE <= GRAPH.`
-fuse     | `GRAPH => false.`
-query    | `GRAPH => true.`
+CLAUSE          | Examples
+----------------|---------
+FACT            | `TRIPLE.`
+FORWARD_RULE    | `GRAPH => GRAPH.`
+INFERENCE_FUSE  | `GRAPH => false.`
+QUERY           | `GRAPH => true.`
+BACKWARD_RULE   | `TRIPLE <= GRAPH,PROLOG.`
 
 ## Background
 

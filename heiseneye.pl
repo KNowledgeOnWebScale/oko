@@ -15,9 +15,6 @@
 :- use_module(library(terms)).
 
 :- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
 
 :- dynamic((=>)/2).
 :- dynamic(goal/0).

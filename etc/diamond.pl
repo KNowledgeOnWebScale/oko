@@ -3,9 +3,6 @@
 % Original code from http://www.ii.uib.no/~bezem/GL/dpe.in
 
 :- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
 
 :- dynamic(dom/1).
 :- dynamic(e/2).

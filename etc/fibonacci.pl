@@ -9,7 +9,7 @@ term_expansion((X <= Y),(X :- Y)).
 
 fibonacci(0,A,_,A).
 fibonacci(1,_,A,A).
-fibonacci(A,B,C,D) <=
+fibonacci(A,B,C,D) :-
     A > 1,
     E is A-1,
     F is B+C,
