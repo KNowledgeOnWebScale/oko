@@ -25,15 +25,7 @@ term_expansion((X <= Y),(X :- Y)).
 :- dynamic(limited_answer/1).
 :- dynamic(linear_select/0).
 
-% Heiseneye abstract machine
-%
-% 1/ Select rule P => C
-% 2/ Prove P & ~C via backward chaining and if it fails backtrack to 1/
-% 3/ If C = true
-%       answer with P => true and if limited_answer stop, else backtrack to 2/
-%    else assert step C via forward chaining, retract goal and backtrack to 2/
-% 4/ If goal or linear_select stop, else assert goal and start again at 1/
-%
+% run abstract machine
 run :-
     (Prem => Conc),
     Prem,
