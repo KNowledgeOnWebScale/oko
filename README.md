@@ -1,8 +1,8 @@
-# Heiseneye
+# Webeye
 
 ## Reasoning
 
-[Heiseneye](https://github.com/IDLabResearch/Heiseneye) performs forward chaining for rules like `PREM => CONC` and backward chaining for rules like `CONC <= PREM`.
+[Webeye](https://github.com/IDLabResearch/Webeye) performs forward chaining for rules like `PREM => CONC` and backward chaining for rules like `CONC <= PREM`.
 There is no principle to tell whether to use forward chaining or backward chaining.
 
 Queries are posed and answered as `PREM => true` so the answers are also queries be it with some parts
@@ -17,7 +17,7 @@ giving [result](./result.pl).
 
 ## Webizing
 
-[Heiseneye](https://github.com/IDLabResearch/Heiseneye) is using [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog):
+[Webeye](https://github.com/IDLabResearch/Webeye) is using [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog):
 
 TERM            | Examples
 ----------------|---------

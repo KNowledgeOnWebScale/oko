@@ -1,8 +1,8 @@
 % -----------------------
-% Heiseneye -- Jos De Roo
+% Webeye -- Jos De Roo
 % -----------------------
 %
-% Heiseneye performs forward chaining for rules like PREM => CONC and
+% Webeye performs forward chaining for rules like PREM => CONC and
 % backward chaining for rules like CONC <= PREM. There is no principle
 % to tell whether to use forward chaining or backward chaining.
 %
