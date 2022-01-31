@@ -1,4 +1,4 @@
-% Using Skolem function
+% Using existential rule
 
 :- op(1150,xfx,=>).
 

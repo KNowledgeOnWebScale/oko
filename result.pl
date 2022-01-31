@@ -61,7 +61,7 @@
 'https://idlabresearch.github.io/etc#atan'([1,2],[1.3389725222944935,0.4023594781085251]) => true.
 
 % running etc/de.pl
-'https://idlabresearch.github.io/etc#saying'(someone,'C') => true.
+'https://idlabresearch.github.io/etc#saying'('https://idlabresearch.github.io/.well-known/genid/9453595560568678717#sk2','C') => true.
 
 % running etc/diamond.pl
 'https://idlabresearch.github.io/etc#re'(b,B),'https://idlabresearch.github.io/etc#re'(c,B) => true.
