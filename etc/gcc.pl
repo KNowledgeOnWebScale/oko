@@ -6,7 +6,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://idlabresearch.github.io/etc#gcc'([[],_],[]).
+'https://idlabresearch.github.io/etc#gcc'([[],_],[]) <= true.
 'https://idlabresearch.github.io/etc#gcc'([[C|Cs],S],[N|Ns]) <=
     gcc(C,S,N),
     'https://idlabresearch.github.io/etc#gcc'([Cs,N],Ns).

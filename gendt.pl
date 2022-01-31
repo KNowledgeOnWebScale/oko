@@ -13,17 +13,17 @@ run :-
     write(Out,'\n'),
     write(Out,'term_expansion((X <= Y),(X :- Y)).\n'),
     write(Out,'\n'),
-    write(Out,'\'http://example.org/etc#N0\'(\'http://example.org/etc#z\',true).\n'),
+    write(Out,'\'https://idlabresearch.github.io/etc#n0\'(\'https://idlabresearch.github.io/etc#z\',true) <= true.\n'),
     write(Out,'\n'),
     (   between(0,999,I),
         J is I+1,
-        format(Out,"'http://example.org/etc#N~d'(X,true) <= 'http://example.org/etc#N~d'(X,true).~n",[J,I]),
-        format(Out,"'http://example.org/etc#I~d'(X,true) <= 'http://example.org/etc#N~d'(X,true).~n",[J,I]),
-        format(Out,"'http://example.org/etc#J~d'(X,true) <= 'http://example.org/etc#N~d'(X,true).~n",[J,I]),
+        format(Out,"'https://idlabresearch.github.io/etc#n~d'(X,true) <= 'https://idlabresearch.github.io/etc#n~d'(X,true).~n",[J,I]),
+        format(Out,"'https://idlabresearch.github.io/etc#i~d'(X,true) <= 'https://idlabresearch.github.io/etc#n~d'(X,true).~n",[J,I]),
+        format(Out,"'https://idlabresearch.github.io/etc#j~d'(X,true) <= 'https://idlabresearch.github.io/etc#n~d'(X,true).~n",[J,I]),
         fail
     ;   true
     ),
     write(Out,'\n'),
     write(Out,'% query\n'),
-    write(Out,'\'http://example.org/etc#N1000\'(_ELEMENT,true) => true.\n'),
+    write(Out,'\'https://idlabresearch.github.io/etc#n1000\'(_ELEMENT,true) => true.\n'),
     close(Out).

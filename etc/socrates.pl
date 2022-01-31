@@ -1,13 +1,13 @@
 % Socrates is a mortal
 
 :- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
 
-term_expansion((X <= Y),(X :- Y)).
+:- dynamic('https://idlabresearch.github.io/etc#man'/2).
+:- dynamic('https://idlabresearch.github.io/etc#mortal'/2).
 
-'http://example.org/etc#Man'('http://example.org/etc#socrates',true).
+true => 'https://idlabresearch.github.io/etc#man'('http://example.org/etc#socrates',true).
 
-'http://example.org/etc#Mortal'(X,true) <= 'http://example.org/etc#Man'(X,true).
+'https://idlabresearch.github.io/etc#man'(X,true) => 'https://idlabresearch.github.io/etc#mortal'(X,true).
 
 % query
-'http://example.org/etc#Mortal'(_IND,true) => true.
+'https://idlabresearch.github.io/etc#mortal'(_IND,true) => true.

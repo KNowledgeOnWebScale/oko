@@ -5,7 +5,7 @@
 
 term_expansion((X <= Y),(X :- Y)).
 
-'https://idlabresearch.github.io/etc#area'([_],0).
+'https://idlabresearch.github.io/etc#area'([_],0) <= true.
 'https://idlabresearch.github.io/etc#area'([[A,B],[C,D]|E],F) <=
     'https://idlabresearch.github.io/etc#area'([[C,D]|E],G),
     F is (A*D-B*C)/2+G.

@@ -65,65 +65,65 @@ conj_list((A,B),[A|C]) :-
 
 % test data
 :- dynamic('https://idlabresearch.github.io/etc#description'/2).
-:- dynamic('http://example.org/etc#location'/2).
+:- dynamic('https://idlabresearch.github.io/etc#location'/2).
 
 % partial map of Belgium
 'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
-    [   'http://example.org/etc#location'(S,'http://example.org/etc#gent'),
+    [   'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#gent'),
         true,
-        'http://example.org/etc#location'(S,'http://example.org/etc#brugge'),
+        'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#brugge'),
         'http://example.org/etc#drive_gent_brugge',
         1500.0,
         0.006,
         0.96,
         0.99
     ]
-).
+) <= true.
 'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
-    [   'http://example.org/etc#location'(S,'http://example.org/etc#gent'),
+    [   'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#gent'),
         true,
-        'http://example.org/etc#location'(S,'http://example.org/etc#kortrijk'),
+        'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#kortrijk'),
         'http://example.org/etc#drive_gent_kortrijk',
         1600.0,
         0.007,
         0.96,
         0.99
     ]
-).
+) <= true.
 'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
-    [   'http://example.org/etc#location'(S,'http://example.org/etc#kortrijk'),
+    [   'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#kortrijk'),
         true,
-        'http://example.org/etc#location'(S,'http://example.org/etc#brugge'),
+        'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#brugge'),
         'http://example.org/etc#drive_kortrijk_brugge',
         1600.0,
         0.007,
         0.96,
         0.99
     ]
-).
+) <= true.
 'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
-    [   'http://example.org/etc#location'(S,'http://example.org/etc#brugge'),
+    [   'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#brugge'),
         true,
-        'http://example.org/etc#location'(S,'http://example.org/etc#oostende'),
+        'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#oostende'),
         'http://example.org/etc#drive_brugge_oostende',
         900.0,
         0.004,
         0.98,
         1.0
     ]
-).
+) <= true.
 
 % current state
-'http://example.org/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent').
+true => 'https://idlabresearch.github.io/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent').
 
 % query
 'https://idlabresearch.github.io/etc#findpath'(
     'http://example.org/etc#map_be',
-    [   'http://example.org/etc#location'(_SUBJECT,'http://example.org/etc#oostende'),
+    [   'https://idlabresearch.github.io/etc#location'(_SUBJECT,'http://example.org/etc#oostende'),
         _PATH,
         _DURATION,
         _COST,
