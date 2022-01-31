@@ -22,9 +22,10 @@ giving [result](./result.pl).
 TERM            | Examples
 ----------------|---------
 IRI             | `'http://example.org/etc#socrates'`
-LITERAL         | `"abc"` `xyz` `1.52` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
 BLANK_NODE      | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 VARIABLE        | `X` `_abc`
+LITERAL         | `"abc"` `1.52` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
+FUNCTIONAL      | `f1(TERM,...)` `pi`
 LIST            | `[TERM,...]` `[TERM,...\|LIST]`
 TRIPLE          | `IRI(TERM,TERM)`
 GRAPH           | `TRIPLE,...`
