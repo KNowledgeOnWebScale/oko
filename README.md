@@ -22,7 +22,6 @@ giving [result](./result.pl).
 TERM            | Examples
 ----------------|---------
 IRI             | `'http://example.org/etc#socrates'`
-BLANK_NODE      | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 VARIABLE        | `X` `_abc`
 LITERAL         | `"abc"` `1.52` `1e-18` `pi` `dt("2022-01-15",'http://www.w3.org/2001/XMLSchema#date')`
 LIST            | `[TERM,...]` `[TERM,...\|LIST]`
@@ -31,7 +30,7 @@ GRAPH           | `TRIPLE,...`
 
 CLAUSE          | Examples
 ----------------|---------
-FACT            | `TRIPLE.`
+GRAPH           | `true => GRAPH.`
 FORWARD_RULE    | `GRAPH => GRAPH.`
 INFERENCE_FUSE  | `GRAPH => false.`
 QUERY           | `GRAPH => true.`

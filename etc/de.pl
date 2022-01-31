@@ -20,5 +20,5 @@
 % query
 'https://idlabresearch.github.io/etc#saying'(_WHO,'C') => true.
 
-% assuming the negation of the query so that it can be discharged when the query succeeds
-'https://idlabresearch.github.io/etc#not_saying'('https://idlabresearch.github.io/.well-known/genid/9453595560568678717#sk2','C').
+% assuming the negation of the query premis so that it can be discharged when the query succeeds
+true => 'https://idlabresearch.github.io/etc#not_saying'(_WHO,'C').
