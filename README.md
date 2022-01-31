@@ -30,7 +30,8 @@ GRAPH           | `TRIPLE,...`
 
 CLAUSE          | Examples
 ----------------|---------
-FORWARD_RULE    | `true => GRAPH.` `GRAPH => GRAPH.`
+ASSERTION       | `true => GRAPH.`
+FORWARD_RULE    | `GRAPH => GRAPH.`
 INFERENCE_FUSE  | `GRAPH => false.`
 QUERY           | `GRAPH => true.`
 ANSWER          | `GRAPH => true.`
