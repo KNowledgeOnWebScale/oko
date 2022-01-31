@@ -20,6 +20,12 @@
 % occurs in one or the other branch but not both.
 
 :- op(1150,xfx,=>).
+:- op(1200,xfx,<=).
+
+term_expansion((X <= Y),(X :- Y)).
+
+:- dynamic('https://idlabresearch.github.io/etc#sdcoding'/2).
+:- dynamic('https://idlabresearch.github.io/etc#sdconot'/2).
 
 % |R) = |0, 0) + |1, 1)
 r(false,false).
@@ -65,12 +71,6 @@ gk(X,Y) :-
     k(X,Z),
     g(Z,Y).
 
-% superdense coding
-sdc(N,M) :-
-    r(X,Y),
-    alice(N,[X,B]),
-    bob([B,Y],M).
-
 % alice
 alice(0,[X,Y]) :-
     id(X,Y).
@@ -91,14 +91,18 @@ bob([X,Y],2) :-
 bob([X,Y],3) :-
     id(X,Y).
 
-% sdcoding appearing an odd number of times
-:- dynamic('https://idlabresearch.github.io/etc#sdcoding'/2).
+% superdense coding
+'https://idlabresearch.github.io/etc#sdc'(N,M) <=
+    r(X,Y),
+    alice(N,[X,B]),
+    bob([B,Y],M),
+    (   'https://idlabresearch.github.io/etc#sdcoding'(N,M)
+    ->  retract('https://idlabresearch.github.io/etc#sdcoding'(N,M))
+    ;   assertz('https://idlabresearch.github.io/etc#sdcoding'(N,M))
+    ).
 
-sdc(X,Y),
-(   'https://idlabresearch.github.io/etc#sdcoding'(X,Y)
-->  retract('https://idlabresearch.github.io/etc#sdcoding'(X,Y))
-;   assertz('https://idlabresearch.github.io/etc#sdcoding'(X,Y))
-) => \+false.
+% superdense coding appearing an odd number of times
+'https://idlabresearch.github.io/etc#sdc'(_N,_M) => 'https://idlabresearch.github.io/etc#sdconot'(_N,_M).
 
 % query
-'https://idlabresearch.github.io/etc#sdcoding'(_X,_Y) => true.
+'https://idlabresearch.github.io/etc#sdcoding'(_N,_M) => true.
