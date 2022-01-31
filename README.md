@@ -24,8 +24,8 @@ TERM            | Examples
 IRI             | `'http://example.org/etc#socrates'`
 BLANK_NODE      | `'https://idlabresearch.github.io/.well-known/genid/9453595560568678716#sk1'`
 VARIABLE        | `X` `_abc`
-LITERAL         | `"abc"` `1.52` `pi`
-FUNCTIONAL      | `function3(TERM,...)` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
+LITERAL         | `"abc"` `1.52` `1e-18` `pi`
+FUNCTIONAL      | `fn3(TERM,...)` `'http://www.w3.org/2001/XMLSchema#date'("2022-01-15")`
 LIST            | `[TERM,...]` `[TERM,...\|LIST]`
 TRIPLE          | `IRI(TERM,TERM)`
 GRAPH           | `TRIPLE,...`
