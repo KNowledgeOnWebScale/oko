@@ -1,6 +1,6 @@
-% -----------------------
+% --------------------
 % Webeye -- Jos De Roo
-% -----------------------
+% --------------------
 %
 % Webeye performs forward chaining for rules like PREM => CONC and
 % backward chaining for rules like CONC <= PREM.
