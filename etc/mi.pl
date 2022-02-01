@@ -17,9 +17,6 @@ head_body_('https://idlabresearch.github.io/etc#mi'([G|Gs],true),[head_body_(G,G
 head_body_(head_body_(Head,Goals0,Goals),Rs,Rs) :-
     head_body_(Head,Goals0,Goals).
 
-head_body_(natnum(0),Rs,Rs).
-head_body_(natnum(s(X)),[natnum(X)|Rs],Rs).
-
 head_body_(factorial(0,s(0)),Rs,Rs).
 head_body_(factorial(s(N),F),[factorial(N,F1),prod(s(N),F1,F)|Rs],Rs).
 
@@ -31,7 +28,3 @@ head_body_(sum(s(N),M,s(K)),[sum(N,M,K)|Rs],Rs).
 
 % query
 'https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'([factorial(s(s(s(s(s(s(0)))))),_X)],true)],true)],true)],true)],true) => true.
-'https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'(['https://idlabresearch.github.io/etc#mi'([natnum(_X)],true)],true)],true)],true)],true) => true.
-
-% 10 answers are fine
-limited_answer(10).

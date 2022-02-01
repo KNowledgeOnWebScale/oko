@@ -13,7 +13,7 @@ and run the [examples and test cases](./etc) via
 ```
 $ ./test
 ```
-giving [result](./result.pl).
+giving [answer](./answer.pl) and [proof](./proof.pl).
 
 ## Webizing
 

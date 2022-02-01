@@ -10,16 +10,25 @@
 % variables than in the original query.
 %
 
-:- use_module(library(iso_ext)).
+:- use_module(library(format)).
 :- use_module(library(terms)).
+:- use_module(library(iso_ext)).
 
 :- op(1150,xfx,=>).
 
 :- dynamic((=>)/2).
 :- dynamic(goal/0).
 :- dynamic(label/1).
-:- dynamic(limited_answer/1).
-:- dynamic(linear_select/0).
+
+% options
+proof_explanation :-
+    bb_put(proof_explanation,true).
+
+single_answer :-
+    bb_put(single_answer,true).
+
+linear_select :-
+    bb_put(linear_select,true).
 
 % run abstract machine
 run :-
@@ -28,25 +37,21 @@ run :-
     (   Conc = true
     ->  \+goal,
         labelvars(Prem),
-        writeq(Prem),
-        write(' => true.'),
-        nl,
-        (   limited_answer(1)
-        ;   true
-        ->  retract(limited_answer(N)),
-            M is N-1,
-            assertz(limited_answer(M)),
-            fail
-        )
+        format("~q => true.~n",[Prem]),
+        bb_get(single_answer,true)
     ;   \+Conc,
         labelvars(Conc),
         astep(Conc),
+        (   bb_get(proof_explanation,true)
+        ->  format("~q => ~q.~n",[Prem,Conc])
+        ;   true
+        ),
         retract(goal),
         fail
     ).
 run :-
     (   (   goal
-        ;   linear_select
+        ;   bb_get(linear_select,true)
         )
     ->  true
     ;   assertz(goal),

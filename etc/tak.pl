@@ -18,7 +18,4 @@ term_expansion((X <= Y),(X :- Y)).
     'https://idlabresearch.github.io/etc#tak'([A1,A2,A3],A).
 
 % query
-'https://idlabresearch.github.io/etc#tak'([34,13,8],_A) => true.
-
-% a single answer is fine
-limited_answer(1).
+single_answer,'https://idlabresearch.github.io/etc#tak'([34,13,8],_A) => true.

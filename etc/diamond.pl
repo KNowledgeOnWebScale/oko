@@ -44,11 +44,8 @@ true => 'https://idlabresearch.github.io/etc#re'(a,b),'https://idlabresearch.git
     'https://idlabresearch.github.io/etc#r'(Z,U).
 
 % query
-'https://idlabresearch.github.io/etc#re'(b,X),'https://idlabresearch.github.io/etc#re'(c,X) => true.
+single_answer,'https://idlabresearch.github.io/etc#re'(b,X),'https://idlabresearch.github.io/etc#re'(c,X) => true.
 
 % assuming the negation of the query premis so that it can be discharged when the query succeeds
 'https://idlabresearch.github.io/etc#re'(b,X) => 'https://idlabresearch.github.io/etc#not_re'(c,X).
 'https://idlabresearch.github.io/etc#re'(c,X) => 'https://idlabresearch.github.io/etc#not_re'(b,X).
-
-% a single answer is fine
-limited_answer(1).
