@@ -236,7 +236,7 @@ single_answer,'https://idlabresearch.github.io/etc#re'(b,B),'https://idlabresear
 'https://idlabresearch.github.io/etc#sdcoding'(2,2) => true.
 
 % running etc/socrates.pl
-'https://idlabresearch.github.io/etc#mortal'('http://example.org/etc#socrates',true) => true.
+'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/etc#Socrates','https://idlabresearch.github.io/etc#Mortal') => true.
 
 % running etc/sudoku.pl
 single_answer,'https://idlabresearch.github.io/etc#sudoku'([8,A,B,4,C,5,D,E,F,6,G,4,H,I,J,K,L,1,M,N,O,P,1,Q,R,S,2,T,3,7,2,U,V,W,X,Y,Z,A1,B1,C1,5,1,D1,E1,9,F1,G1,H1,I1,J1,4,K1,3,L1,9,M1,2,N1,O1,8,1,P1,7,7,Q1,R1,S1,T1,U1,V1,W1,X1,Y1,Z1,1,A2,B2,2,C2,D2,E2],[8,1,3,4,2,5,7,9,6,6,2,4,8,9,7,3,5,1,5,7,9,6,1,3,8,4,2,4,3,7,2,8,9,6,1,5,2,8,6,3,5,1,4,7,9,1,9,5,7,6,4,2,3,8,9,4,2,5,3,8,1,6,7,7,5,8,1,4,6,9,2,3,3,6,1,9,7,2,5,8,4]) => true.

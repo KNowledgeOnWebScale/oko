@@ -60,12 +60,12 @@ run :-
 
 % create witnesses
 labelvars(Term) :-
-    (   retract(label(Current))
+    (   bb_get(label,Current)
     ->  true
     ;   Current = 0
     ),
     numbervars(Term,Current,Next),
-    assertz(label(Next)).
+    bb_put(label,Next).
 
 % assert new step
 astep((A,B)) :-

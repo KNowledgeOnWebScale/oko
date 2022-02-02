@@ -2,12 +2,12 @@
 
 :- op(1150,xfx,=>).
 
-:- dynamic('https://idlabresearch.github.io/etc#man'/2).
-:- dynamic('https://idlabresearch.github.io/etc#mortal'/2).
+:- dynamic('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'/2).
 
-true => 'https://idlabresearch.github.io/etc#man'('http://example.org/etc#socrates',true).
+true => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/etc#Socrates','https://idlabresearch.github.io/etc#Man').
 
-'https://idlabresearch.github.io/etc#man'(X,true) => 'https://idlabresearch.github.io/etc#mortal'(X,true).
+'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'https://idlabresearch.github.io/etc#Man') =>
+    'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'https://idlabresearch.github.io/etc#Mortal').
 
 % query
-'https://idlabresearch.github.io/etc#mortal'(_IND,true) => true.
+'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(_IND,'https://idlabresearch.github.io/etc#Mortal') => true.
