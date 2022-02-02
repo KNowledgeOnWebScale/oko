@@ -67,7 +67,7 @@
 single_answer,'https://idlabresearch.github.io/etc#re'(b,B),'https://idlabresearch.github.io/etc#re'(c,B) => true.
 
 % running etc/dt.pl
-'https://idlabresearch.github.io/etc#n1000'('https://idlabresearch.github.io/etc#z',true) => true.
+'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/etc#z','http://example.org/etc#N1000') => true.
 
 % running etc/easter.pl
 'https://idlabresearch.github.io/etc#easter'(2021,[4,4]) => true.
