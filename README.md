@@ -22,6 +22,10 @@ QUERY           | `GRAPH => true.`
 ANSWER          | `GRAPH => true.`
 BACKWARD_RULE   | `TRIPLE :- GRAPH,`[**PROLOG**](http://tau-prolog.org/documentation#prolog)`.`
 
+Webeye performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
+
+Queries are posed and answered as `GRAPH => true.` so the answers are also queries be it with
+some parts substituted and eventually containing more variables than in the original query.
 
 ## Installation and test:
 ```
@@ -31,7 +35,6 @@ $ npm install tau-prolog
 $ cd examples
 $ ./test
 ```
-
 
 ## Background
 
