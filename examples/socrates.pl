@@ -7,4 +7,4 @@
 'http://example.org/ns#Man'(X,true) => 'http://example.org/ns#Mortal'(X,true).
 
 % query
-'http://example.org/ns#Mortal'(_IND,true) => true.
+'https://idlabresearch.github.io/ns#triple'(_CLASS,[_IND,true]) => true.
