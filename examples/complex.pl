@@ -1,47 +1,47 @@
 % See https://en.wikipedia.org/wiki/Complex_number
 
-'https://idlabresearch.github.io/etc#exp'([[A,B],[C,D]],[E,F]) :-
+'https://idlabresearch.github.io/ns#exp'([[A,B],[C,D]],[E,F]) :-
     polar([A,B],[G,H]),
     E is G^C*exp(-D*H)*cos(D*log(G)+C*H),
     F is G^C*exp(-D*H)*sin(D*log(G)+C*H).
 
-'https://idlabresearch.github.io/etc#log'([[A,B],[C,D]],[E,F]) :-
+'https://idlabresearch.github.io/ns#log'([[A,B],[C,D]],[E,F]) :-
     polar([A,B],[G,H]),
     polar([C,D],[I,J]),
     K is log(G),
     L is log(I),
     divide([[L,J],[K,H]],[E,F]).
 
-'https://idlabresearch.github.io/etc#sin'([A,B],[C,D]) :-
+'https://idlabresearch.github.io/ns#sin'([A,B],[C,D]) :-
     C is sin(A)*(exp(B)+exp(-B))/2,
     D is cos(A)*(exp(B)-exp(-B))/2.
 
-'https://idlabresearch.github.io/etc#cos'([A,B],[C,D]) :-
+'https://idlabresearch.github.io/ns#cos'([A,B],[C,D]) :-
     C is cos(A)*(exp(B)+exp(-B))/2,
     D is -sin(A)*(exp(B)-exp(-B))/2.
 
-'https://idlabresearch.github.io/etc#tan'(A,B) :-
-    'https://idlabresearch.github.io/etc#sin'(A,C),
-    'https://idlabresearch.github.io/etc#cos'(A,D),
+'https://idlabresearch.github.io/ns#tan'(A,B) :-
+    'https://idlabresearch.github.io/ns#sin'(A,C),
+    'https://idlabresearch.github.io/ns#cos'(A,D),
     divide([C,D],B).
 
-'https://idlabresearch.github.io/etc#asin'([A,B],[C,D]) :-
+'https://idlabresearch.github.io/ns#asin'([A,B],[C,D]) :-
     E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,
     F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,
     C is asin(E),
     D is log(F+sqrt(F^2-1)).
 
-'https://idlabresearch.github.io/etc#acos'([A,B],[C,D]) :-
+'https://idlabresearch.github.io/ns#acos'([A,B],[C,D]) :-
     E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,
     F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,
     C is acos(E),
     D is -log(F+sqrt(F^2-1)).
 
-'https://idlabresearch.github.io/etc#atan'(A,B) :-
+'https://idlabresearch.github.io/ns#atan'(A,B) :-
     subtract([[0,1],A],C),
     add([[0,1],A],D),
     divide([C,D],E),
-    'https://idlabresearch.github.io/etc#log'([[e,0],E],F),
+    'https://idlabresearch.github.io/ns#log'([[e,0],E],F),
     divide([F,[0,2]],B).
 
 polar([A,B],[C,D]) :-
@@ -91,13 +91,13 @@ divide([A,B],C) :-
     multiply([A,D],C).
 
 % query
-'https://idlabresearch.github.io/etc#exp'([[-1,0],[0.5,0]],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#exp'([[e,0],[0,pi]],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#log'([[e,0],[-1,0]],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#log'([[0,1],[0,1]],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#sin'([1.570796326794897,1.316957896924817],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#cos'([0,-1.316957896924817],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#tan'([1.338972522294493,0.4023594781085251],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#asin'([2,0],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#acos'([2,0],_ANSWER) => true.
-'https://idlabresearch.github.io/etc#atan'([1,2],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#exp'([[-1,0],[0.5,0]],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#exp'([[e,0],[0,pi]],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#log'([[e,0],[-1,0]],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#log'([[0,1],[0,1]],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#sin'([1.570796326794897,1.316957896924817],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#cos'([0,-1.316957896924817],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#tan'([1.338972522294493,0.4023594781085251],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#asin'([2,0],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#acos'([2,0],_ANSWER) => true.
+'https://idlabresearch.github.io/ns#atan'([1,2],_ANSWER) => true.

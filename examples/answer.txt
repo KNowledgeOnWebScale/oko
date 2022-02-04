@@ -1,107 +1,107 @@
-// running complex.js
-_Answer = =>(https://idlabresearch.github.io/etc#exp([[-1,0],[0.5,0]],[6.123233995736766e-17,1.0]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#exp([[e,0],[0,pi]],[-1.0,1.2246467991473532e-16]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#log([[e,0],[-1,0]],[0.0,3.141592653589793]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#log([[0,1],[0,1]],[1.0,0.0]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#sin([1.570796326794897,1.316957896924817],[2.0000000000000004,-6.631275506809351e-16]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#cos([0,-1.316957896924817],[2.0000000000000004,0.0]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#tan([1.338972522294493,0.4023594781085251],[1.000000000000001,1.9999999999999982]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#asin([2,0],[1.5707963267948966,1.3169578969248166]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#acos([2,0],[0.0,-1.3169578969248166]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#atan([1,2],[1.3389725222944935,0.4023594781085251]),true) ;
+% running complex.js
+_Answer = =>(https://idlabresearch.github.io/ns#exp([[-1,0],[0.5,0]],[6.123233995736766e-17,1.0]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#exp([[e,0],[0,pi]],[-1.0,1.2246467991473532e-16]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#log([[e,0],[-1,0]],[0.0,3.141592653589793]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#log([[0,1],[0,1]],[1.0,0.0]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#sin([1.570796326794897,1.316957896924817],[2.0000000000000004,-6.631275506809351e-16]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#cos([0,-1.316957896924817],[2.0000000000000004,0.0]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#tan([1.338972522294493,0.4023594781085251],[1.000000000000001,1.9999999999999982]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#asin([2,0],[1.5707963267948966,1.3169578969248166]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#acos([2,0],[0.0,-1.3169578969248166]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#atan([1,2],[1.3389725222944935,0.4023594781085251]),true) ;
 false.
 
-// running dt.js
-_Answer = =>(http://example.org/etc#N1000(http://example.org/etc#z,true),true) ;
+% running dt.js
+_Answer = =>(http://example.org/ns#N1000(http://example.org/ns#z,true),true) ;
 false.
 
-// running easter.js
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2021,[4,4]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2022,[4,17]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2023,[4,9]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2024,[3,31]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2025,[4,20]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2026,[4,5]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2027,[3,28]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2028,[4,16]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2029,[4,1]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2030,[4,21]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2031,[4,13]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2032,[3,28]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2033,[4,17]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2034,[4,9]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2035,[3,25]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2036,[4,13]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2037,[4,5]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2038,[4,25]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2039,[4,10]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2040,[4,1]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2041,[4,21]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2042,[4,6]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2043,[3,29]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2044,[4,17]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2045,[4,9]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2046,[3,25]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2047,[4,14]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2048,[4,5]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2049,[4,18]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#easter(2050,[4,10]),true) ;
+% running easter.js
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2021,[4,4]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2022,[4,17]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2023,[4,9]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2024,[3,31]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2025,[4,20]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2026,[4,5]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2027,[3,28]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2028,[4,16]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2029,[4,1]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2030,[4,21]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2031,[4,13]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2032,[3,28]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2033,[4,17]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2034,[4,9]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2035,[3,25]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2036,[4,13]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2037,[4,5]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2038,[4,25]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2039,[4,10]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2040,[4,1]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2041,[4,21]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2042,[4,6]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2043,[3,29]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2044,[4,17]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2045,[4,9]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2046,[3,25]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2047,[4,14]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2048,[4,5]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2049,[4,18]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#easter(2050,[4,10]),true) ;
 false.
 
-// running gps.js
-_Answer = =>(https://idlabresearch.github.io/etc#findpath(http://example.org/etc#map_be,[https://idlabresearch.github.io/etc#location(http://example.org/etc#i1,http://example.org/etc#oostende),[http://example.org/etc#drive_gent_brugge,http://example.org/etc#drive_brugge_oostende],2400.0,0.01,0.9408,0.99,[5000.0,5.0,0.2,0.4,1]]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#findpath(http://example.org/etc#map_be,[https://idlabresearch.github.io/etc#location(http://example.org/etc#i1,http://example.org/etc#oostende),[http://example.org/etc#drive_gent_kortrijk,http://example.org/etc#drive_kortrijk_brugge,http://example.org/etc#drive_brugge_oostende],4100.0,0.018000000000000002,0.903168,0.9801,[5000.0,5.0,0.2,0.4,1]]),true) ;
+% running gps.js
+_Answer = =>(https://idlabresearch.github.io/ns#findpath(http://example.org/ns#map_be,[https://idlabresearch.github.io/ns#location(http://example.org/ns#i1,http://example.org/ns#oostende),[http://example.org/ns#drive_gent_brugge,http://example.org/ns#drive_brugge_oostende],2400.0,0.01,0.9408,0.99,[5000.0,5.0,0.2,0.4,1]]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#findpath(http://example.org/ns#map_be,[https://idlabresearch.github.io/ns#location(http://example.org/ns#i1,http://example.org/ns#oostende),[http://example.org/ns#drive_gent_kortrijk,http://example.org/ns#drive_kortrijk_brugge,http://example.org/ns#drive_brugge_oostende],4100.0,0.018000000000000002,0.903168,0.9801,[5000.0,5.0,0.2,0.4,1]]),true) ;
 false.
 
-// running graph.js
-_Proof_step = =>(true,,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#paris,http://example.org/etc#orleans),,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#paris,http://example.org/etc#chartres),,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#paris,http://example.org/etc#amiens),,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#orleans,http://example.org/etc#blois),,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#orleans,http://example.org/etc#bourges),,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#blois,http://example.org/etc#tours),,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#chartres,http://example.org/etc#lemans),,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#lemans,http://example.org/etc#angers),,(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#lemans,http://example.org/etc#tours),https://idlabresearch.github.io/etc#oneway(http://example.org/etc#angers,http://example.org/etc#nantes))))))))))) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#angers,http://example.org/etc#nantes),https://idlabresearch.github.io/etc#path(http://example.org/etc#angers,http://example.org/etc#nantes)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#lemans,http://example.org/etc#tours),https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#tours)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#lemans,http://example.org/etc#angers),https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#angers)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#chartres,http://example.org/etc#lemans),https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#lemans)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#blois,http://example.org/etc#tours),https://idlabresearch.github.io/etc#path(http://example.org/etc#blois,http://example.org/etc#tours)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#orleans,http://example.org/etc#bourges),https://idlabresearch.github.io/etc#path(http://example.org/etc#orleans,http://example.org/etc#bourges)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#orleans,http://example.org/etc#blois),https://idlabresearch.github.io/etc#path(http://example.org/etc#orleans,http://example.org/etc#blois)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#paris,http://example.org/etc#amiens),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#amiens)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#paris,http://example.org/etc#chartres),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#chartres)) ;
-_Proof_step = =>(https://idlabresearch.github.io/etc#oneway(http://example.org/etc#paris,http://example.org/etc#orleans),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#orleans)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#orleans),https://idlabresearch.github.io/etc#path(http://example.org/etc#orleans,http://example.org/etc#blois)),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#blois)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#orleans),https://idlabresearch.github.io/etc#path(http://example.org/etc#orleans,http://example.org/etc#bourges)),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#bourges)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#chartres),https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#lemans)),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#lemans)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#orleans,http://example.org/etc#blois),https://idlabresearch.github.io/etc#path(http://example.org/etc#blois,http://example.org/etc#tours)),https://idlabresearch.github.io/etc#path(http://example.org/etc#orleans,http://example.org/etc#tours)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#lemans),https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#angers)),https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#angers)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#lemans),https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#tours)),https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#tours)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#angers),https://idlabresearch.github.io/etc#path(http://example.org/etc#angers,http://example.org/etc#nantes)),https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#nantes)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#angers),https://idlabresearch.github.io/etc#path(http://example.org/etc#angers,http://example.org/etc#nantes)),https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#nantes)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#lemans),https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#nantes)),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#nantes)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#lemans),https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#angers)),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#angers)) ;
-_Proof_step = =>(,(https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#lemans),https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#tours)),https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#tours)) ;
-_Answer = =>(https://idlabresearch.github.io/etc#path(http://example.org/etc#lemans,http://example.org/etc#nantes),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#path(http://example.org/etc#angers,http://example.org/etc#nantes),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#path(http://example.org/etc#paris,http://example.org/etc#nantes),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#path(http://example.org/etc#chartres,http://example.org/etc#nantes),true) ;
+% running graph.js
+_Proof_step = =>(true,,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#paris,http://example.org/ns#orleans),,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#paris,http://example.org/ns#chartres),,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#paris,http://example.org/ns#amiens),,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#orleans,http://example.org/ns#blois),,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#orleans,http://example.org/ns#bourges),,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#blois,http://example.org/ns#tours),,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#chartres,http://example.org/ns#lemans),,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#lemans,http://example.org/ns#angers),,(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#lemans,http://example.org/ns#tours),https://idlabresearch.github.io/ns#oneway(http://example.org/ns#angers,http://example.org/ns#nantes))))))))))) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#angers,http://example.org/ns#nantes),https://idlabresearch.github.io/ns#path(http://example.org/ns#angers,http://example.org/ns#nantes)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#lemans,http://example.org/ns#tours),https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#tours)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#lemans,http://example.org/ns#angers),https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#angers)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#chartres,http://example.org/ns#lemans),https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#lemans)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#blois,http://example.org/ns#tours),https://idlabresearch.github.io/ns#path(http://example.org/ns#blois,http://example.org/ns#tours)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#orleans,http://example.org/ns#bourges),https://idlabresearch.github.io/ns#path(http://example.org/ns#orleans,http://example.org/ns#bourges)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#orleans,http://example.org/ns#blois),https://idlabresearch.github.io/ns#path(http://example.org/ns#orleans,http://example.org/ns#blois)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#paris,http://example.org/ns#amiens),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#amiens)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#paris,http://example.org/ns#chartres),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#chartres)) ;
+_Proof_step = =>(https://idlabresearch.github.io/ns#oneway(http://example.org/ns#paris,http://example.org/ns#orleans),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#orleans)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#orleans),https://idlabresearch.github.io/ns#path(http://example.org/ns#orleans,http://example.org/ns#blois)),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#blois)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#orleans),https://idlabresearch.github.io/ns#path(http://example.org/ns#orleans,http://example.org/ns#bourges)),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#bourges)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#chartres),https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#lemans)),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#lemans)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#orleans,http://example.org/ns#blois),https://idlabresearch.github.io/ns#path(http://example.org/ns#blois,http://example.org/ns#tours)),https://idlabresearch.github.io/ns#path(http://example.org/ns#orleans,http://example.org/ns#tours)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#lemans),https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#angers)),https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#angers)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#lemans),https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#tours)),https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#tours)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#angers),https://idlabresearch.github.io/ns#path(http://example.org/ns#angers,http://example.org/ns#nantes)),https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#nantes)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#angers),https://idlabresearch.github.io/ns#path(http://example.org/ns#angers,http://example.org/ns#nantes)),https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#nantes)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#lemans),https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#nantes)),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#nantes)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#lemans),https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#angers)),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#angers)) ;
+_Proof_step = =>(,(https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#lemans),https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#tours)),https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#tours)) ;
+_Answer = =>(https://idlabresearch.github.io/ns#path(http://example.org/ns#lemans,http://example.org/ns#nantes),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#path(http://example.org/ns#angers,http://example.org/ns#nantes),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#path(http://example.org/ns#paris,http://example.org/ns#nantes),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#path(http://example.org/ns#chartres,http://example.org/ns#nantes),true) ;
 false.
 
-// running lee.js
-_Answer = =>(https://idlabresearch.github.io/etc#route([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],[[9,8],[9,7],[9,6],[9,5],[8,5],[7,5],[6,5],[5,5],[5,4],[5,3],[5,2],[4,2],[3,2],[2,2],[1,2],[1,1]]),true) ;
+% running lee.js
+_Answer = =>(https://idlabresearch.github.io/ns#route([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],[[9,8],[9,7],[9,6],[9,5],[8,5],[7,5],[6,5],[5,5],[5,4],[5,3],[5,2],[4,2],[3,2],[2,2],[1,2],[1,1]]),true) ;
 false.
 
-// running sdcoding.js
-_Answer = =>(https://idlabresearch.github.io/etc#sdcoding(1,1),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#sdcoding(3,3),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#sdcoding(0,0),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#sdcoding(2,2),true) ;
+% running sdcoding.js
+_Answer = =>(https://idlabresearch.github.io/ns#sdcoding(1,1),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#sdcoding(3,3),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#sdcoding(0,0),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#sdcoding(2,2),true) ;
 false.
 
-// running socrates.js
-_Proof_step = =>(http://example.org/etc#Man(http://example.org/etc#Socrates,true),http://example.org/etc#Mortal(http://example.org/etc#Socrates,true)) ;
-_Answer = =>(http://example.org/etc#Mortal(http://example.org/etc#Socrates,true),true) ;
+% running socrates.js
+_Proof_step = =>(http://example.org/ns#Man(http://example.org/ns#Socrates,true),http://example.org/ns#Mortal(http://example.org/ns#Socrates,true)) ;
+_Answer = =>(http://example.org/ns#Mortal(http://example.org/ns#Socrates,true),true) ;
 false.
 
-// running turing.js
-_Answer = =>(https://idlabresearch.github.io/etc#compute([1,0,1,0,0,1],[1,0,1,0,1,0,#]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#compute([1,0,1,1,1,1],[1,1,0,0,0,0,#]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#compute([1,1,1,1,1,1],[1,0,0,0,0,0,0,#]),true) ;
-_Answer = =>(https://idlabresearch.github.io/etc#compute([],[1,#]),true) ;
+% running turing.js
+_Answer = =>(https://idlabresearch.github.io/ns#compute([1,0,1,0,0,1],[1,0,1,0,1,0,#]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#compute([1,0,1,1,1,1],[1,1,0,0,0,0,#]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#compute([1,1,1,1,1,1],[1,0,0,0,0,0,0,#]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#compute([],[1,#]),true) ;
 false.
 

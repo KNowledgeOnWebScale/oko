@@ -1,10 +1,10 @@
 % Socrates is a mortal
 
-:- dynamic('http://example.org/etc#Mortal'/2).
+:- dynamic('http://example.org/ns#Mortal'/2).
 
-'http://example.org/etc#Man'('http://example.org/etc#Socrates',true).
+'http://example.org/ns#Man'('http://example.org/ns#Socrates',true).
 
-'http://example.org/etc#Man'(X,true) => 'http://example.org/etc#Mortal'(X,true).
+'http://example.org/ns#Man'(X,true) => 'http://example.org/ns#Mortal'(X,true).
 
 % query
-'http://example.org/etc#Mortal'(_IND,true) => true.
+'http://example.org/ns#Mortal'(_IND,true) => true.

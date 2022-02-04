@@ -19,8 +19,8 @@
 % exhibit an interference effect: an answer is produced from the junction if it
 % occurs in one or the other branch but not both.
 
-:- dynamic('https://idlabresearch.github.io/etc#sdcoding'/2).
-:- dynamic('https://idlabresearch.github.io/etc#sdconot'/2).
+:- dynamic('https://idlabresearch.github.io/ns#sdcoding'/2).
+:- dynamic('https://idlabresearch.github.io/ns#sdconot'/2).
 
 % |R) = |0, 0) + |1, 1)
 r(false,false).
@@ -87,17 +87,17 @@ bob([X,Y],3) :-
     id(X,Y).
 
 % superdense coding
-'https://idlabresearch.github.io/etc#sdc'(N,M) :-
+'https://idlabresearch.github.io/ns#sdc'(N,M) :-
     r(X,Y),
     alice(N,[X,B]),
     bob([B,Y],M),
-    (   'https://idlabresearch.github.io/etc#sdcoding'(N,M)
-    ->  retract('https://idlabresearch.github.io/etc#sdcoding'(N,M))
-    ;   assertz('https://idlabresearch.github.io/etc#sdcoding'(N,M))
+    (   'https://idlabresearch.github.io/ns#sdcoding'(N,M)
+    ->  retract('https://idlabresearch.github.io/ns#sdcoding'(N,M))
+    ;   assertz('https://idlabresearch.github.io/ns#sdcoding'(N,M))
     ).
 
 % superdense coding appearing an odd number of times
-'https://idlabresearch.github.io/etc#sdc'(_N,_M) => 'https://idlabresearch.github.io/etc#sdconot'(_N,_M).
+'https://idlabresearch.github.io/ns#sdc'(_N,_M) => 'https://idlabresearch.github.io/ns#sdconot'(_N,_M).
 
 % query
-'https://idlabresearch.github.io/etc#sdcoding'(_N,_M) => true.
+'https://idlabresearch.github.io/ns#sdcoding'(_N,_M) => true.
