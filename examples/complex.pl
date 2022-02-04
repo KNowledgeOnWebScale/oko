@@ -1,48 +1,43 @@
 % See https://en.wikipedia.org/wiki/Complex_number
 
-:- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
-
-'https://idlabresearch.github.io/etc#exp'([[A,B],[C,D]],[E,F]) <=
+'https://idlabresearch.github.io/etc#exp'([[A,B],[C,D]],[E,F]) :-
     polar([A,B],[G,H]),
     E is G^C*exp(-D*H)*cos(D*log(G)+C*H),
     F is G^C*exp(-D*H)*sin(D*log(G)+C*H).
 
-'https://idlabresearch.github.io/etc#log'([[A,B],[C,D]],[E,F]) <=
+'https://idlabresearch.github.io/etc#log'([[A,B],[C,D]],[E,F]) :-
     polar([A,B],[G,H]),
     polar([C,D],[I,J]),
     K is log(G),
     L is log(I),
     divide([[L,J],[K,H]],[E,F]).
 
-'https://idlabresearch.github.io/etc#sin'([A,B],[C,D]) <=
+'https://idlabresearch.github.io/etc#sin'([A,B],[C,D]) :-
     C is sin(A)*(exp(B)+exp(-B))/2,
     D is cos(A)*(exp(B)-exp(-B))/2.
 
-'https://idlabresearch.github.io/etc#cos'([A,B],[C,D]) <=
+'https://idlabresearch.github.io/etc#cos'([A,B],[C,D]) :-
     C is cos(A)*(exp(B)+exp(-B))/2,
     D is -sin(A)*(exp(B)-exp(-B))/2.
 
-'https://idlabresearch.github.io/etc#tan'(A,B) <=
+'https://idlabresearch.github.io/etc#tan'(A,B) :-
     'https://idlabresearch.github.io/etc#sin'(A,C),
     'https://idlabresearch.github.io/etc#cos'(A,D),
     divide([C,D],B).
 
-'https://idlabresearch.github.io/etc#asin'([A,B],[C,D]) <=
+'https://idlabresearch.github.io/etc#asin'([A,B],[C,D]) :-
     E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,
     F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,
     C is asin(E),
     D is log(F+sqrt(F^2-1)).
 
-'https://idlabresearch.github.io/etc#acos'([A,B],[C,D]) <=
+'https://idlabresearch.github.io/etc#acos'([A,B],[C,D]) :-
     E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,
     F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,
     C is acos(E),
     D is -log(F+sqrt(F^2-1)).
 
-'https://idlabresearch.github.io/etc#atan'(A,B) <=
+'https://idlabresearch.github.io/etc#atan'(A,B) :-
     subtract([[0,1],A],C),
     add([[0,1],A],D),
     divide([C,D],E),

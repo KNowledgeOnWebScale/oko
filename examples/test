@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -n "" | tee answer.txt
+for f in *.js
+do
+    echo "// running $f" | tee -a answer.txt
+    node "$f" | tee -a answer.txt
+    echo "" | tee -a answer.txt
+done

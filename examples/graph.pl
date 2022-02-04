@@ -1,7 +1,5 @@
 % Traversing graph paths
 
-:- op(1150,xfx,=>).
-
 :- dynamic('https://idlabresearch.github.io/etc#oneway'/2).
 :- dynamic('https://idlabresearch.github.io/etc#path'/2).
 

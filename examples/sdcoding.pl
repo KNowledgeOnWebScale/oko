@@ -19,11 +19,6 @@
 % exhibit an interference effect: an answer is produced from the junction if it
 % occurs in one or the other branch but not both.
 
-:- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
-
 :- dynamic('https://idlabresearch.github.io/etc#sdcoding'/2).
 :- dynamic('https://idlabresearch.github.io/etc#sdconot'/2).
 
@@ -92,7 +87,7 @@ bob([X,Y],3) :-
     id(X,Y).
 
 % superdense coding
-'https://idlabresearch.github.io/etc#sdc'(N,M) <=
+'https://idlabresearch.github.io/etc#sdc'(N,M) :-
     r(X,Y),
     alice(N,[X,B]),
     bob([B,Y],M),

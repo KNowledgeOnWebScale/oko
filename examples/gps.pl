@@ -1,16 +1,10 @@
 % Goal driven Parallel Sequences -- Jos De Roo
 % See background paper https://arxiv.org/pdf/2010.12027.pdf
 
-:- use_module(library(iso_ext)).
 :- use_module(library(lists)).
 
-:- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
-
 % find paths in the state space from initial state to goal state within limits
-'https://idlabresearch.github.io/etc#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=
+'https://idlabresearch.github.io/etc#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) :-
     findpaths([],Goal,[],0.0,0.0,1.0,1.0,Path,Duration,Cost,Belief,Comfort,Limits).
 
 findpaths(_Maps,Goal,Path,Duration,Cost,Belief,Comfort,Path,Duration,Cost,Belief,Comfort,_Limits) :-
@@ -79,7 +73,7 @@ conj_list((A,B),[A|C]) :-
         0.96,
         0.99
     ]
-) <= true.
+).
 'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
     [   'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#gent'),
@@ -91,7 +85,7 @@ conj_list((A,B),[A|C]) :-
         0.96,
         0.99
     ]
-) <= true.
+).
 'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
     [   'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#kortrijk'),
@@ -103,7 +97,7 @@ conj_list((A,B),[A|C]) :-
         0.96,
         0.99
     ]
-) <= true.
+).
 'https://idlabresearch.github.io/etc#description'(
     'http://example.org/etc#map_be',
     [   'https://idlabresearch.github.io/etc#location'(S,'http://example.org/etc#brugge'),
@@ -115,7 +109,7 @@ conj_list((A,B),[A|C]) :-
         0.98,
         1.0
     ]
-) <= true.
+).
 
 % current state
 true => 'https://idlabresearch.github.io/etc#location'('http://example.org/etc#i1','http://example.org/etc#gent').

@@ -2,17 +2,12 @@
 
 :- use_module(library(lists)).
 
-:- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
-
 % interpreter for Univeral Turing Machine
 
-'https://idlabresearch.github.io/etc#compute'([],OutTape) <=
+'https://idlabresearch.github.io/etc#compute'([],OutTape) :-
     start(_MACHINE,I),
     find(I,[],#,[ ],OutTape).
-'https://idlabresearch.github.io/etc#compute'([Head|Tail],OutTape) <=
+'https://idlabresearch.github.io/etc#compute'([Head|Tail],OutTape) :-
     start(_MACHINE,I),
     find(I,[],Head,Tail,OutTape).
 

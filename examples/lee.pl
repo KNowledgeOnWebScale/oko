@@ -3,12 +3,7 @@
 
 :- use_module(library(lists)).
 
-:- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
-
-'https://idlabresearch.github.io/etc#route'([Source,Destination,Obstacles],Path) <=
+'https://idlabresearch.github.io/etc#route'([Source,Destination,Obstacles],Path) :-
     waves(Destination,[[Source],[]],Obstacles,Waves),
     path(Source,Destination,Waves,Path).
 

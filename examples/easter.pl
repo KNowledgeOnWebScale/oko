@@ -1,13 +1,6 @@
 % calculate easter date
 
-:- use_module(library(between)).
-
-:- op(1150,xfx,=>).
-:- op(1200,xfx,<=).
-
-term_expansion((X <= Y),(X :- Y)).
-
-'https://idlabresearch.github.io/etc#easter'(Year,[Month,Day]) <=
+'https://idlabresearch.github.io/etc#easter'(Year,[Month,Day]) :-
     A is Year rem 19,
     B is Year//100,
     C is Year rem 100,
@@ -18,5 +11,5 @@ term_expansion((X <= Y),(X :- Y)).
     Day is F rem 31+1.
 
 % query
-'https://idlabresearch.github.io/etc#easter'(Year,[_Month,_Day]) => true <=
+'https://idlabresearch.github.io/etc#easter'(Year,[_Month,_Day]) => true :-
     between(2021,2050,Year).
