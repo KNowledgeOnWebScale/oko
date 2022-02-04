@@ -20,7 +20,7 @@ FORWARD_RULE    | `GRAPH => GRAPH.`
 INFERENCE_FUSE  | `GRAPH => false.`
 QUERY           | `GRAPH => true.`
 ANSWER          | `GRAPH => true.`
-BACKWARD_RULE   | `TRIPLE :- GRAPH,PROLOG.`
+BACKWARD_RULE   | `TRIPLE :- GRAPH,[PROLOG](http://tau-prolog.org/documentation#builtin).`
 
 
 ## Installation and test:
