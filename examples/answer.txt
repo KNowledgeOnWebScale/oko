@@ -12,7 +12,7 @@ _Answer = =>(https://idlabresearch.github.io/etc#atan([1,2],[1.3389725222944935,
 false.
 
 // running dt.js
-_Answer = =>(http://example.org/etc#N1000(http://example.org/etc#z),true) ;
+_Answer = =>(http://example.org/etc#N1000(http://example.org/etc#z,true),true) ;
 false.
 
 // running easter.js
@@ -94,8 +94,8 @@ _Answer = =>(https://idlabresearch.github.io/etc#sdcoding(2,2),true) ;
 false.
 
 // running socrates.js
-_Proof_step = =>(http://example.org/etc#Man(http://example.org/etc#Socrates),http://example.org/etc#Mortal(http://example.org/etc#Socrates)) ;
-_Answer = =>(http://example.org/etc#Mortal(http://example.org/etc#Socrates),true) ;
+_Proof_step = =>(http://example.org/etc#Man(http://example.org/etc#Socrates,true),http://example.org/etc#Mortal(http://example.org/etc#Socrates,true)) ;
+_Answer = =>(http://example.org/etc#Mortal(http://example.org/etc#Socrates,true),true) ;
 false.
 
 // running turing.js

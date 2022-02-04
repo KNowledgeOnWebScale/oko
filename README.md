@@ -10,7 +10,6 @@ IRI             | `'http://example.org/etc#Socrates'`
 VARIABLE        | `X` `_abc`
 LITERAL         | `"abc"` `1.52` `1e-18` `pi` `dt("2022-01-15",'http://www.w3.org/2001/XMLSchema#date')`
 LIST            | `[TERM,...]` `[TERM,...\|LIST]`
-CLASS           | `IRI(TERM)`
 TRIPLE          | `IRI(TERM,TERM)`
 GRAPH           | `TRIPLE,...`
 
@@ -21,7 +20,8 @@ FORWARD_RULE    | `GRAPH => GRAPH.`
 INFERENCE_FUSE  | `GRAPH => false.`
 QUERY           | `GRAPH => true.`
 ANSWER          | `GRAPH => true.`
-BACKWARD_RULE   | `TRIPLE :- PROLOG.`
+BACKWARD_RULE   | `TRIPLE :- GRAPH,PROLOG.`
+
 
 ## Installation and test:
 ```
@@ -31,6 +31,7 @@ $ npm install tau-prolog
 $ cd examples
 $ ./test
 ```
+
 
 ## Background
 
