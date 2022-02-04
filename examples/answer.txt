@@ -95,9 +95,8 @@ false.
 
 // running socrates.js
 _Proof_step = =>(http://example.org/ns#Man(http://example.org/ns#Socrates,true),http://example.org/ns#Mortal(http://example.org/ns#Socrates,true)) ;
-_Answer = =>(https://idlabresearch.github.io/ns#triple(=>,[https://idlabresearch.github.io/ns#triple($VAR(0),[$VAR(1),true]),true]),true) ;
-_Answer = =>(https://idlabresearch.github.io/ns#triple(http://example.org/ns#Mortal,[http://example.org/ns#Socrates,true]),true) ;
 _Answer = =>(https://idlabresearch.github.io/ns#triple(http://example.org/ns#Man,[http://example.org/ns#Socrates,true]),true) ;
+_Answer = =>(https://idlabresearch.github.io/ns#triple(http://example.org/ns#Mortal,[http://example.org/ns#Socrates,true]),true) ;
 false.
 
 // running turing.js

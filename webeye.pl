@@ -63,9 +63,11 @@ astep(A) :-
 % built-ins
 'https://idlabresearch.github.io/ns#triple'(P,[S,O]) :-
     (   var(P)
-    ->  current_predicate(P/2)
+    ->  current_predicate(P/2),
+        P \= =>
     ;   true
     ),
     Triple =.. [P,S,O],
+    predicate_property(Triple,dynamic),
     Triple.
 
