@@ -1,6 +1,9 @@
-% ----------------------------------------
-% Webized reasoning - Webeye -- Jos De Roo
-% ----------------------------------------
+% -------------------------------
+% Webized reasoning -- Jos De Roo
+% -------------------------------
+%
+% See https://idlabresearch.github.io/Webeye/
+%
 
 :- op(1150,xfx,=>).
 
