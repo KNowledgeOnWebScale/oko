@@ -13,7 +13,7 @@ var program = fs.readFileSync("../webeye.pl");
 program += fs.readFileSync("./socrates.pl");
 
 // Goal
-var goal = "run,proof_step(_Proof_step);answer(_Answer).";
+var goal = "run([proof_step]).";
 
 // Load the program
 session.consult(program, {
@@ -22,7 +22,7 @@ session.consult(program, {
 		session.query(goal, {
 			success: function() {
 				// Look for answers
-				session.answers(x => console.log(pl.format_answer(x)));
+				session.answers(x => null);
 			}
 		});
 	}

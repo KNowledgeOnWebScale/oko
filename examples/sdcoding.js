@@ -13,8 +13,7 @@ var program = fs.readFileSync("../webeye.pl");
 program += fs.readFileSync("./sdcoding.pl");
 
 // Goal
-var goal = "run,answer(_Answer).";
-//var goal = "run,proof(_P);answer(_A).";
+var goal = "run([proof_step]).";
 
 // Load the program
 session.consult(program, {
@@ -23,7 +22,7 @@ session.consult(program, {
 		session.query(goal, {
 			success: function() {
 				// Look for answers
-				session.answers(x => console.log(pl.format_answer(x)));
+				session.answers(x => null);
 			}
 		});
 	}
