@@ -28,7 +28,7 @@ Queries are posed and answered as `GRAPH => true.` so the answers are also queri
 some parts substituted and eventually containing more variables than in the original query.
 This forms a dialogue that leads to a sufficient answer, supported by proof steps, so that action can take place.
 
-## Installation and test:
+## Installation and test
 ```
 $ git clone https://github.com/IDLabResearch/Webeye
 $ cd Webeye
