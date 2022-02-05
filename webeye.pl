@@ -30,7 +30,7 @@ run(Options) :-
         labelvars(Prem),
         (   \+answer((Prem => true))
         ->  assertz(answer((Prem => true))),
-            wterm(Prem),
+            writeq(Prem),
             write(' => true.\n')
         ;   true
         ),
@@ -41,9 +41,9 @@ run(Options) :-
         (   member(proof_step,Options),
             \+proof_step((Prem => Conc))
         ->  assertz(proof_step((Prem => Conc))),
-            wterm(Prem),
+            writeq(Prem),
             write(' => '),
-            wterm(Conc),
+            writeq(Conc),
             write('.\n')
         ;   true
         ),
@@ -85,20 +85,9 @@ astep(A) :-
     ).
 
 %
-% write term
-%
-wterm('https://idlabresearch.github.io/ns#triple'(P,[S,O])) :-
-    nonvar(P),
-    !,
-    Triple =.. [P,S,O],
-    writeq(Triple).
-wterm(A) :-
-    writeq(A).
-
-%
 % built-ins
 %
-'https://idlabresearch.github.io/ns#triple'(P,[S,O]) :-
+'https://idlabresearch.github.io/ns#triple'([P,S,O],Triple) :-
     (   var(P)
     ->  current_predicate(P/2),
         P \= =>
