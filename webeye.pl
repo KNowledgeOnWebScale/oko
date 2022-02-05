@@ -1,6 +1,6 @@
-% -------------------------------
-% Webized reasoning -- Jos De Roo
-% -------------------------------
+% --------------------
+% Webeye -- Jos De Roo
+% --------------------
 %
 % See https://idlabresearch.github.io/Webeye/
 %
@@ -13,13 +13,13 @@
 :- dynamic(goal/0).
 :- dynamic(label/1).
 :- dynamic(answer/1).
-:- dynamic(single_answer/0).
 :- dynamic(proof_step/1).
 
 % run Webeye abstract machine with a list of options:
-%   - proof_step to output proof steps
-%   - single_answer to output only one answer
-%   - linear_select to use the rules only once
+%   - single_answer: output only one answer
+%   - proof_step: output proof steps
+%   - linear_select: use the rules only once
+%
 run(Options) :-
     (Prem => Conc),
     Prem,
@@ -80,7 +80,9 @@ astep(_,A) :-
     ;   true
     ).
 
+%
 % built-ins
+%
 'https://idlabresearch.github.io/ns#find_triple'([P,S,O],Triple) :-
     (   var(P)
     ->  current_predicate(P/2),
