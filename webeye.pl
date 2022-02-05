@@ -16,12 +16,10 @@
 :- dynamic(single_answer/0).
 :- dynamic(proof_step/1).
 
-%
 % run Webeye abstract machine with a list of options:
 %   - proof_step to output proof steps
 %   - single_answer to output only one answer
 %   - linear_select to use the rules only once
-%
 run(Options) :-
     (Prem => Conc),
     Prem,
@@ -37,7 +35,7 @@ run(Options) :-
         member(single_answer,Options)
     ;   \+Conc,
         labelvars(Conc),
-        astep(Conc),
+        astep(Prem,Conc),
         (   member(proof_step,Options),
             \+proof_step((Prem => Conc))
         ->  assertz(proof_step((Prem => Conc))),
@@ -59,9 +57,7 @@ run(Options) :-
         run(Options)
     ).
 
-%
 % create witnesses
-%
 labelvars(Term) :-
     (   retract(label(Current))
     ->  true
@@ -70,24 +66,22 @@ labelvars(Term) :-
     numbervars(Term,Current,Next),
     assertz(label(Next)).
 
-%
 % assert new step
-%
-astep((A,B)) :-
-    astep(A),
-    astep(B).
-astep(false) :-
-    throw('inference_fuse').
-astep(A) :-
+astep(A,(B,C)) :-
+    astep(A,B),
+    astep(A,C).
+astep(A,false) :-
+    writeq(A),
+    write(' => false.\n'),
+    halt.
+astep(_,A) :-
     (   \+A
     ->  asserta(A)
     ;   true
     ).
 
-%
 % built-ins
-%
-'https://idlabresearch.github.io/ns#triple'([P,S,O],Triple) :-
+'https://idlabresearch.github.io/ns#find_triple'([P,S,O],Triple) :-
     (   var(P)
     ->  current_predicate(P/2),
         P \= =>
@@ -96,4 +90,3 @@ astep(A) :-
     Triple =.. [P,S,O],
     predicate_property(Triple,dynamic),
     Triple.
-
