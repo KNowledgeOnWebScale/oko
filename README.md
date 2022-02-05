@@ -20,7 +20,7 @@ FORWARD_RULE    | `GRAPH => GRAPH.`
 QUERY           | `GRAPH => true.`
 ANSWER          | `GRAPH => true.`
 INFERENCE_FUSE  | `GRAPH => false.`
-BACKWARD_RULE   | `TRIPLE :- GRAPH,`[PROLOG](http://tau-prolog.org/documentation#prolog)`.`
+BACKWARD_RULE   | `TRIPLE :- GRAPH,`[`PROLOG`](http://tau-prolog.org/documentation#prolog)`.`
 
 Webeye performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
 
