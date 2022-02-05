@@ -1,5 +1,8 @@
 # Webeye
 
+Webeye is doing webized reasoning via forward and backward chaining.
+It participates in dialogues leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
+
 ## Webized reasoning
 
 [Webeye](https://github.com/IDLabResearch/Webeye) is using [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog):
@@ -26,7 +29,7 @@ Webeye performs forward chaining for a `FORWARD_RULE` and backward chaining for 
 
 Queries are posed and answered as `GRAPH => true.` so the answers are also queries be it with
 some parts substituted and eventually containing more variables than in the original query.
-This forms a dialogue that leads to a sufficient answer, supported by proof steps, so that action can take place.
+This forms a dialogue leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
 
 ## Installation and test
 ```
