@@ -10,7 +10,7 @@
 :- op(1150,xfx,=>).
 
 :- dynamic((=>)/2).
-:- dynamic(goal/0).
+:- dynamic(brake/0).
 :- dynamic(label/1).
 :- dynamic(answer/1).
 :- dynamic(proof_step/1).
@@ -23,9 +23,9 @@
 % 1/ select rule P => C
 % 2/ prove P and if it fails backtrack to 1/
 % 3/ if C = true answer with P => true and if single_answer stop, else backtrack to 2/
-%    else if ~C assert C, retract goal and backtrack to 2/
+%    else if ~C assert C, retract brake and backtrack to 2/
 %    else backtrack to 2/
-% 4/ if goal or linear_select stop, else assert goal and start again at 1/
+% 4/ if brake or linear_select stop, else assert brake and start again at 1/
 %
 run(Options) :-
     (Prem => Conc),
@@ -51,15 +51,15 @@ run(Options) :-
             write('.\n')
         ;   true
         ),
-        retract(goal),
+        retract(brake),
         fail
     ).
 run(Options) :-
-    (   (   goal
+    (   (   brake
         ;   member(linear_select,Options)
         )
     ->  true
-    ;   asserta(goal),
+    ;   asserta(brake),
         run(Options)
     ).
 
