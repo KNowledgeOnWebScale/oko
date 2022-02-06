@@ -20,12 +20,20 @@
 %   - proof_step: output proof steps
 %   - linear_select: use the rules only once
 %
+% 1/ select rule P => C
+% 2/ prove P and if it fails backtrack to 1/
+% 3/ if C = true answer with P => true and if single_answer stop, else backtrack to 2/
+%    else if ~C assert C, retract goal and backtrack to 2/
+%    else backtrack to 2/
+% 4/ if goal or linear_select stop, else assert goal and start again at 1/
+%
 run(Options) :-
     (Prem => Conc),
+    copy_term((Prem => Conc),Rule),
+    labelvars(Rule),
     Prem,
     (   Conc = true
-    ->  \+goal,
-        labelvars(Prem),
+    ->  labelvars(Prem),
         (   \+answer((Prem => true))
         ->  assertz(answer((Prem => true))),
             writeq(Prem),
@@ -39,9 +47,7 @@ run(Options) :-
         (   member(proof_step,Options),
             \+proof_step((Prem => Conc))
         ->  assertz(proof_step((Prem => Conc))),
-            writeq(Prem),
-            write(' => '),
-            writeq(Conc),
+            writeq('https://idlabresearch.github.io/ns#proof_step'(Rule,(Prem => Conc))),
             write('.\n')
         ;   true
         ),
