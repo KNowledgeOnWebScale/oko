@@ -42,4 +42,5 @@ $ ./test
 
 ## Background
 
+- Personal notes by Tim Berners-Lee: [Design Issues](https://www.w3.org/DesignIssues/)
 - Book of Markus Triska: [The Power of Prolog](https://www.metalevel.at/prolog)
