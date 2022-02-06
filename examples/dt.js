@@ -9,7 +9,7 @@ var session = pl.create(10000);
 
 // Program
 var fs = require("fs");
-var program = fs.readFileSync("../webeye.pl");
+var program = fs.readFileSync("../weye.pl");
 program += fs.readFileSync("./dt.pl");
 
 // Goal

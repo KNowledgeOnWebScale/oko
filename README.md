@@ -1,11 +1,11 @@
-# Webeye
+# Weye
 
-Webeye is doing webized reasoning via forward and backward chaining.
+Weye is doing webized reasoning via forward and backward chaining.
 It participates in dialogues leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
 
 ## Webized reasoning
 
-[Webeye](https://github.com/IDLabResearch/Webeye) is using [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog):
+[Weye](https://github.com/IDLabResearch/Weye) is using [ISO Prolog notation](https://en.wikipedia.org/wiki/Prolog#ISO_Prolog):
 
 TERM            | Examples
 ----------------|---------
@@ -25,7 +25,7 @@ ANSWER          | `GRAPH => true.`
 INFERENCE_FUSE  | `GRAPH => false.`
 BACKWARD_RULE   | `TRIPLE :- GRAPH,`[`PROLOG`](http://tau-prolog.org/documentation#prolog)`.`
 
-Webeye performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
+Weye performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
 
 Queries are posed and answered as `GRAPH => true.` so the answers are also queries be it with
 some parts substituted and eventually containing more variables than in the original query.
@@ -33,8 +33,8 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 
 ## Installation and test
 ```
-$ git clone https://github.com/IDLabResearch/Webeye
-$ cd Webeye
+$ git clone https://github.com/IDLabResearch/Weye
+$ cd Weye
 $ npm install tau-prolog
 $ cd examples
 $ ./test
