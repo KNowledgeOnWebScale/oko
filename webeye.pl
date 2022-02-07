@@ -1,8 +1,8 @@
-% ------------------
-% Weye -- Jos De Roo
-% ------------------
+% --------------------
+% Webeye -- Jos De Roo
+% --------------------
 %
-% See https://idlabresearch.github.io/Weye/
+% See https://idlabresearch.github.io/Webeye/
 %
 
 :- use_module(library(lists)).
@@ -15,7 +15,7 @@
 :- dynamic(answer/1).
 :- dynamic(proof_step/1).
 
-% run Weye abstract machine with a list of options:
+% run Webeye abstract machine with a list of options:
 %   - single_answer: output only one answer
 %   - proof_step: output proof steps
 %   - linear_select: use the rules only once
