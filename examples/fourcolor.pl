@@ -3,7 +3,7 @@
 :- use_module(library(lists)).
 
 'https://idlabresearch.github.io/ns#colors'(_Map,Places) :-
-    findall([Place,Color],('https://idlabresearch.github.io/ns#neighbours'(Place,_),length([Color],_)),Places),
+    findall([Place,_],'https://idlabresearch.github.io/ns#neighbours'(Place,_),Places),
     places(Places).
 
 places([]).
