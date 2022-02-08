@@ -13,7 +13,7 @@ var program = fs.readFileSync("../webeye.pl");
 program += fs.readFileSync("./sdcoding.pl");
 
 // Goal
-var goal = "run([proof_step]).";
+var goal = "catch(run([proof_step]),Err,(writeq(Err),nl)).";
 
 // Load the program
 session.consult(program, {
