@@ -25,5 +25,8 @@ session.consult(program, {
 				session.answers(x => null);
 			}
 		});
+	},
+	error: function(err) {
+		console.log(err.args.toString());
 	}
 });
