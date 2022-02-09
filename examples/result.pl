@@ -134,6 +134,9 @@
 % running mi.js
 'https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#factorial'(s(s(s(s(s(0))))),s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))],true)],true) => true.
 
+% running polygon.js
+'https://idlabresearch.github.io/ns#area'([[3,2],[6,2],[7,6],[4,6],[5,5],[5,3],[3,2]],7.5) => true.
+
 % running sdcoding.js
 'https://idlabresearch.github.io/ns#proof_step'(('https://idlabresearch.github.io/ns#sdc'(A,B)=>'https://idlabresearch.github.io/ns#sdconot'(A,B)),('https://idlabresearch.github.io/ns#sdc'(0,1)=>'https://idlabresearch.github.io/ns#sdconot'(0,1))).
 'https://idlabresearch.github.io/ns#proof_step'(('https://idlabresearch.github.io/ns#sdc'(A,B)=>'https://idlabresearch.github.io/ns#sdconot'(A,B)),('https://idlabresearch.github.io/ns#sdc'(0,3)=>'https://idlabresearch.github.io/ns#sdconot'(0,3))).
