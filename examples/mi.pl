@@ -1,13 +1,13 @@
 % Meta-interpretation
 % Original code from https://www.youtube.com/watch?v=nmBkU-l1zyc&t=1870s
 
-'https://idlabresearch.github.io/ns#mi'([],true).
-'https://idlabresearch.github.io/ns#mi'([G|Gs],true) :-
+'https://idlabresearch.github.io/ns#mi'([],[]).
+'https://idlabresearch.github.io/ns#mi'([G|Gs],[]) :-
     head_body_(G,Goals,Gs),
-    'https://idlabresearch.github.io/ns#mi'(Goals,true).
+    'https://idlabresearch.github.io/ns#mi'(Goals,[]).
 
-head_body_('https://idlabresearch.github.io/ns#mi'([],true),Rs,Rs).
-head_body_('https://idlabresearch.github.io/ns#mi'([G|Gs],true),[head_body_(G,Goals,Gs),'https://idlabresearch.github.io/ns#mi'(Goals,true)|Rs],Rs).
+head_body_('https://idlabresearch.github.io/ns#mi'([],[]),Rs,Rs).
+head_body_('https://idlabresearch.github.io/ns#mi'([G|Gs],[]),[head_body_(G,Goals,Gs),'https://idlabresearch.github.io/ns#mi'(Goals,[])|Rs],Rs).
 
 head_body_(head_body_(Head,Goals0,Goals),Rs,Rs) :-
     head_body_(Head,Goals0,Goals).
@@ -22,4 +22,4 @@ head_body_(sum(0,M,M),Rs,Rs).
 head_body_(sum(s(N),M,s(K)),[sum(N,M,K)|Rs],Rs).
 
 % query
-'https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#factorial'(s(s(s(s(s(0))))),_X)],true)],true) => true.
+'https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#factorial'(s(s(s(s(s(0))))),_X)],[])],[]) => true.

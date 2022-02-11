@@ -11,7 +11,7 @@
 'https://idlabresearch.github.io/ns#atan'([1,2],[1.3389725222944935,0.4023594781085251]) => true.
 
 % running dt.js
-'http://example.org/ns#N1000'('http://example.org/ns#z',true) => true.
+'http://example.org/ns#N1000'('http://example.org/ns#z',[]) => true.
 
 % running easter.js
 'https://idlabresearch.github.io/ns#easter'(2021,[4,4]) => true.
@@ -132,7 +132,7 @@
 'https://idlabresearch.github.io/ns#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],[[9,8],[9,7],[9,6],[9,5],[8,5],[7,5],[6,5],[5,5],[5,4],[5,3],[5,2],[4,2],[3,2],[2,2],[1,2],[1,1]]) => true.
 
 % running mi.js
-'https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#factorial'(s(s(s(s(s(0))))),s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))],true)],true) => true.
+'https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#factorial'(s(s(s(s(s(0))))),s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))],[])],[]) => true.
 
 % running polygon.js
 'https://idlabresearch.github.io/ns#area'([[3,2],[6,2],[7,6],[4,6],[5,5],[5,3],[3,2]],7.5) => true.
@@ -158,9 +158,9 @@
 'https://idlabresearch.github.io/ns#sdcoding'(2,2) => true.
 
 % running socrates.js
-'https://idlabresearch.github.io/ns#proof_step'(('http://example.org/ns#Man'(A,true)=>'http://example.org/ns#Mortal'(A,true)),('http://example.org/ns#Man'('http://example.org/ns#Socrates',true)=>'http://example.org/ns#Mortal'('http://example.org/ns#Socrates',true))).
-'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Man','http://example.org/ns#Socrates',true],'http://example.org/ns#Man'('http://example.org/ns#Socrates',true)) => true.
-'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Mortal','http://example.org/ns#Socrates',true],'http://example.org/ns#Mortal'('http://example.org/ns#Socrates',true)) => true.
+'https://idlabresearch.github.io/ns#proof_step'(('http://example.org/ns#Man'(A,[])=>'http://example.org/ns#Mortal'(A,[])),('http://example.org/ns#Man'('http://example.org/ns#Socrates',[])=>'http://example.org/ns#Mortal'('http://example.org/ns#Socrates',[]))).
+'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Man','http://example.org/ns#Socrates',[]],'http://example.org/ns#Man'('http://example.org/ns#Socrates',[])) => true.
+'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Mortal','http://example.org/ns#Socrates',[]],'http://example.org/ns#Mortal'('http://example.org/ns#Socrates',[])) => true.
 
 % running turing.js
 'https://idlabresearch.github.io/ns#compute'([1,0,1,0,0,1],[1,0,1,0,1,0,#]) => true.
