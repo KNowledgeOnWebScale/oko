@@ -14,7 +14,7 @@ run :-
         J is I+1,
         format(Out,"'http://example.org/ns#N~d'(X,[]) :- 'http://example.org/ns#N~d'(X,[]).~n",[J,I]),
         format(Out,"'http://example.org/ns#I~d'(X,[]) :- 'http://example.org/ns#N~d'(X,[]).~n",[J,I]),
-        format(Out,"'http://example.org/ns#I~d'(X,[]) :- 'http://example.org/ns#N~d'(X,[]).~n",[J,I]),
+        format(Out,"'http://example.org/ns#J~d'(X,[]) :- 'http://example.org/ns#N~d'(X,[]).~n",[J,I]),
         fail
     ;   true
     ),
