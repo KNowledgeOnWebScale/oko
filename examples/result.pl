@@ -11,7 +11,11 @@
 'https://idlabresearch.github.io/ns#atan'([1,2],[1.3389725222944935,0.4023594781085251]) => true.
 
 % running dt.js
-'http://example.org/ns#N1000'('http://example.org/ns#z',[]) => true.
+'http://example.org/ns#N1'('http://example.org/ns#z','http://example.org/ns#N1') => true.
+'http://example.org/ns#N10'('http://example.org/ns#z','http://example.org/ns#N10') => true.
+'http://example.org/ns#N100'('http://example.org/ns#z','http://example.org/ns#N100') => true.
+'http://example.org/ns#N1000'('http://example.org/ns#z','http://example.org/ns#N1000') => true.
+'http://example.org/ns#N10000'('http://example.org/ns#z','http://example.org/ns#N10000') => true.
 
 % running easter.js
 'https://idlabresearch.github.io/ns#easter'(2021,[4,4]) => true.
@@ -158,9 +162,9 @@
 'https://idlabresearch.github.io/ns#sdcoding'(2,2) => true.
 
 % running socrates.js
-'https://idlabresearch.github.io/ns#proof_step'(('http://example.org/ns#Man'(A,[])=>'http://example.org/ns#Mortal'(A,[])),('http://example.org/ns#Man'('http://example.org/ns#Socrates',[])=>'http://example.org/ns#Mortal'('http://example.org/ns#Socrates',[]))).
-'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Man','http://example.org/ns#Socrates',[]],'http://example.org/ns#Man'('http://example.org/ns#Socrates',[])) => true.
-'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Mortal','http://example.org/ns#Socrates',[]],'http://example.org/ns#Mortal'('http://example.org/ns#Socrates',[])) => true.
+'https://idlabresearch.github.io/ns#proof_step'(('http://example.org/ns#Man'(A,'http://example.org/ns#Man')=>'http://example.org/ns#Mortal'(A,'http://example.org/ns#Mortal')),('http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')=>'http://example.org/ns#Mortal'('http://example.org/ns#Socrates','http://example.org/ns#Mortal'))).
+'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Man','http://example.org/ns#Socrates','http://example.org/ns#Man'],'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')) => true.
+'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Mortal','http://example.org/ns#Socrates','http://example.org/ns#Mortal'],'http://example.org/ns#Mortal'('http://example.org/ns#Socrates','http://example.org/ns#Mortal')) => true.
 
 % running turing.js
 'https://idlabresearch.github.io/ns#compute'([1,0,1,0,0,1],[1,0,1,0,1,0,#]) => true.
