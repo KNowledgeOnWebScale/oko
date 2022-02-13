@@ -32,11 +32,26 @@ some parts substituted and eventually containing more variables than in the orig
 This forms a dialogue leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
 
 ## Installation and test
+
+### Node
+
+Install [Node.js](https://nodejs.org/en/download/) and then
+
 ```
 $ git clone https://github.com/IDLabResearch/Webeye
 $ cd Webeye
 $ npm install tau-prolog
-$ ./test
+$ ./test_on_node
+```
+
+### Rust
+
+Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) `rebis-dev` branch and then
+
+```
+$ git clone https://github.com/IDLabResearch/Webeye
+$ cd Webeye
+$ ./test_on_rust
 ```
 
 ## Background

@@ -6,12 +6,14 @@
 %
 
 :- use_module(library(lists)).
+:- use_module(library(terms)).
 
 :- op(1150,xfx,=>).
 
 :- dynamic((=>)/2).
 :- dynamic(brake/0).
 :- dynamic(label/1).
+:- dynamic(pred/1).
 :- dynamic(answer/1).
 :- dynamic(proof_step/1).
 
@@ -82,7 +84,12 @@ astep(A,false) :-
     halt.
 astep(_,A) :-
     (   \+A
-    ->  asserta(A)
+    ->  asserta(A),
+        (   A =.. [B|_],
+            \+pred(B)
+        ->  assertz(pred(B))
+        ;   true
+        )
     ;   true
     ).
 
@@ -91,10 +98,8 @@ astep(_,A) :-
 %
 'https://idlabresearch.github.io/ns#find_triple'([P,S,O],Triple) :-
     (   var(P)
-    ->  current_predicate(P/2),
-        P \= =>
+    ->  pred(P)
     ;   true
     ),
     Triple =.. [P,S,O],
-    predicate_property(Triple,dynamic),
     Triple.

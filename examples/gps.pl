@@ -2,6 +2,7 @@
 % See background paper https://arxiv.org/pdf/2010.12027.pdf
 
 :- use_module(library(lists)).
+:- use_module(library(iso_ext)).
 
 % find paths in the state space from initial state to goal state within limits
 'https://idlabresearch.github.io/ns#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) :-

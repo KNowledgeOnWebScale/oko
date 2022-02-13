@@ -162,6 +162,7 @@
 'https://idlabresearch.github.io/ns#sdcoding'(2,2) => true.
 
 % running examples/socrates.pl
+'https://idlabresearch.github.io/ns#proof_step'((true=>'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')),(true=>'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man'))).
 'https://idlabresearch.github.io/ns#proof_step'(('http://example.org/ns#Man'(A,'http://example.org/ns#Man')=>'http://example.org/ns#Mortal'(A,'http://example.org/ns#Mortal')),('http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')=>'http://example.org/ns#Mortal'('http://example.org/ns#Socrates','http://example.org/ns#Mortal'))).
 'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Man','http://example.org/ns#Socrates','http://example.org/ns#Man'],'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')) => true.
 'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Mortal','http://example.org/ns#Socrates','http://example.org/ns#Mortal'],'http://example.org/ns#Mortal'('http://example.org/ns#Socrates','http://example.org/ns#Mortal')) => true.

@@ -3,7 +3,7 @@
 :- dynamic('http://example.org/ns#Man'/2).
 :- dynamic('http://example.org/ns#Mortal'/2).
 
-'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man').
+true => 'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man').
 
 'http://example.org/ns#Man'(X,'http://example.org/ns#Man') => 'http://example.org/ns#Mortal'(X,'http://example.org/ns#Mortal').
 
