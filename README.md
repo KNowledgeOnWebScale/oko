@@ -31,6 +31,11 @@ Queries are posed and answered as `GRAPH => true.` so the answers are also queri
 some parts substituted and eventually containing more variables than in the original query.
 This forms a dialogue leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
 
+Class membership is currently expressed as `class_iri(element_iri,class_iri)` with the assumption that an instance of
+[rdfs:Class](https://www.w3.org/TR/rdf-schema/#ch_class) is a
+[rdfs:subPropertyOf](https://www.w3.org/TR/rdf-schema/#ch_subpropertyof)
+[rdf:type](https://www.w3.org/TR/rdf-schema/#ch_type).
+
 ## Installation and test
 
 ### Node
