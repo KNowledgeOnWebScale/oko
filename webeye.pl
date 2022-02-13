@@ -88,7 +88,7 @@ astep(A,false) :-
 astep(_,A) :-
     (   \+A
     ->  asserta(A),
-        (   A =.. [B|_],
+        (   functor(A,B,2),
             \+pred(B)
         ->  assertz(pred(B))
         ;   true
