@@ -1,4 +1,4 @@
-% running complex.js
+% running examples/complex.pl
 'https://idlabresearch.github.io/ns#exp'([[-1,0],[0.5,0]],[6.123233995736766e-17,1.0]) => true.
 'https://idlabresearch.github.io/ns#exp'([[e,0],[0,pi]],[-1.0,1.2246467991473532e-16]) => true.
 'https://idlabresearch.github.io/ns#log'([[e,0],[-1,0]],[0.0,3.141592653589793]) => true.
@@ -10,14 +10,14 @@
 'https://idlabresearch.github.io/ns#acos'([2,0],[0.0,-1.3169578969248166]) => true.
 'https://idlabresearch.github.io/ns#atan'([1,2],[1.3389725222944935,0.4023594781085251]) => true.
 
-% running dt.js
+% running examples/dt.pl
 'http://example.org/ns#N1'('http://example.org/ns#z','http://example.org/ns#N1') => true.
 'http://example.org/ns#N10'('http://example.org/ns#z','http://example.org/ns#N10') => true.
 'http://example.org/ns#N100'('http://example.org/ns#z','http://example.org/ns#N100') => true.
 'http://example.org/ns#N1000'('http://example.org/ns#z','http://example.org/ns#N1000') => true.
 'http://example.org/ns#N10000'('http://example.org/ns#z','http://example.org/ns#N10000') => true.
 
-% running easter.js
+% running examples/easter.pl
 'https://idlabresearch.github.io/ns#easter'(2021,[4,4]) => true.
 'https://idlabresearch.github.io/ns#easter'(2022,[4,17]) => true.
 'https://idlabresearch.github.io/ns#easter'(2023,[4,9]) => true.
@@ -49,7 +49,7 @@
 'https://idlabresearch.github.io/ns#easter'(2049,[4,18]) => true.
 'https://idlabresearch.github.io/ns#easter'(2050,[4,10]) => true.
 
-% running fourcolor.js
+% running examples/fourcolor.pl
 'https://idlabresearch.github.io/ns#colors'('http://example.org/ns#map1',[['http://example.org/ns#p1','http://example.org/ns#c4'],['http://example.org/ns#p2','http://example.org/ns#c3'],['http://example.org/ns#p3','http://example.org/ns#c2'],['http://example.org/ns#p4','http://example.org/ns#c1'],['http://example.org/ns#p5','http://example.org/ns#c1']]) => true.
 'https://idlabresearch.github.io/ns#colors'('http://example.org/ns#map1',[['http://example.org/ns#p1','http://example.org/ns#c3'],['http://example.org/ns#p2','http://example.org/ns#c4'],['http://example.org/ns#p3','http://example.org/ns#c2'],['http://example.org/ns#p4','http://example.org/ns#c1'],['http://example.org/ns#p5','http://example.org/ns#c1']]) => true.
 'https://idlabresearch.github.io/ns#colors'('http://example.org/ns#map1',[['http://example.org/ns#p1','http://example.org/ns#c4'],['http://example.org/ns#p2','http://example.org/ns#c2'],['http://example.org/ns#p3','http://example.org/ns#c3'],['http://example.org/ns#p4','http://example.org/ns#c1'],['http://example.org/ns#p5','http://example.org/ns#c1']]) => true.
@@ -99,12 +99,12 @@
 'https://idlabresearch.github.io/ns#colors'('http://example.org/ns#map1',[['http://example.org/ns#p1','http://example.org/ns#c2'],['http://example.org/ns#p2','http://example.org/ns#c1'],['http://example.org/ns#p3','http://example.org/ns#c3'],['http://example.org/ns#p4','http://example.org/ns#c4'],['http://example.org/ns#p5','http://example.org/ns#c4']]) => true.
 'https://idlabresearch.github.io/ns#colors'('http://example.org/ns#map1',[['http://example.org/ns#p1','http://example.org/ns#c1'],['http://example.org/ns#p2','http://example.org/ns#c2'],['http://example.org/ns#p3','http://example.org/ns#c3'],['http://example.org/ns#p4','http://example.org/ns#c4'],['http://example.org/ns#p5','http://example.org/ns#c4']]) => true.
 
-% running gps.js
+% running examples/gps.pl
 'https://idlabresearch.github.io/ns#proof_step'((true=>'https://idlabresearch.github.io/ns#location'('http://example.org/ns#i1','http://example.org/ns#gent')),(true=>'https://idlabresearch.github.io/ns#location'('http://example.org/ns#i1','http://example.org/ns#gent'))).
 'https://idlabresearch.github.io/ns#findpath'('http://example.org/ns#map_be',['https://idlabresearch.github.io/ns#location'('http://example.org/ns#i1','http://example.org/ns#oostende'),['http://example.org/ns#drive_gent_brugge','http://example.org/ns#drive_brugge_oostende'],2400.0,0.01,0.9408,0.99,[5000.0,5.0,0.2,0.4,1]]) => true.
 'https://idlabresearch.github.io/ns#findpath'('http://example.org/ns#map_be',['https://idlabresearch.github.io/ns#location'('http://example.org/ns#i1','http://example.org/ns#oostende'),['http://example.org/ns#drive_gent_kortrijk','http://example.org/ns#drive_kortrijk_brugge','http://example.org/ns#drive_brugge_oostende'],4100.0,0.018000000000000002,0.903168,0.9801,[5000.0,5.0,0.2,0.4,1]]) => true.
 
-% running graph.js
+% running examples/graph.pl
 'https://idlabresearch.github.io/ns#proof_step'((true=>'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#paris','http://example.org/ns#orleans'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#paris','http://example.org/ns#chartres'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#paris','http://example.org/ns#amiens'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#orleans','http://example.org/ns#blois'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#orleans','http://example.org/ns#bourges'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#blois','http://example.org/ns#tours'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#chartres','http://example.org/ns#lemans'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#lemans','http://example.org/ns#angers'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#lemans','http://example.org/ns#tours'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#angers','http://example.org/ns#nantes')),(true=>'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#paris','http://example.org/ns#orleans'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#paris','http://example.org/ns#chartres'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#paris','http://example.org/ns#amiens'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#orleans','http://example.org/ns#blois'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#orleans','http://example.org/ns#bourges'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#blois','http://example.org/ns#tours'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#chartres','http://example.org/ns#lemans'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#lemans','http://example.org/ns#angers'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#lemans','http://example.org/ns#tours'),'https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#angers','http://example.org/ns#nantes'))).
 'https://idlabresearch.github.io/ns#proof_step'(('https://idlabresearch.github.io/ns#oneway'(A,B)=>'https://idlabresearch.github.io/ns#path'(A,B)),('https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#angers','http://example.org/ns#nantes')=>'https://idlabresearch.github.io/ns#path'('http://example.org/ns#angers','http://example.org/ns#nantes'))).
 'https://idlabresearch.github.io/ns#proof_step'(('https://idlabresearch.github.io/ns#oneway'(A,B)=>'https://idlabresearch.github.io/ns#path'(A,B)),('https://idlabresearch.github.io/ns#oneway'('http://example.org/ns#lemans','http://example.org/ns#tours')=>'https://idlabresearch.github.io/ns#path'('http://example.org/ns#lemans','http://example.org/ns#tours'))).
@@ -132,16 +132,16 @@
 'https://idlabresearch.github.io/ns#path'('http://example.org/ns#paris','http://example.org/ns#nantes') => true.
 'https://idlabresearch.github.io/ns#path'('http://example.org/ns#chartres','http://example.org/ns#nantes') => true.
 
-% running lee.js
+% running examples/lee.pl
 'https://idlabresearch.github.io/ns#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],[[9,8],[9,7],[9,6],[9,5],[8,5],[7,5],[6,5],[5,5],[5,4],[5,3],[5,2],[4,2],[3,2],[2,2],[1,2],[1,1]]) => true.
 
-% running mi.js
+% running examples/mi.pl
 'https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#factorial'(s(s(s(s(s(0))))),s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))],[])],[]) => true.
 
-% running polygon.js
+% running examples/polygon.pl
 'https://idlabresearch.github.io/ns#area'([[3,2],[6,2],[7,6],[4,6],[5,5],[5,3],[3,2]],7.5) => true.
 
-% running sdcoding.js
+% running examples/sdcoding.pl
 'https://idlabresearch.github.io/ns#proof_step'(('https://idlabresearch.github.io/ns#sdc'(A,B)=>'https://idlabresearch.github.io/ns#sdconot'(A,B)),('https://idlabresearch.github.io/ns#sdc'(0,1)=>'https://idlabresearch.github.io/ns#sdconot'(0,1))).
 'https://idlabresearch.github.io/ns#proof_step'(('https://idlabresearch.github.io/ns#sdc'(A,B)=>'https://idlabresearch.github.io/ns#sdconot'(A,B)),('https://idlabresearch.github.io/ns#sdc'(0,3)=>'https://idlabresearch.github.io/ns#sdconot'(0,3))).
 'https://idlabresearch.github.io/ns#proof_step'(('https://idlabresearch.github.io/ns#sdc'(A,B)=>'https://idlabresearch.github.io/ns#sdconot'(A,B)),('https://idlabresearch.github.io/ns#sdc'(1,0)=>'https://idlabresearch.github.io/ns#sdconot'(1,0))).
@@ -161,12 +161,12 @@
 'https://idlabresearch.github.io/ns#sdcoding'(0,0) => true.
 'https://idlabresearch.github.io/ns#sdcoding'(2,2) => true.
 
-% running socrates.js
+% running examples/socrates.pl
 'https://idlabresearch.github.io/ns#proof_step'(('http://example.org/ns#Man'(A,'http://example.org/ns#Man')=>'http://example.org/ns#Mortal'(A,'http://example.org/ns#Mortal')),('http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')=>'http://example.org/ns#Mortal'('http://example.org/ns#Socrates','http://example.org/ns#Mortal'))).
 'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Man','http://example.org/ns#Socrates','http://example.org/ns#Man'],'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')) => true.
 'https://idlabresearch.github.io/ns#find_triple'(['http://example.org/ns#Mortal','http://example.org/ns#Socrates','http://example.org/ns#Mortal'],'http://example.org/ns#Mortal'('http://example.org/ns#Socrates','http://example.org/ns#Mortal')) => true.
 
-% running turing.js
+% running examples/turing.pl
 'https://idlabresearch.github.io/ns#compute'([1,0,1,0,0,1],[1,0,1,0,1,0,#]) => true.
 'https://idlabresearch.github.io/ns#compute'([1,0,1,1,1,1],[1,1,0,0,0,0,#]) => true.
 'https://idlabresearch.github.io/ns#compute'([1,1,1,1,1,1],[1,0,0,0,0,0,0,#]) => true.

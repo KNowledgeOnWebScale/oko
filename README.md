@@ -36,7 +36,6 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 $ git clone https://github.com/IDLabResearch/Webeye
 $ cd Webeye
 $ npm install tau-prolog
-$ cd examples
 $ ./test
 ```
 

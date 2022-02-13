@@ -4,7 +4,7 @@
 :- use_module(library(format)).
 
 run :-
-    open('dt.pl',write,Out),
+    open('examples/dt.pl',write,Out),
     write(Out,'% Deep taxonomy\n'),
     write(Out,'% See http://ruleml.org/WellnessRules/files/WellnessRulesN3-2009-11-10.pdf\n'),
     write(Out,'\n'),
