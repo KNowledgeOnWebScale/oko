@@ -29,6 +29,9 @@
 %    else backtrack to 2/
 % 4/ if brake or linear_select stop, else assert brake and start again at 1/
 %
+run :-
+    run([]).
+
 run(Options) :-
     (Prem => Conc),
     copy_term((Prem => Conc),Rule),
@@ -96,7 +99,14 @@ astep(_,A) :-
 %
 % built-ins
 %
-'https://idlabresearch.github.io/ns#find_triple'([P,S,O],Triple) :-
+'https://idlabresearch.github.io/ns#spo_triple'([S,P,O],Triple) :-
+    (   var(P)
+    ->  pred(P)
+    ;   true
+    ),
+    Triple =.. [P,S,O].
+
+'https://idlabresearch.github.io/ns#spo_true'([S,P,O],true) :-
     (   var(P)
     ->  pred(P)
     ;   true
