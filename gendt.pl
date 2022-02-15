@@ -20,9 +20,5 @@ run :-
     ),
     write(Out,'\n'),
     write(Out,'% query\n'),
-    write(Out,'\'http://www.w3.org/1999/02/22-rdf-syntax-ns#type\'(_ELEMENT,\'http://example.org/ns#N1\') => true.\n'),
-    write(Out,'\'http://www.w3.org/1999/02/22-rdf-syntax-ns#type\'(_ELEMENT,\'http://example.org/ns#N10\') => true.\n'),
-    write(Out,'\'http://www.w3.org/1999/02/22-rdf-syntax-ns#type\'(_ELEMENT,\'http://example.org/ns#N100\') => true.\n'),
-    write(Out,'\'http://www.w3.org/1999/02/22-rdf-syntax-ns#type\'(_ELEMENT,\'http://example.org/ns#N1000\') => true.\n'),
     write(Out,'\'http://www.w3.org/1999/02/22-rdf-syntax-ns#type\'(_ELEMENT,\'http://example.org/ns#N10000\') => true.\n'),
     close(Out).
