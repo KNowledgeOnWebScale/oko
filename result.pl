@@ -158,10 +158,10 @@
 'https://idlabresearch.github.io/ns#sdcoding'(2,2) => true.
 
 % running examples/socrates.pl
-'https://idlabresearch.github.io/ns#proof_step'((true=>'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')),(true=>'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man'))).
-'https://idlabresearch.github.io/ns#proof_step'(('http://example.org/ns#Man'(A,'http://example.org/ns#Man')=>'http://example.org/ns#Mortal'(A,'http://example.org/ns#Mortal')),('http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man')=>'http://example.org/ns#Mortal'('http://example.org/ns#Socrates','http://example.org/ns#Mortal'))).
-'https://idlabresearch.github.io/ns#pso_true'(['http://example.org/ns#Man','http://example.org/ns#Socrates','http://example.org/ns#Man'],true) => true.
-'https://idlabresearch.github.io/ns#pso_true'(['http://example.org/ns#Mortal','http://example.org/ns#Socrates','http://example.org/ns#Mortal'],true) => true.
+'https://idlabresearch.github.io/ns#proof_step'((true=>'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man')),(true=>'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man'))).
+'https://idlabresearch.github.io/ns#proof_step'(('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(A,'http://example.org/ns#Man')=>'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(A,'http://example.org/ns#Mortal')),('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man')=>'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Mortal'))).
+'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Mortal') => true.
+'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man') => true.
 
 % running examples/turing.pl
 'https://idlabresearch.github.io/ns#compute'([1,0,1,0,0,1],[1,0,1,0,1,0,#]) => true.
