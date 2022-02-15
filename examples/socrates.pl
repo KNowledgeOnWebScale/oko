@@ -1,11 +1,10 @@
 % Socrates is a mortal
 
-:- dynamic('http://example.org/ns#Man'/2).
-:- dynamic('http://example.org/ns#Mortal'/2).
+:- dynamic('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'/2).
 
-true => 'http://example.org/ns#Man'('http://example.org/ns#Socrates','http://example.org/ns#Man').
+true => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man').
 
-'http://example.org/ns#Man'(X,'http://example.org/ns#Man') => 'http://example.org/ns#Mortal'(X,'http://example.org/ns#Mortal').
+'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'http://example.org/ns#Man') => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'http://example.org/ns#Mortal').
 
 % query
-'https://idlabresearch.github.io/ns#pso_true'([_P,_S,_O],true) => true.
+'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(_WHO,_CLASS) => true.
