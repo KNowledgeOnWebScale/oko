@@ -7,4 +7,4 @@ true => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns
 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'http://example.org/ns#Man') => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'http://example.org/ns#Mortal').
 
 % query
-'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(_WHO,_CLASS) => true.
+'https://idlabresearch.github.io/ns#pso_triple'([_P,_S,_O],Triple),Triple => true.

@@ -105,7 +105,3 @@ astep(_,A) :-
     ;   true
     ),
     Triple =.. [P,S,O].
-
-'https://idlabresearch.github.io/ns#pso_true'([P,S,O],true) :-
-    'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple),
-    Triple.
