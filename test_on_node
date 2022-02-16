@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -n "" | tee result_on_node.pl
+for f in examples/*.pl
+do
+    echo "% running $f" | tee -a result_on_node.pl
+    node test_on_node.js "$f" | tee -a result_on_node.pl
+    echo "" | tee -a result_on_node.pl
+done

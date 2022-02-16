@@ -18,12 +18,12 @@ GRAPH           | `TRIPLE,...`
 
 CLAUSE          | Examples
 ----------------|---------
-ASSERTION       | `true => GRAPH.`
+ASSERTION       | `TRIPLE.` `true => GRAPH.`
 FORWARD_RULE    | `GRAPH => GRAPH.`
 QUERY           | `GRAPH => true.`
 ANSWER          | `GRAPH => true.`
 INFERENCE_FUSE  | `GRAPH => false.`
-BACKWARD_RULE   | `TRIPLE :- GRAPH,PROLOG.`
+BACKWARD_RULE   | `TRIPLE :- GRAPH,`[`PROLOG`](http://tau-prolog.org/documentation#prolog)`.`
 
 Webeye performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
 
@@ -31,14 +31,32 @@ Queries are posed and answered as `GRAPH => true.` so the answers are also queri
 some parts substituted and eventually containing more variables than in the original query.
 This forms a dialogue leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
 
+Class membership is currently expressed as `class_iri(element_iri,class_iri)` with the assumption that an instance of
+[rdfs:Class](https://www.w3.org/TR/rdf-schema/#ch_class) is a
+[rdfs:subPropertyOf](https://www.w3.org/TR/rdf-schema/#ch_subpropertyof)
+[rdf:type](https://www.w3.org/TR/rdf-schema/#ch_type).
+
 ## Installation and test
 
-Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) `rebis-dev` branch.
+### Node
+
+Install [Node.js](https://nodejs.org/en/download/) and then
 
 ```
 $ git clone https://github.com/IDLabResearch/Webeye
 $ cd Webeye
-$ ./test
+$ npm install tau-prolog
+$ ./test_on_node
+```
+
+### Rust
+
+Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) `rebis-dev` branch and then
+
+```
+$ git clone https://github.com/IDLabResearch/Webeye
+$ cd Webeye
+$ ./test_on_rust
 ```
 
 ## Background
