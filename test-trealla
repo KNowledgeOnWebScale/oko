@@ -3,6 +3,6 @@ echo -n "" | tee result-trealla.pl
 for f in examples/*.pl
 do
     echo "% running $f" | tee -a result-trealla.pl
-    tpl -g "run([proof_step]),halt" webeye.pl "$f" | tee -a result-trealla.pl
+    tpl -g "run,halt" webeye.pl "$f" | tee -a result-trealla.pl
     echo "" | tee -a result-trealla.pl
 done

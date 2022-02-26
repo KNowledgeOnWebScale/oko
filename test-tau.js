@@ -13,7 +13,7 @@ var program = fs.readFileSync("webeye.pl");
 program += fs.readFileSync(process.argv.slice(2)[0]);
 
 // Goal
-var goal = "catch(run([proof_step]),Err,(writeq(Err),nl)).";
+var goal = "catch(run,Err,(writeq(Err),nl)).";
 
 // Load the program
 session.consult(program, {
