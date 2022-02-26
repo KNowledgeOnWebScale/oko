@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -n "" | tee result-scryer.pl
+for f in examples/*.pl
+do
+    echo "% running $f" | tee -a result-scryer.pl
+    scryer-prolog -g "run([proof_step]),halt" webeye.pl "$f" | tee -a result-scryer.pl
+    echo "" | tee -a result-scryer.pl
+done

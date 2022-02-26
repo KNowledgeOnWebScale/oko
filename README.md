@@ -38,7 +38,7 @@ Class membership is currently expressed as `class_iri(element_iri,class_iri)` wi
 
 ## Installation and test
 
-### Node
+### Tau Prolog
 
 Install [Node.js](https://nodejs.org/en/download/) and then
 
@@ -46,17 +46,27 @@ Install [Node.js](https://nodejs.org/en/download/) and then
 $ git clone https://github.com/IDLabResearch/Webeye
 $ cd Webeye
 $ npm install tau-prolog
-$ ./test_on_node
+$ ./test-tau
 ```
 
-### Rust
+### Scryer Prolog
 
 Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) `rebis-dev` branch and then
 
 ```
 $ git clone https://github.com/IDLabResearch/Webeye
 $ cd Webeye
-$ ./test_on_rust
+$ ./test-scryer
+```
+
+### Trealla Prolog
+
+Install [Trealla Prolog](https://github.com/trealla-prolog/trealla#building) and then
+
+```
+$ git clone https://github.com/IDLabResearch/Webeye
+$ cd Webeye
+$ ./test-trealla
 ```
 
 ## Background
