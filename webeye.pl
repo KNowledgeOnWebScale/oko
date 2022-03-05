@@ -25,6 +25,7 @@ term_expansion((Head <= Body),(Head :- Body)).
 
 goal_expansion('https://idlabresearch.github.io/ns#builtin'(!,true),!).
 
+%
 % run Webeye abstract machine with a list of options:
 %   - single_answer: output only one answer
 %   - proof_step: output proof steps
@@ -107,12 +108,12 @@ astep(_,A) :-
 %
 % built-ins
 %
+'https://idlabresearch.github.io/ns#builtin'(B,true) :-
+    B.
+
 'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple) :-
     (   var(P)
     ->  pred(P)
     ;   true
     ),
     Triple =.. [P,S,O].
-
-'https://idlabresearch.github.io/ns#builtin'(B,true) :-
-    B.
