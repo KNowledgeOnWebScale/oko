@@ -74,9 +74,3 @@
 'https://idlabresearch.github.io/ns#pso_triple'(['http://www.w3.org/1999/02/22-rdf-syntax-ns#type','http://example.org/ns#Socrates','http://example.org/ns#Mortal'],'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Mortal')),'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Mortal') => true.
 'https://idlabresearch.github.io/ns#pso_triple'(['http://www.w3.org/1999/02/22-rdf-syntax-ns#type','http://example.org/ns#Socrates','http://example.org/ns#Man'],'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man')),'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man') => true.
 
-% running examples/turing.n3p
-'https://idlabresearch.github.io/ns#compute'([1,0,1,0,0,1],[1,0,1,0,1,0,#]) => true.
-'https://idlabresearch.github.io/ns#compute'([1,0,1,1,1,1],[1,1,0,0,0,0,#]) => true.
-'https://idlabresearch.github.io/ns#compute'([1,1,1,1,1,1],[1,0,0,0,0,0,0,#]) => true.
-'https://idlabresearch.github.io/ns#compute'([],[1,#]) => true.
-

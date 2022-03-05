@@ -23,74 +23,74 @@
 :- dynamic('https://idlabresearch.github.io/ns#sdconot'/2).
 
 % |R) = |0, 0) + |1, 1)
-r(false,false).
-r(true,true).
+'http://example.org/ns#r'(false,false).
+'http://example.org/ns#r'(true,true).
 
 % |S) = |0, 1) + |1, 0)
-s(false,true).
-s(true,false).
+'http://example.org/ns#s'(false,true).
+'http://example.org/ns#s'(true,false).
 
 % |U) = |0, 0) + |1, 0) + |1, 1)
-u(false,false).
-u(true,false).
-u(true,true).
+'http://example.org/ns#u'(false,false).
+'http://example.org/ns#u'(true,false).
+'http://example.org/ns#u'(true,true).
 
 % |V ) = |0, 0) + |0, 1) + |1, 0)
-v(false,false).
-v(false,true).
-v(true,false).
+'http://example.org/ns#v'(false,false).
+'http://example.org/ns#v'(false,true).
+'http://example.org/ns#v'(true,false).
 
 % ID |0) = |0)
-id(false,false).
+'http://example.org/ns#id'(false,false).
 % ID |1) = |1)
-id(true,true).
+'http://example.org/ns#id'(true,true).
 
 % G |0) = |1)
-g(false,true).
+'http://example.org/ns#g'(false,true).
 % G |1) = |0)
-g(true,false).
+'http://example.org/ns#g'(true,false).
 
 % K |0) = |0)
-k(false,false).
+'http://example.org/ns#k'(false,false).
 % K |1) = |0) + |1)
-k(true,false).
-k(true,true).
+'http://example.org/ns#k'(true,false).
+'http://example.org/ns#k'(true,true).
 
 % KG
-kg(X,Y) :-
-    g(X,Z),
-    k(Z,Y).
+'http://example.org/ns#kg'(X,Y) <=
+    'http://example.org/ns#g'(X,Z),
+    'http://example.org/ns#k'(Z,Y).
 
 % GK
-gk(X,Y) :-
-    k(X,Z),
-    g(Z,Y).
+'http://example.org/ns#gk'(X,Y) <=
+    'http://example.org/ns#k'(X,Z),
+    'http://example.org/ns#g'(Z,Y).
 
 % alice
-alice(0,[X,Y]) :-
-    id(X,Y).
-alice(1,[X,Y]) :-
-    g(X,Y).
-alice(2,[X,Y]) :-
-    k(X,Y).
-alice(3,[X,Y]) :-
-    kg(X,Y).
+'http://example.org/ns#alice'(0,[X,Y]) <=
+    'http://example.org/ns#id'(X,Y).
+'http://example.org/ns#alice'(1,[X,Y]) <=
+    'http://example.org/ns#g'(X,Y).
+'http://example.org/ns#alice'(2,[X,Y]) <=
+    'http://example.org/ns#k'(X,Y).
+'http://example.org/ns#alice'(3,[X,Y]) <=
+    'http://example.org/ns#kg'(X,Y).
 
 % bob
-bob([X,Y],0) :-
-    gk(X,Y).
-bob([X,Y],1) :-
-    k(X,Y).
-bob([X,Y],2) :-
-    g(X,Y).
-bob([X,Y],3) :-
-    id(X,Y).
+'http://example.org/ns#bob'([X,Y],0) <=
+    'http://example.org/ns#gk'(X,Y).
+'http://example.org/ns#bob'([X,Y],1) <=
+    'http://example.org/ns#k'(X,Y).
+'http://example.org/ns#bob'([X,Y],2) <=
+    'http://example.org/ns#g'(X,Y).
+'http://example.org/ns#bob'([X,Y],3) <=
+    'http://example.org/ns#id'(X,Y).
 
 % superdense coding
 'https://idlabresearch.github.io/ns#sdc'(N,M) <=
-    r(X,Y),
-    alice(N,[X,B]),
-    bob([B,Y],M),
+    'http://example.org/ns#r'(X,Y),
+    'http://example.org/ns#alice'(N,[X,B]),
+    'http://example.org/ns#bob'([B,Y],M),
     (   'https://idlabresearch.github.io/ns#sdcoding'(N,M)
     ->  'https://idlabresearch.github.io/ns#builtin'(retract('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true)
     ;   'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true)
