@@ -12,6 +12,7 @@
 :- op(1150,xfx,=>).
 :- op(1175,xfx,<=).
 
+term_expansion((true <= 'https://idlabresearch.github.io/ns#builtin'(B,true)), (:- B)).
 term_expansion((Head <= Body), (Head :- Body)).
 
 :- dynamic((=>)/2).

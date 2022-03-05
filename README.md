@@ -24,6 +24,7 @@ QUERY           | `GRAPH => true.`
 ANSWER          | `GRAPH => true.`
 INFERENCE_FUSE  | `GRAPH => false.`
 BACKWARD_RULE   | `TRIPLE <= GRAPH.`
+DIRECTIVE       | `true <= GRAPH.`
 
 Webeye performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
 

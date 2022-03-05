@@ -1,6 +1,6 @@
 % Socrates is a mortal
 
-:- dynamic('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'/2).
+true <= 'https://idlabresearch.github.io/ns#builtin'(dynamic('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'/2),true).
 
 true => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man').
 

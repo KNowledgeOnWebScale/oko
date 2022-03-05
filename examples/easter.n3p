@@ -1,6 +1,6 @@
 % calculate easter date
 
-:- use_module(library(between)).
+true <= 'https://idlabresearch.github.io/ns#builtin'(use_module(library(between)),true).
 
 'https://idlabresearch.github.io/ns#easter'(Year,[Month,Day]) <=
     'https://idlabresearch.github.io/ns#builtin'(A is Year rem 19,true),
