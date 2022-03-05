@@ -5,7 +5,7 @@ It participates in dialogues leading to necessary and sufficient answers, suppor
 
 ## Webized reasoning
 
-[Webeye](https://github.com/IDLabResearch/Webeye) is using n3p syntax::
+[Webeye](https://github.com/IDLabResearch/Webeye) is using n3p syntax:
 
 TERM            | Examples
 ----------------|---------
