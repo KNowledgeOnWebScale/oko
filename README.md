@@ -33,10 +33,9 @@ some parts substituted and eventually containing more variables than in the orig
 This forms a dialogue leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
 
 The builtin triples are:
-```
-'https://idlabresearch.github.io/ns#builtin'(Builtin,true)
-'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)
-```
+
+- `'https://idlabresearch.github.io/ns#builtin'`([Builtin](https://www.deransart.fr/prolog/bips.html),true)
+- `'https://idlabresearch.github.io/ns#pso_triple'`([P,S,O],Triple)
 
 ## Installation and test
 
