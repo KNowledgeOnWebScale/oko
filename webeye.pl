@@ -12,9 +12,6 @@
 :- op(1150,xfx,=>).
 :- op(1175,xfx,<=).
 
-term_expansion((true <= 'https://idlabresearch.github.io/ns#builtin'(B,true)), (:- B)).
-term_expansion((Head <= Body), (Head :- Body)).
-
 :- dynamic((=>)/2).
 :- dynamic((<=)/2).
 :- dynamic(brake/0).
@@ -22,6 +19,11 @@ term_expansion((Head <= Body), (Head :- Body)).
 :- dynamic(pred/1).
 :- dynamic(answer/1).
 :- dynamic(proof_step/1).
+
+term_expansion((true <= 'https://idlabresearch.github.io/ns#builtin'(B,true)),(:- B)).
+term_expansion((Head <= Body),(Head :- Body)).
+
+goal_expansion('https://idlabresearch.github.io/ns#builtin'(!,true),!).
 
 % run Webeye abstract machine with a list of options:
 %   - single_answer: output only one answer

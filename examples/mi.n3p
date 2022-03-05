@@ -3,23 +3,23 @@
 
 'https://idlabresearch.github.io/ns#mi'([],[]).
 'https://idlabresearch.github.io/ns#mi'([G|Gs],[]) <=
-    head_body_(G,Goals,Gs),
+    'https://idlabresearch.github.io/ns#head_body_'([G,Goals],Gs),
     'https://idlabresearch.github.io/ns#mi'(Goals,[]).
 
-head_body_('https://idlabresearch.github.io/ns#mi'([],[]),Rs,Rs).
-head_body_('https://idlabresearch.github.io/ns#mi'([G|Gs],[]),[head_body_(G,Goals,Gs),'https://idlabresearch.github.io/ns#mi'(Goals,[])|Rs],Rs).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#mi'([],[]),Rs],Rs).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#mi'([G|Gs],[]),['https://idlabresearch.github.io/ns#head_body_'([G,Goals],Gs),'https://idlabresearch.github.io/ns#mi'(Goals,[])|Rs]],Rs).
 
-head_body_(head_body_(Head,Goals0,Goals),Rs,Rs) :-
-    head_body_(Head,Goals0,Goals).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#head_body_'([Head,Goals0],Goals),Rs],Rs) :-
+    'https://idlabresearch.github.io/ns#head_body_'([Head,Goals0],Goals).
 
-head_body_('https://idlabresearch.github.io/ns#factorial'(0,s(0)),Rs,Rs).
-head_body_('https://idlabresearch.github.io/ns#factorial'(s(N),F),['https://idlabresearch.github.io/ns#factorial'(N,F1),prod(s(N),F1,F)|Rs],Rs).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#factorial'(0,s(0)),Rs],Rs).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#factorial'(s(N),F),['https://idlabresearch.github.io/ns#factorial'(N,F1),'https://idlabresearch.github.io/ns#prod'([s(N),F1],F)|Rs]],Rs).
 
-head_body_(prod(0,_,0),Rs,Rs).
-head_body_(prod(s(N),M,P),[prod(N,M,K),sum(K,M,P)|Rs],Rs).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#prod'([0,_],0),Rs],Rs).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#prod'([s(N),M],P),['https://idlabresearch.github.io/ns#prod'([N,M],K),'https://idlabresearch.github.io/ns#sum'([K,M],P)|Rs]],Rs).
 
-head_body_(sum(0,M,M),Rs,Rs).
-head_body_(sum(s(N),M,s(K)),[sum(N,M,K)|Rs],Rs).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#sum'([0,M],M),Rs],Rs).
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#sum'([s(N),M],s(K)),['https://idlabresearch.github.io/ns#sum'([N,M],K)|Rs]],Rs).
 
 % query
 'https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#mi'(['https://idlabresearch.github.io/ns#factorial'(s(s(s(s(s(0))))),_X)],[])],[]) => true.
