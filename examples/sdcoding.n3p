@@ -92,8 +92,8 @@ bob([X,Y],3) :-
     alice(N,[X,B]),
     bob([B,Y],M),
     (   'https://idlabresearch.github.io/ns#sdcoding'(N,M)
-    ->  retract('https://idlabresearch.github.io/ns#sdcoding'(N,M))
-    ;   assertz('https://idlabresearch.github.io/ns#sdcoding'(N,M))
+    ->  'https://idlabresearch.github.io/ns#builtin'(retract('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true)
+    ;   'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true)
     ).
 
 % superdense coding appearing an odd number of times
