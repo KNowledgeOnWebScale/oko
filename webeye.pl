@@ -7,10 +7,15 @@
 
 :- use_module(library(lists)).
 :- use_module(library(terms)).
+:- use_module(library(iso_ext)).
 
 :- op(1150,xfx,=>).
+:- op(1175,xfx,<=).
+
+term_expansion((Head <= Body), (Head :- Body)).
 
 :- dynamic((=>)/2).
+:- dynamic((<=)/2).
 :- dynamic(brake/0).
 :- dynamic(label/1).
 :- dynamic(pred/1).

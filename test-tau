@@ -1,8 +1,0 @@
-#!/bin/bash
-echo -n "" | tee result-tau.pl
-for f in examples/*.pl
-do
-    echo "% running $f" | tee -a result-tau.pl
-    node test-tau.js "$f" | tee -a result-tau.pl
-    echo "" | tee -a result-tau.pl
-done
