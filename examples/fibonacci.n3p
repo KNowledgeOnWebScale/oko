@@ -12,8 +12,8 @@
     'https://idlabresearch.github.io/ns#fib'([E,C,F],D).
 
 % query implies goal
-'https://idlabresearch.github.io/ns#fibonacci'(9,_ANSWER) => true.
-'https://idlabresearch.github.io/ns#fibonacci'(91,_ANSWER) => true.
-'https://idlabresearch.github.io/ns#fibonacci'(283,_ANSWER) => true.
-'https://idlabresearch.github.io/ns#fibonacci'(3674,_ANSWER) => true.
+'https://idlabresearch.github.io/ns#fibonacci'(1,_ANSWER) => true.
+'https://idlabresearch.github.io/ns#fibonacci'(10,_ANSWER) => true.
+'https://idlabresearch.github.io/ns#fibonacci'(100,_ANSWER) => true.
+'https://idlabresearch.github.io/ns#fibonacci'(1000,_ANSWER) => true.
 'https://idlabresearch.github.io/ns#fibonacci'(10000,_ANSWER) => true.
