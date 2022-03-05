@@ -110,3 +110,6 @@ astep(_,A) :-
     ;   true
     ),
     Triple =.. [P,S,O].
+
+'https://idlabresearch.github.io/ns#builtin'(B,true) :-
+    B.

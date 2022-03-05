@@ -2,23 +2,23 @@
 
 'https://idlabresearch.github.io/ns#exp'([[A,B],[C,D]],[E,F]) <=
     polar([A,B],[G,H]),
-    E is G^C*exp(-D*H)*cos(D*log(G)+C*H),
-    F is G^C*exp(-D*H)*sin(D*log(G)+C*H).
+    'https://idlabresearch.github.io/ns#builtin'(E is G^C*exp(-D*H)*cos(D*log(G)+C*H),true),
+    'https://idlabresearch.github.io/ns#builtin'(F is G^C*exp(-D*H)*sin(D*log(G)+C*H),true).
 
 'https://idlabresearch.github.io/ns#log'([[A,B],[C,D]],[E,F]) <=
     polar([A,B],[G,H]),
     polar([C,D],[I,J]),
-    K is log(G),
-    L is log(I),
+    'https://idlabresearch.github.io/ns#builtin'(K is log(G),true),
+    'https://idlabresearch.github.io/ns#builtin'(L is log(I),true),
     divide([[L,J],[K,H]],[E,F]).
 
 'https://idlabresearch.github.io/ns#sin'([A,B],[C,D]) <=
-    C is sin(A)*(exp(B)+exp(-B))/2,
-    D is cos(A)*(exp(B)-exp(-B))/2.
+    'https://idlabresearch.github.io/ns#builtin'(C is sin(A)*(exp(B)+exp(-B))/2,true),
+    'https://idlabresearch.github.io/ns#builtin'(D is cos(A)*(exp(B)-exp(-B))/2,true).
 
 'https://idlabresearch.github.io/ns#cos'([A,B],[C,D]) <=
-    C is cos(A)*(exp(B)+exp(-B))/2,
-    D is -sin(A)*(exp(B)-exp(-B))/2.
+    'https://idlabresearch.github.io/ns#builtin'(C is cos(A)*(exp(B)+exp(-B))/2,true),
+    'https://idlabresearch.github.io/ns#builtin'(D is -sin(A)*(exp(B)-exp(-B))/2,true).
 
 'https://idlabresearch.github.io/ns#tan'(A,B) <=
     'https://idlabresearch.github.io/ns#sin'(A,C),
@@ -26,16 +26,16 @@
     divide([C,D],B).
 
 'https://idlabresearch.github.io/ns#asin'([A,B],[C,D]) <=
-    E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,
-    F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,
-    C is asin(E),
-    D is log(F+sqrt(F^2-1)).
+    'https://idlabresearch.github.io/ns#builtin'(E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,true),
+    'https://idlabresearch.github.io/ns#builtin'(F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,true),
+    'https://idlabresearch.github.io/ns#builtin'(C is asin(E),true),
+    'https://idlabresearch.github.io/ns#builtin'(D is log(F+sqrt(F^2-1)),true).
 
 'https://idlabresearch.github.io/ns#acos'([A,B],[C,D]) <=
-    E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,
-    F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,
-    C is acos(E),
-    D is -log(F+sqrt(F^2-1)).
+    'https://idlabresearch.github.io/ns#builtin'(E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,true),
+    'https://idlabresearch.github.io/ns#builtin'(F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,true),
+    'https://idlabresearch.github.io/ns#builtin'(C is acos(E),true),
+    'https://idlabresearch.github.io/ns#builtin'(D is -log(F+sqrt(F^2-1)),true).
 
 'https://idlabresearch.github.io/ns#atan'(A,B) <=
     subtract([[0,1],A],C),
