@@ -9,7 +9,7 @@
 'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#mi'([],[]),Rs],Rs).
 'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#mi'([G|Gs],[]),['https://idlabresearch.github.io/ns#head_body_'([G,Goals],Gs),'https://idlabresearch.github.io/ns#mi'(Goals,[])|Rs]],Rs).
 
-'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#head_body_'([Head,Goals0],Goals),Rs],Rs) :-
+'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#head_body_'([Head,Goals0],Goals),Rs],Rs) <=
     'https://idlabresearch.github.io/ns#head_body_'([Head,Goals0],Goals).
 
 'https://idlabresearch.github.io/ns#head_body_'(['https://idlabresearch.github.io/ns#factorial'(0,s(0)),Rs],Rs).
