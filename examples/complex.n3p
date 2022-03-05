@@ -1,16 +1,16 @@
 % See https://en.wikipedia.org/wiki/Complex_number
 
 'https://idlabresearch.github.io/ns#exp'([[A,B],[C,D]],[E,F]) <=
-    polar([A,B],[G,H]),
+    'https://idlabresearch.github.io/ns#polar'([A,B],[G,H]),
     'https://idlabresearch.github.io/ns#builtin'(E is G^C*exp(-D*H)*cos(D*log(G)+C*H),true),
     'https://idlabresearch.github.io/ns#builtin'(F is G^C*exp(-D*H)*sin(D*log(G)+C*H),true).
 
 'https://idlabresearch.github.io/ns#log'([[A,B],[C,D]],[E,F]) <=
-    polar([A,B],[G,H]),
-    polar([C,D],[I,J]),
+    'https://idlabresearch.github.io/ns#polar'([A,B],[G,H]),
+    'https://idlabresearch.github.io/ns#polar'([C,D],[I,J]),
     'https://idlabresearch.github.io/ns#builtin'(K is log(G),true),
     'https://idlabresearch.github.io/ns#builtin'(L is log(I),true),
-    divide([[L,J],[K,H]],[E,F]).
+    'https://idlabresearch.github.io/ns#divide'([[L,J],[K,H]],[E,F]).
 
 'https://idlabresearch.github.io/ns#sin'([A,B],[C,D]) <=
     'https://idlabresearch.github.io/ns#builtin'(C is sin(A)*(exp(B)+exp(-B))/2,true),
@@ -23,7 +23,7 @@
 'https://idlabresearch.github.io/ns#tan'(A,B) <=
     'https://idlabresearch.github.io/ns#sin'(A,C),
     'https://idlabresearch.github.io/ns#cos'(A,D),
-    divide([C,D],B).
+    'https://idlabresearch.github.io/ns#divide'([C,D],B).
 
 'https://idlabresearch.github.io/ns#asin'([A,B],[C,D]) <=
     'https://idlabresearch.github.io/ns#builtin'(E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,true),
@@ -38,57 +38,57 @@
     'https://idlabresearch.github.io/ns#builtin'(D is -log(F+sqrt(F^2-1)),true).
 
 'https://idlabresearch.github.io/ns#atan'(A,B) <=
-    subtract([[0,1],A],C),
-    add([[0,1],A],D),
-    divide([C,D],E),
+    'https://idlabresearch.github.io/ns#subtract'([[0,1],A],C),
+    'https://idlabresearch.github.io/ns#add'([[0,1],A],D),
+    'https://idlabresearch.github.io/ns#divide'([C,D],E),
     'https://idlabresearch.github.io/ns#log'([[e,0],E],F),
-    divide([F,[0,2]],B).
+    'https://idlabresearch.github.io/ns#divide'([F,[0,2]],B).
 
-polar([A,B],[C,D]) :-
-    C is sqrt(A^2+B^2),
-    E is acos(abs(A)/C),
-    angular(A,B,E,D).
+'https://idlabresearch.github.io/ns#polar'([A,B],[C,D]) <=
+    'https://idlabresearch.github.io/ns#builtin'(C is sqrt(A^2+B^2),true),
+    'https://idlabresearch.github.io/ns#builtin'(E is acos(abs(A)/C),true),
+    'https://idlabresearch.github.io/ns#angular'([A,B,E],D).
 
-angular(A,B,C,D) :-
-    A >= 0,
-    B >= 0,
-    D = C.
-angular(A,B,C,D) :-
-    A < 0,
-    B >= 0,
-    D is pi-C.
-angular(A,B,C,D) :-
-    A < 0,
-    B < 0,
-    D is C+pi.
-angular(A,B,C,D) :-
-    A >= 0,
-    B < 0,
-    D is 2*pi-C.
+'https://idlabresearch.github.io/ns#angular'([A,B,C],D) <=
+    'https://idlabresearch.github.io/ns#builtin'(A >= 0,true),
+    'https://idlabresearch.github.io/ns#builtin'(B >= 0,true),
+    'https://idlabresearch.github.io/ns#builtin'(D = C,true).
+'https://idlabresearch.github.io/ns#angular'([A,B,C],D) <=
+    'https://idlabresearch.github.io/ns#builtin'(A < 0,true),
+    'https://idlabresearch.github.io/ns#builtin'(B >= 0,true),
+    'https://idlabresearch.github.io/ns#builtin'(D is pi-C,true).
+'https://idlabresearch.github.io/ns#angular'([A,B,C],D) <=
+    'https://idlabresearch.github.io/ns#builtin'(A < 0,true),
+    'https://idlabresearch.github.io/ns#builtin'(B < 0,true),
+    'https://idlabresearch.github.io/ns#builtin'(D is C+pi,true).
+'https://idlabresearch.github.io/ns#angular'([A,B,C],D) <=
+    'https://idlabresearch.github.io/ns#builtin'(A >= 0,true),
+    'https://idlabresearch.github.io/ns#builtin'(B < 0,true),
+    'https://idlabresearch.github.io/ns#builtin'(D is 2*pi-C,true).
 
-minus([A,B],[C,D]) :-
-    C is -A,
-    D is -B.
+'https://idlabresearch.github.io/ns#minus'([A,B],[C,D]) <=
+    'https://idlabresearch.github.io/ns#builtin'(C is -A,true),
+    'https://idlabresearch.github.io/ns#builtin'(D is -B,true).
 
-subtract([[A,B],[C,D]],[E,F]) :-
-    E is A-C,
-    F is B-D.
+'https://idlabresearch.github.io/ns#subtract'([[A,B],[C,D]],[E,F]) <=
+    'https://idlabresearch.github.io/ns#builtin'(E is A-C,true),
+    'https://idlabresearch.github.io/ns#builtin'(F is B-D,true).
 
-add([[A,B],[C,D]],[E,F]) :-
-    E is A+C,
-    F is B+D.
+'https://idlabresearch.github.io/ns#add'([[A,B],[C,D]],[E,F]) <=
+    'https://idlabresearch.github.io/ns#builtin'(E is A+C,true),
+    'https://idlabresearch.github.io/ns#builtin'(F is B+D,true).
 
-multiply([[A,B],[C,D]],[E,F]) :-
-    E is A*C-B*D,
-    F is A*D+B*C.
+'https://idlabresearch.github.io/ns#multiply'([[A,B],[C,D]],[E,F]) <=
+    'https://idlabresearch.github.io/ns#builtin'(E is A*C-B*D,true),
+    'https://idlabresearch.github.io/ns#builtin'(F is A*D+B*C,true).
 
-inverse([A,B],[C,D]) :-
-    C is A/(A^2+B^2),
-    D is -B/(A^2+B^2).
+'https://idlabresearch.github.io/ns#inverse'([A,B],[C,D]) <=
+    'https://idlabresearch.github.io/ns#builtin'(C is A/(A^2+B^2),true),
+    'https://idlabresearch.github.io/ns#builtin'(D is -B/(A^2+B^2),true).
 
-divide([A,B],C) :-
-    inverse(B,D),
-    multiply([A,D],C).
+'https://idlabresearch.github.io/ns#divide'([A,B],C) <=
+    'https://idlabresearch.github.io/ns#inverse'(B,D),
+    'https://idlabresearch.github.io/ns#multiply'([A,D],C).
 
 % query
 'https://idlabresearch.github.io/ns#exp'([[-1,0],[0.5,0]],_ANSWER) => true.
