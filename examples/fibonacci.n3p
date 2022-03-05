@@ -1,0 +1,19 @@
+% See https://en.wikipedia.org/wiki/'https://idlabresearch.github.io/ns#fibonacci'_number
+
+'https://idlabresearch.github.io/ns#fibonacci'(A,B) :-
+    'https://idlabresearch.github.io/ns#fib'([A,0,1],B).
+
+'https://idlabresearch.github.io/ns#fib'([0,A,_],A).
+'https://idlabresearch.github.io/ns#fib'([1,_,A],A).
+'https://idlabresearch.github.io/ns#fib'([A,B,C],D) :-
+    'https://idlabresearch.github.io/ns#builtin'(A > 1,true),
+    'https://idlabresearch.github.io/ns#builtin'(E is A-1,true),
+    'https://idlabresearch.github.io/ns#builtin'(F is B+C,true),
+    'https://idlabresearch.github.io/ns#fib'([E,C,F],D).
+
+% query implies goal
+'https://idlabresearch.github.io/ns#fibonacci'(9,_ANSWER) => true.
+'https://idlabresearch.github.io/ns#fibonacci'(91,_ANSWER) => true.
+'https://idlabresearch.github.io/ns#fibonacci'(283,_ANSWER) => true.
+'https://idlabresearch.github.io/ns#fibonacci'(3674,_ANSWER) => true.
+'https://idlabresearch.github.io/ns#fibonacci'(10000,_ANSWER) => true.
