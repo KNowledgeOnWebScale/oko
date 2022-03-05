@@ -32,6 +32,12 @@ Queries are posed and answered as `GRAPH => true.` so the answers are also queri
 some parts substituted and eventually containing more variables than in the original query.
 This forms a dialogue leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
 
+The builtin triples are:
+```
+'https://idlabresearch.github.io/ns#builtin'(Builtin,true)
+'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)
+```
+
 ## Installation and test
 
 Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) `rebis-dev` branch and then

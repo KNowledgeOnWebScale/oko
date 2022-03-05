@@ -108,8 +108,8 @@ astep(_,A) :-
 %
 % built-ins
 %
-'https://idlabresearch.github.io/ns#builtin'(B,true) :-
-    B.
+'https://idlabresearch.github.io/ns#builtin'(Builtin,true) :-
+    Builtin.
 
 'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple) :-
     (   var(P)
