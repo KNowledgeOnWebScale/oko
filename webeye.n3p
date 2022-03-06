@@ -45,7 +45,7 @@
 
 'https://idlabresearch.github.io/ns#options'(Options,[Prem,true,_]) <=
     'https://idlabresearch.github.io/ns#labelvars'(Prem,true),
-    'https://idlabresearch.github.io/ns#builtin'('https://idlabresearch.github.io/ns#write_answer'(Prem,true),true),
+    'https://idlabresearch.github.io/ns#write_answer'(Prem,true),
     'https://idlabresearch.github.io/ns#builtin'(member(single_answer,Options),true).
 'https://idlabresearch.github.io/ns#options'(Options,[Prem,Conc,Rule]) <=
     'https://idlabresearch.github.io/ns#builtin'(\+Conc,true),
