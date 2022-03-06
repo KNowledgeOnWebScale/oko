@@ -21,9 +21,9 @@
 :- dynamic(proof_step/1).
 
 term_expansion((Head <= Body),(Head :- Body)).
-term_expansion(('https://idlabresearch.github.io/ns#directive'(Term,true)),(:- Term)).
+term_expansion(('https://idlabresearch.github.io/ns#builtin'(Term,true)),(:- Term)).
 
-goal_expansion('https://idlabresearch.github.io/ns#builtin'(!,true),!).
+goal_expansion('https://idlabresearch.github.io/ns#builtin'(Goal,true),Goal).
 
 %
 % run Webeye abstract machine with a list of options:
@@ -108,9 +108,6 @@ astep(_,A) :-
 %
 % built-ins
 %
-'https://idlabresearch.github.io/ns#builtin'(Builtin,true) :-
-    Builtin.
-
 'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple) :-
     (   var(P)
     ->  pred(P)

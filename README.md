@@ -33,7 +33,7 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 
 The builtin triples are:
 
-- `'https://idlabresearch.github.io/ns#builtin'(`[`Builtin`](https://www.deransart.fr/prolog/bips.html)`,true)`
+- `'https://idlabresearch.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,true)`
 - `'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)`
 
 ## Installation and test
