@@ -1,0 +1,112 @@
+% --------------------
+% Webeye -- Jos De Roo
+% --------------------
+%
+% See https://idlabresearch.github.io/Webeye/
+%
+
+'https://idlabresearch.github.io/ns#builtin'(use_module(library(lists)),true).
+'https://idlabresearch.github.io/ns#builtin'(use_module(library(terms)),true).
+'https://idlabresearch.github.io/ns#builtin'(use_module(library(iso_ext)),true).
+
+'https://idlabresearch.github.io/ns#builtin'(dynamic((=>)/2),true).
+'https://idlabresearch.github.io/ns#builtin'(dynamic((<=)/2),true).
+'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#brake'/2),true).
+'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#label'/2),true).
+'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#pred'/2),true).
+'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#answer'/2),true).
+'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#proof_step'/2),true).
+
+%
+% run Webeye abstract machine with a list of options:
+%   - single_answer: output only one answer
+%   - proof_step: output proof steps
+%   - linear_select: use the rules only once
+%
+% 1/ select rule P => C
+% 2/ prove P and if it fails backtrack to 1/
+% 3/ if C = true answer with P => true and if single_answer stop, else backtrack to 2/
+%    else if ~C assert C, retract brake and backtrack to 2/
+%    else backtrack to 2/
+% 4/ if brake halt, else assert brake and start again at 1/
+%
+'https://idlabresearch.github.io/ns#main'(Options,true) <=
+    'https://idlabresearch.github.io/ns#builtin'(call((Prem => Conc)),true),
+    'https://idlabresearch.github.io/ns#builtin'(copy_term((Prem => Conc),Rule),true),
+    'https://idlabresearch.github.io/ns#labelvars'(Rule,true),
+    'https://idlabresearch.github.io/ns#builtin'(call(Prem),true),
+    'https://idlabresearch.github.io/ns#options'(Options,[Prem,Conc,Rule]).
+'https://idlabresearch.github.io/ns#main'(_,_) <=
+    'https://idlabresearch.github.io/ns#brake'(true,true),
+    'https://idlabresearch.github.io/ns#builtin'(halt,true).
+'https://idlabresearch.github.io/ns#main'(Options,true) <=
+    'https://idlabresearch.github.io/ns#builtin'(asserta('https://idlabresearch.github.io/ns#brake'(true,true)),true),
+    'https://idlabresearch.github.io/ns#main'(Options,true).
+
+'https://idlabresearch.github.io/ns#options'(Options,[Prem,true,_]) <=
+    'https://idlabresearch.github.io/ns#labelvars'(Prem,true),
+    'https://idlabresearch.github.io/ns#builtin'('https://idlabresearch.github.io/ns#write_answer'(Prem,true),true),
+    'https://idlabresearch.github.io/ns#builtin'(member(single_answer,Options),true).
+'https://idlabresearch.github.io/ns#options'(Options,[Prem,Conc,Rule]) <=
+    'https://idlabresearch.github.io/ns#builtin'(\+Conc,true),
+    'https://idlabresearch.github.io/ns#labelvars'(Conc,true),
+    'https://idlabresearch.github.io/ns#astep'(Prem,Conc),
+    'https://idlabresearch.github.io/ns#write_proof_step'(Options,[Prem,Conc,Rule]),
+    'https://idlabresearch.github.io/ns#builtin'(retract('https://idlabresearch.github.io/ns#brake'(true,true)),true),
+    'https://idlabresearch.github.io/ns#builtin'(fail,true).
+
+'https://idlabresearch.github.io/ns#write_answer'(Prem,true) <=
+    'https://idlabresearch.github.io/ns#builtin'(\+'https://idlabresearch.github.io/ns#answer'((Prem => true),true),true),
+    'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#answer'((Prem => true),true)),true),
+    'https://idlabresearch.github.io/ns#builtin'(writeq(Prem),true),
+    'https://idlabresearch.github.io/ns#builtin'(write(' => true.\n'),true).
+'https://idlabresearch.github.io/ns#write_answer'(_,true).
+
+'https://idlabresearch.github.io/ns#write_proof_step'(Options,[Prem,Conc,Rule]) <=
+    'https://idlabresearch.github.io/ns#builtin'(member(proof_step,Options),true),
+    'https://idlabresearch.github.io/ns#builtin'(\+'https://idlabresearch.github.io/ns#proof_step'((Prem => Conc),true),true),
+    'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#proof_step'((Prem => Conc),true)),true),
+    'https://idlabresearch.github.io/ns#builtin'(writeq('https://idlabresearch.github.io/ns#proof_step'(Rule,(Prem => Conc))),true),
+    'https://idlabresearch.github.io/ns#builtin'(write('.\n'),true).
+'https://idlabresearch.github.io/ns#write_proof_step'(_,[_,_,_]).
+
+% create witnesses
+'https://idlabresearch.github.io/ns#labelvars'(Term,true) <=
+    'https://idlabresearch.github.io/ns#builtin'(retract('https://idlabresearch.github.io/ns#label'(Current,true)),true),
+    'https://idlabresearch.github.io/ns#builtin'(!,true),
+    'https://idlabresearch.github.io/ns#builtin'(numbervars(Term,Current,Next),true),
+    'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#label'(Next,true)),true).
+'https://idlabresearch.github.io/ns#labelvars'(Term,true) <=
+    'https://idlabresearch.github.io/ns#builtin'(numbervars(Term,0,Next),true),
+    'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#label'(Next,true)),true).
+
+% assert new step
+'https://idlabresearch.github.io/ns#astep'(A,(B,C)) <=
+    'https://idlabresearch.github.io/ns#astep'(A,B),
+    'https://idlabresearch.github.io/ns#astep'(A,C).
+'https://idlabresearch.github.io/ns#astep'(A,false) <=
+    'https://idlabresearch.github.io/ns#builtin'(writeq(A),true),
+    'https://idlabresearch.github.io/ns#builtin'(write(' => false.\n'),true),
+    'https://idlabresearch.github.io/ns#builtin'(halt,true).
+'https://idlabresearch.github.io/ns#astep'(_,A) <=
+    'https://idlabresearch.github.io/ns#builtin'(\+A,true),
+    'https://idlabresearch.github.io/ns#builtin'(asserta(A),true),
+    'https://idlabresearch.github.io/ns#apred'(A,true).
+'https://idlabresearch.github.io/ns#astep'(_,_).
+
+'https://idlabresearch.github.io/ns#apred'(A,true) <=
+    'https://idlabresearch.github.io/ns#builtin'(functor(A,B,2),true),
+    'https://idlabresearch.github.io/ns#builtin'(\+'https://idlabresearch.github.io/ns#pred'(B,true),true),
+    'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#pred'(B,true)),true).
+'https://idlabresearch.github.io/ns#apred'(_,true).
+
+%
+% built-ins
+%
+'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple) <=
+    'https://idlabresearch.github.io/ns#builtin'(var(P),true),
+    'https://idlabresearch.github.io/ns#builtin'(!,true),
+    'https://idlabresearch.github.io/ns#pred'(P,true),
+    'https://idlabresearch.github.io/ns#builtin'(Triple =.. [P,S,O],true).
+'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple) <=
+    'https://idlabresearch.github.io/ns#builtin'(Triple =.. [P,S,O],true).
