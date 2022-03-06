@@ -21,7 +21,6 @@
 % run Webeye abstract machine with a list of options:
 %   - single_answer: output only one answer
 %   - proof_step: output proof steps
-%   - linear_select: use the rules only once
 %
 % 1/ select rule P => C
 % 2/ prove P and if it fails backtrack to 1/
