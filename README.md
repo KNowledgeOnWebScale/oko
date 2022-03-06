@@ -9,7 +9,7 @@ It participates in dialogues leading to necessary and sufficient answers, suppor
 
 TERM            | Examples
 ----------------|---------
-IRI             | `'http://example.org/etc#Socrates'`
+IRI             | `'http://example.org/ns#Socrates'`
 VARIABLE        | `X` `_abc`
 LITERAL         | `"abc"` `1.52` `1e-18` `pi` `dt("2022-01-15",'http://www.w3.org/2001/XMLSchema#date')`
 LIST            | `[TERM,...]` `[TERM,...\|LIST]`
