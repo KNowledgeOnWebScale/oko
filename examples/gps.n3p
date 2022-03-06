@@ -1,8 +1,8 @@
 % Goal driven Parallel Sequences -- Jos De Roo
 % See background paper https://arxiv.org/pdf/2010.12027.pdf
 
-true <= 'https://idlabresearch.github.io/ns#builtin'(use_module(library(lists)),true).
-true <= 'https://idlabresearch.github.io/ns#builtin'(use_module(library(iso_ext)),true).
+'https://idlabresearch.github.io/ns#directive'(use_module(library(lists)),true).
+'https://idlabresearch.github.io/ns#directive'(use_module(library(iso_ext)),true).
 
 % find paths in the state space from initial state to goal state within limits
 'https://idlabresearch.github.io/ns#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=
@@ -71,8 +71,8 @@ true <= 'https://idlabresearch.github.io/ns#builtin'(use_module(library(iso_ext)
     'https://idlabresearch.github.io/ns#conj_list'(B,C).
 
 % test data
-true <= 'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#description'/2),true).
-true <= 'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#location'/2),true).
+'https://idlabresearch.github.io/ns#directive'(dynamic('https://idlabresearch.github.io/ns#description'/2),true).
+'https://idlabresearch.github.io/ns#directive'(dynamic('https://idlabresearch.github.io/ns#location'/2),true).
 
 % partial map of Belgium
 'https://idlabresearch.github.io/ns#description'(

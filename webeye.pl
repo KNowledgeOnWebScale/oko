@@ -20,8 +20,8 @@
 :- dynamic(answer/1).
 :- dynamic(proof_step/1).
 
-term_expansion((true <= 'https://idlabresearch.github.io/ns#builtin'(B,true)),(:- B)).
 term_expansion((Head <= Body),(Head :- Body)).
+term_expansion(('https://idlabresearch.github.io/ns#directive'(Term,true)),(:- Term)).
 
 goal_expansion('https://idlabresearch.github.io/ns#builtin'(!,true),!).
 

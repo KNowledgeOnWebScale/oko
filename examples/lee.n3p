@@ -1,7 +1,7 @@
 % Lee routing for VLSI circuits
 % Code from the book "The Art of Prolog" Chapter 16
 
-true <= 'https://idlabresearch.github.io/ns#builtin'(use_module(library(lists)),true).
+'https://idlabresearch.github.io/ns#directive'(use_module(library(lists)),true).
 
 'https://idlabresearch.github.io/ns#route'([Source,Destination,Obstacles],Path) <=
     'https://idlabresearch.github.io/ns#waves'([Destination,[[Source],[]],Obstacles],Waves),
