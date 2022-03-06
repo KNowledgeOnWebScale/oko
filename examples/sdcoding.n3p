@@ -57,44 +57,37 @@
 'http://example.org/ns#k'(true,true).
 
 % KG
-'http://example.org/ns#kg'(X,Y) <=
-    'http://example.org/ns#g'(X,Z),
-    'http://example.org/ns#k'(Z,Y).
+'http://example.org/ns#kg'(X,Y) <= 'http://example.org/ns#g'(X,Z),'http://example.org/ns#k'(Z,Y).
 
 % GK
-'http://example.org/ns#gk'(X,Y) <=
-    'http://example.org/ns#k'(X,Z),
-    'http://example.org/ns#g'(Z,Y).
+'http://example.org/ns#gk'(X,Y) <= 'http://example.org/ns#k'(X,Z),'http://example.org/ns#g'(Z,Y).
 
 % alice
-'http://example.org/ns#alice'(0,[X,Y]) <=
-    'http://example.org/ns#id'(X,Y).
-'http://example.org/ns#alice'(1,[X,Y]) <=
-    'http://example.org/ns#g'(X,Y).
-'http://example.org/ns#alice'(2,[X,Y]) <=
-    'http://example.org/ns#k'(X,Y).
-'http://example.org/ns#alice'(3,[X,Y]) <=
-    'http://example.org/ns#kg'(X,Y).
+'http://example.org/ns#alice'(0,[X,Y]) <= 'http://example.org/ns#id'(X,Y).
+'http://example.org/ns#alice'(1,[X,Y]) <= 'http://example.org/ns#g'(X,Y).
+'http://example.org/ns#alice'(2,[X,Y]) <= 'http://example.org/ns#k'(X,Y).
+'http://example.org/ns#alice'(3,[X,Y]) <= 'http://example.org/ns#kg'(X,Y).
 
 % bob
-'http://example.org/ns#bob'([X,Y],0) <=
-    'http://example.org/ns#gk'(X,Y).
-'http://example.org/ns#bob'([X,Y],1) <=
-    'http://example.org/ns#k'(X,Y).
-'http://example.org/ns#bob'([X,Y],2) <=
-    'http://example.org/ns#g'(X,Y).
-'http://example.org/ns#bob'([X,Y],3) <=
-    'http://example.org/ns#id'(X,Y).
+'http://example.org/ns#bob'([X,Y],0) <= 'http://example.org/ns#gk'(X,Y).
+'http://example.org/ns#bob'([X,Y],1) <= 'http://example.org/ns#k'(X,Y).
+'http://example.org/ns#bob'([X,Y],2) <= 'http://example.org/ns#g'(X,Y).
+'http://example.org/ns#bob'([X,Y],3) <= 'http://example.org/ns#id'(X,Y).
 
 % superdense coding
 'https://idlabresearch.github.io/ns#sdc'(N,M) <=
     'http://example.org/ns#r'(X,Y),
     'http://example.org/ns#alice'(N,[X,B]),
     'http://example.org/ns#bob'([B,Y],M),
-    (   'https://idlabresearch.github.io/ns#sdcoding'(N,M)
-    ->  'https://idlabresearch.github.io/ns#builtin'(retract('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true)
-    ;   'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true)
-    ).
+    'https://idlabresearch.github.io/ns#sd'(N,M).
+
+% asserting sdcoding an odd number of times
+'https://idlabresearch.github.io/ns#sd'(N,M) <=
+    'https://idlabresearch.github.io/ns#sdcoding'(N,M),
+    'https://idlabresearch.github.io/ns#builtin'(!,true),
+    'https://idlabresearch.github.io/ns#builtin'(retract('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true).
+'https://idlabresearch.github.io/ns#sd'(N,M) <=
+    'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true).
 
 % superdense coding appearing an odd number of times
 'https://idlabresearch.github.io/ns#sdc'(_N,_M) => 'https://idlabresearch.github.io/ns#sdconot'(_N,_M).
