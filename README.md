@@ -38,7 +38,7 @@ The builtin triples are:
 
 ## Installation and test
 
-Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) `rebis-dev` branch and then
+Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) and then
 
 ```
 $ git clone https://github.com/IDLabResearch/Webeye
