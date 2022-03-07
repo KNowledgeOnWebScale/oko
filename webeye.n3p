@@ -2,7 +2,7 @@
 % Webeye -- Jos De Roo
 % --------------------
 %
-% See idlabresearch.github.io/Webeye/
+% See https://idlabresearch.github.io/Webeye/
 %
 
 'idlabresearch.github.io/ns#builtin'(use_module(library(lists)),true).
