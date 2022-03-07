@@ -5,7 +5,7 @@ It participates in dialogues leading to necessary and sufficient answers, suppor
 
 ## Webized reasoning
 
-[Webeye](github.com/IDLabResearch/Webeye) is using __n3p__ syntax:
+[Webeye](https://github.com/IDLabResearch/Webeye) is using __n3p__ syntax:
 
 TERM            | Examples
 ----------------|---------
@@ -33,12 +33,12 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 
 The builtin triples are:
 
-- `'idlabresearch.github.io/ns#builtin'(`[`Subject`](www.deransart.fr/prolog/bips.html)`,true)`
+- `'idlabresearch.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,true)`
 - `'idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)`
 
 ## Installation and test
 
-Install [Rust](www.rust-lang.org/tools/install) and [Scryer Prolog](github.com/mthom/scryer-prolog#installing-scryer-prolog) and then
+Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) and then
 
 ```
 $ git clone github.com/IDLabResearch/Webeye
@@ -48,5 +48,5 @@ $ ./test
 
 ## Background
 
-- Personal notes by Tim Berners-Lee: [Design Issues](www.w3.org/DesignIssues/)
-- Book of Markus Triska: [The Power of Prolog](www.metalevel.at/prolog)
+- Personal notes by Tim Berners-Lee: [Design Issues](https://www.w3.org/DesignIssues/)
+- Book of Markus Triska: [The Power of Prolog](https://www.metalevel.at/prolog)
