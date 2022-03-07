@@ -1,5 +1,5 @@
 % Meta-interpretation
-% Original code from www.youtube.com/watch?v=nmBkU-l1zyc&t=1870s
+% Original code from https://www.youtube.com/watch?v=nmBkU-l1zyc&t=1870s
 
 'idlabresearch.github.io/ns#mi'([],[]).
 'idlabresearch.github.io/ns#mi'([G|Gs],[]) <=

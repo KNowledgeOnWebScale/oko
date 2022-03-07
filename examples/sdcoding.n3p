@@ -1,6 +1,6 @@
 % Superdense coding using discrete quantum computing
 
-% See arxiv.org/pdf/1101.3764.pdf and arxiv.org/pdf/1010.2929.pdf
+% See https://arxiv.org/pdf/1101.3764.pdf and arxiv.org/pdf/1010.2929.pdf
 
 % Discrete quantum theory is obtained by instantiating the mathematical framework
 % of Hilbert spaces with a finite field instead of the field of complex numbers.

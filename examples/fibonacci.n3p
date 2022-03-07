@@ -1,4 +1,4 @@
-% See en.wikipedia.org/wiki/'idlabresearch.github.io/ns#fibonacci'_number
+% See https://en.wikipedia.org/wiki/'idlabresearch.github.io/ns#fibonacci'_number
 
 'idlabresearch.github.io/ns#fibonacci'(A,B) <=
     'idlabresearch.github.io/ns#fib'([A,0,1],B).

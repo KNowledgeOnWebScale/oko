@@ -1,5 +1,5 @@
 % Goal driven Parallel Sequences -- Jos De Roo
-% See background paper arxiv.org/pdf/2010.12027.pdf
+% See background paper https://arxiv.org/pdf/2010.12027.pdf
 
 % find paths in the state space from initial state to goal state within limits
 'idlabresearch.github.io/ns#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=

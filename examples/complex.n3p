@@ -1,4 +1,4 @@
-% See en.wikipedia.org/wiki/Complex_number
+% See https://en.wikipedia.org/wiki/Complex_number
 
 'idlabresearch.github.io/ns#exp'([[A,B],[C,D]],[E,F]) <=
     'idlabresearch.github.io/ns#polar'([A,B],[G,H]),
