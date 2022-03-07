@@ -1,68 +1,68 @@
 % Lee routing for VLSI circuits
 % Code from the book "The Art of Prolog" Chapter 16
 
-'https://idlabresearch.github.io/ns#route'([Source,Destination,Obstacles],Path) <=
-    'https://idlabresearch.github.io/ns#waves'([Destination,[[Source],[]],Obstacles],Waves),
-    'https://idlabresearch.github.io/ns#path'([Source,Destination,Waves],Path).
+'idlabresearch.github.io/ns#route'([Source,Destination,Obstacles],Path) <=
+    'idlabresearch.github.io/ns#waves'([Destination,[[Source],[]],Obstacles],Waves),
+    'idlabresearch.github.io/ns#path'([Source,Destination,Waves],Path).
 
-% 'https://idlabresearch.github.io/ns#waves'([Destination,Wavessofar,Obstacles],Waves)
-'https://idlabresearch.github.io/ns#waves'([B,[Wave|Waves],_],Waves) <=
-    'https://idlabresearch.github.io/ns#builtin'(member(B,Wave),true),
-    'https://idlabresearch.github.io/ns#builtin'(!,true).
-'https://idlabresearch.github.io/ns#waves'([B,[Wave,LastWave|LastWaves],Obstacles],Waves) <=
-    'https://idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave),
-    'https://idlabresearch.github.io/ns#waves'([B,[NextWave,Wave,LastWave|LastWaves],Obstacles],Waves).
+% 'idlabresearch.github.io/ns#waves'([Destination,Wavessofar,Obstacles],Waves)
+'idlabresearch.github.io/ns#waves'([B,[Wave|Waves],_],Waves) <=
+    'idlabresearch.github.io/ns#builtin'(member(B,Wave),true),
+    'idlabresearch.github.io/ns#builtin'(!,true).
+'idlabresearch.github.io/ns#waves'([B,[Wave,LastWave|LastWaves],Obstacles],Waves) <=
+    'idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave),
+    'idlabresearch.github.io/ns#waves'([B,[NextWave,Wave,LastWave|LastWaves],Obstacles],Waves).
 
-% 'https://idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave)
-'https://idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave) <=
-    'https://idlabresearch.github.io/ns#builtin'(setof(X,'https://idlabresearch.github.io/ns#admissible'([X,Wave,LastWave],Obstacles),NextWave),true).
+% 'idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave)
+'idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave) <=
+    'idlabresearch.github.io/ns#builtin'(setof(X,'idlabresearch.github.io/ns#admissible'([X,Wave,LastWave],Obstacles),NextWave),true).
 
-'https://idlabresearch.github.io/ns#admissible'([X,Wave,LastWave],Obstacles) <=
-    'https://idlabresearch.github.io/ns#adjacent'([X,Wave],Obstacles),
-    'https://idlabresearch.github.io/ns#builtin'(\+ member(X,LastWave),true),
-    'https://idlabresearch.github.io/ns#builtin'(\+ member(X,Wave),true).
+'idlabresearch.github.io/ns#admissible'([X,Wave,LastWave],Obstacles) <=
+    'idlabresearch.github.io/ns#adjacent'([X,Wave],Obstacles),
+    'idlabresearch.github.io/ns#builtin'(\+ member(X,LastWave),true),
+    'idlabresearch.github.io/ns#builtin'(\+ member(X,Wave),true).
 
-'https://idlabresearch.github.io/ns#adjacent'([X,Wave],Obstacles) <=
-    'https://idlabresearch.github.io/ns#builtin'(member(X1,Wave),true),
-    'https://idlabresearch.github.io/ns#neighbor'(X1,X),
-    'https://idlabresearch.github.io/ns#builtin'(\+ 'https://idlabresearch.github.io/ns#obstructed'(X,Obstacles),true).
+'idlabresearch.github.io/ns#adjacent'([X,Wave],Obstacles) <=
+    'idlabresearch.github.io/ns#builtin'(member(X1,Wave),true),
+    'idlabresearch.github.io/ns#neighbor'(X1,X),
+    'idlabresearch.github.io/ns#builtin'(\+ 'idlabresearch.github.io/ns#obstructed'(X,Obstacles),true).
 
-'https://idlabresearch.github.io/ns#neighbor'([X1,Y],[X2,Y]) <=
-    'https://idlabresearch.github.io/ns#next_to'(X1,X2).
-'https://idlabresearch.github.io/ns#neighbor'([X,Y1],[X,Y2]) <=
-    'https://idlabresearch.github.io/ns#next_to'(Y1,Y2).
+'idlabresearch.github.io/ns#neighbor'([X1,Y],[X2,Y]) <=
+    'idlabresearch.github.io/ns#next_to'(X1,X2).
+'idlabresearch.github.io/ns#neighbor'([X,Y1],[X,Y2]) <=
+    'idlabresearch.github.io/ns#next_to'(Y1,Y2).
 
-'https://idlabresearch.github.io/ns#next_to'(X,X1) <=
-    'https://idlabresearch.github.io/ns#builtin'(X1 is X+1,true).
-'https://idlabresearch.github.io/ns#next_to'(X,X1) <=
-    'https://idlabresearch.github.io/ns#builtin'(X > 0,true),
-    'https://idlabresearch.github.io/ns#builtin'(X1 is X-1,true).
+'idlabresearch.github.io/ns#next_to'(X,X1) <=
+    'idlabresearch.github.io/ns#builtin'(X1 is X+1,true).
+'idlabresearch.github.io/ns#next_to'(X,X1) <=
+    'idlabresearch.github.io/ns#builtin'(X > 0,true),
+    'idlabresearch.github.io/ns#builtin'(X1 is X-1,true).
 
-'https://idlabresearch.github.io/ns#obstructed'(Point,Obstacles) <=
-    'https://idlabresearch.github.io/ns#builtin'(member(Obstacle,Obstacles),true),
-    'https://idlabresearch.github.io/ns#obstructs'(Point,Obstacle).
+'idlabresearch.github.io/ns#obstructed'(Point,Obstacles) <=
+    'idlabresearch.github.io/ns#builtin'(member(Obstacle,Obstacles),true),
+    'idlabresearch.github.io/ns#obstructs'(Point,Obstacle).
 
-'https://idlabresearch.github.io/ns#obstructs'([X,Y],[[X,Y1],[_,Y2]]) <=
-    'https://idlabresearch.github.io/ns#builtin'(Y1 =< Y,true),
-    'https://idlabresearch.github.io/ns#builtin'(Y =< Y2,true).
-'https://idlabresearch.github.io/ns#obstructs'([X,Y],[[_,Y1],[X,Y2]]) <=
-    'https://idlabresearch.github.io/ns#builtin'(Y1 =< Y,true),
-    'https://idlabresearch.github.io/ns#builtin'(Y =< Y2,true).
-'https://idlabresearch.github.io/ns#obstructs'([X,Y],[[X1,Y],[X2,_]]) <=
-    'https://idlabresearch.github.io/ns#builtin'(X1 =< X,true),
-    'https://idlabresearch.github.io/ns#builtin'(X =< X2,true).
-'https://idlabresearch.github.io/ns#obstructs'([X,Y],[[X1,_],[X2,Y]]) <=
-    'https://idlabresearch.github.io/ns#builtin'(X1 =< X,true),
-    'https://idlabresearch.github.io/ns#builtin'(X =< X2,true).
+'idlabresearch.github.io/ns#obstructs'([X,Y],[[X,Y1],[_,Y2]]) <=
+    'idlabresearch.github.io/ns#builtin'(Y1 =< Y,true),
+    'idlabresearch.github.io/ns#builtin'(Y =< Y2,true).
+'idlabresearch.github.io/ns#obstructs'([X,Y],[[_,Y1],[X,Y2]]) <=
+    'idlabresearch.github.io/ns#builtin'(Y1 =< Y,true),
+    'idlabresearch.github.io/ns#builtin'(Y =< Y2,true).
+'idlabresearch.github.io/ns#obstructs'([X,Y],[[X1,Y],[X2,_]]) <=
+    'idlabresearch.github.io/ns#builtin'(X1 =< X,true),
+    'idlabresearch.github.io/ns#builtin'(X =< X2,true).
+'idlabresearch.github.io/ns#obstructs'([X,Y],[[X1,_],[X2,Y]]) <=
+    'idlabresearch.github.io/ns#builtin'(X1 =< X,true),
+    'idlabresearch.github.io/ns#builtin'(X =< X2,true).
 
-% 'https://idlabresearch.github.io/ns#path'([Source,Destination,Waves],Path)
-'https://idlabresearch.github.io/ns#path'([A,A,_],[A]) <=
-    'https://idlabresearch.github.io/ns#builtin'(!,true).
-'https://idlabresearch.github.io/ns#path'([A,B,[Wave|Waves]],[B|Path]) <=
-    'https://idlabresearch.github.io/ns#builtin'(member(B1,Wave),true),
-    'https://idlabresearch.github.io/ns#neighbor'(B,B1),
-    'https://idlabresearch.github.io/ns#builtin'(!,true),
-    'https://idlabresearch.github.io/ns#path'([A,B1,Waves],Path).
+% 'idlabresearch.github.io/ns#path'([Source,Destination,Waves],Path)
+'idlabresearch.github.io/ns#path'([A,A,_],[A]) <=
+    'idlabresearch.github.io/ns#builtin'(!,true).
+'idlabresearch.github.io/ns#path'([A,B,[Wave|Waves]],[B|Path]) <=
+    'idlabresearch.github.io/ns#builtin'(member(B1,Wave),true),
+    'idlabresearch.github.io/ns#neighbor'(B,B1),
+    'idlabresearch.github.io/ns#builtin'(!,true),
+    'idlabresearch.github.io/ns#path'([A,B1,Waves],Path).
 
 % query
-'https://idlabresearch.github.io/ns#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],_ANSWER) => true.
+'idlabresearch.github.io/ns#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],_ANSWER) => true.

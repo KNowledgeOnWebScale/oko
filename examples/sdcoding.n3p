@@ -1,6 +1,6 @@
 % Superdense coding using discrete quantum computing
 
-% See https://arxiv.org/pdf/1101.3764.pdf and https://arxiv.org/pdf/1010.2929.pdf
+% See arxiv.org/pdf/1101.3764.pdf and arxiv.org/pdf/1010.2929.pdf
 
 % Discrete quantum theory is obtained by instantiating the mathematical framework
 % of Hilbert spaces with a finite field instead of the field of complex numbers.
@@ -19,78 +19,78 @@
 % exhibit an interference effect: an answer is produced from the junction if it
 % occurs in one or the other branch but not both.
 
-'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#sdcoding'/2),true).
-'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#sdconot'/2),true).
+'idlabresearch.github.io/ns#builtin'(dynamic('idlabresearch.github.io/ns#sdcoding'/2),true).
+'idlabresearch.github.io/ns#builtin'(dynamic('idlabresearch.github.io/ns#sdconot'/2),true).
 
 % |R) = |0, 0) + |1, 1)
-'http://example.org/ns#r'(false,false).
-'http://example.org/ns#r'(true,true).
+'example.org/ns#r'(false,false).
+'example.org/ns#r'(true,true).
 
 % |S) = |0, 1) + |1, 0)
-'http://example.org/ns#s'(false,true).
-'http://example.org/ns#s'(true,false).
+'example.org/ns#s'(false,true).
+'example.org/ns#s'(true,false).
 
 % |U) = |0, 0) + |1, 0) + |1, 1)
-'http://example.org/ns#u'(false,false).
-'http://example.org/ns#u'(true,false).
-'http://example.org/ns#u'(true,true).
+'example.org/ns#u'(false,false).
+'example.org/ns#u'(true,false).
+'example.org/ns#u'(true,true).
 
 % |V ) = |0, 0) + |0, 1) + |1, 0)
-'http://example.org/ns#v'(false,false).
-'http://example.org/ns#v'(false,true).
-'http://example.org/ns#v'(true,false).
+'example.org/ns#v'(false,false).
+'example.org/ns#v'(false,true).
+'example.org/ns#v'(true,false).
 
 % ID |0) = |0)
-'http://example.org/ns#id'(false,false).
+'example.org/ns#id'(false,false).
 % ID |1) = |1)
-'http://example.org/ns#id'(true,true).
+'example.org/ns#id'(true,true).
 
 % G |0) = |1)
-'http://example.org/ns#g'(false,true).
+'example.org/ns#g'(false,true).
 % G |1) = |0)
-'http://example.org/ns#g'(true,false).
+'example.org/ns#g'(true,false).
 
 % K |0) = |0)
-'http://example.org/ns#k'(false,false).
+'example.org/ns#k'(false,false).
 % K |1) = |0) + |1)
-'http://example.org/ns#k'(true,false).
-'http://example.org/ns#k'(true,true).
+'example.org/ns#k'(true,false).
+'example.org/ns#k'(true,true).
 
 % KG
-'http://example.org/ns#kg'(X,Y) <= 'http://example.org/ns#g'(X,Z),'http://example.org/ns#k'(Z,Y).
+'example.org/ns#kg'(X,Y) <= 'example.org/ns#g'(X,Z),'example.org/ns#k'(Z,Y).
 
 % GK
-'http://example.org/ns#gk'(X,Y) <= 'http://example.org/ns#k'(X,Z),'http://example.org/ns#g'(Z,Y).
+'example.org/ns#gk'(X,Y) <= 'example.org/ns#k'(X,Z),'example.org/ns#g'(Z,Y).
 
 % alice
-'http://example.org/ns#alice'(0,[X,Y]) <= 'http://example.org/ns#id'(X,Y).
-'http://example.org/ns#alice'(1,[X,Y]) <= 'http://example.org/ns#g'(X,Y).
-'http://example.org/ns#alice'(2,[X,Y]) <= 'http://example.org/ns#k'(X,Y).
-'http://example.org/ns#alice'(3,[X,Y]) <= 'http://example.org/ns#kg'(X,Y).
+'example.org/ns#alice'(0,[X,Y]) <= 'example.org/ns#id'(X,Y).
+'example.org/ns#alice'(1,[X,Y]) <= 'example.org/ns#g'(X,Y).
+'example.org/ns#alice'(2,[X,Y]) <= 'example.org/ns#k'(X,Y).
+'example.org/ns#alice'(3,[X,Y]) <= 'example.org/ns#kg'(X,Y).
 
 % bob
-'http://example.org/ns#bob'([X,Y],0) <= 'http://example.org/ns#gk'(X,Y).
-'http://example.org/ns#bob'([X,Y],1) <= 'http://example.org/ns#k'(X,Y).
-'http://example.org/ns#bob'([X,Y],2) <= 'http://example.org/ns#g'(X,Y).
-'http://example.org/ns#bob'([X,Y],3) <= 'http://example.org/ns#id'(X,Y).
+'example.org/ns#bob'([X,Y],0) <= 'example.org/ns#gk'(X,Y).
+'example.org/ns#bob'([X,Y],1) <= 'example.org/ns#k'(X,Y).
+'example.org/ns#bob'([X,Y],2) <= 'example.org/ns#g'(X,Y).
+'example.org/ns#bob'([X,Y],3) <= 'example.org/ns#id'(X,Y).
 
 % superdense coding
-'https://idlabresearch.github.io/ns#sdc'(N,M) <=
-    'http://example.org/ns#r'(X,Y),
-    'http://example.org/ns#alice'(N,[X,B]),
-    'http://example.org/ns#bob'([B,Y],M),
-    'https://idlabresearch.github.io/ns#sd'(N,M).
+'idlabresearch.github.io/ns#sdc'(N,M) <=
+    'example.org/ns#r'(X,Y),
+    'example.org/ns#alice'(N,[X,B]),
+    'example.org/ns#bob'([B,Y],M),
+    'idlabresearch.github.io/ns#sd'(N,M).
 
 % asserting sdcoding an odd number of times
-'https://idlabresearch.github.io/ns#sd'(N,M) <=
-    'https://idlabresearch.github.io/ns#sdcoding'(N,M),
-    'https://idlabresearch.github.io/ns#builtin'(!,true),
-    'https://idlabresearch.github.io/ns#builtin'(retract('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true).
-'https://idlabresearch.github.io/ns#sd'(N,M) <=
-    'https://idlabresearch.github.io/ns#builtin'(assertz('https://idlabresearch.github.io/ns#sdcoding'(N,M)),true).
+'idlabresearch.github.io/ns#sd'(N,M) <=
+    'idlabresearch.github.io/ns#sdcoding'(N,M),
+    'idlabresearch.github.io/ns#builtin'(!,true),
+    'idlabresearch.github.io/ns#builtin'(retract('idlabresearch.github.io/ns#sdcoding'(N,M)),true).
+'idlabresearch.github.io/ns#sd'(N,M) <=
+    'idlabresearch.github.io/ns#builtin'(assertz('idlabresearch.github.io/ns#sdcoding'(N,M)),true).
 
 % superdense coding appearing an odd number of times
-'https://idlabresearch.github.io/ns#sdc'(_N,_M) => 'https://idlabresearch.github.io/ns#sdconot'(_N,_M).
+'idlabresearch.github.io/ns#sdc'(_N,_M) => 'idlabresearch.github.io/ns#sdconot'(_N,_M).
 
 % query
-'https://idlabresearch.github.io/ns#sdcoding'(_N,_M) => true.
+'idlabresearch.github.io/ns#sdcoding'(_N,_M) => true.

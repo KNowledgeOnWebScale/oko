@@ -1,119 +1,119 @@
 % Goal driven Parallel Sequences -- Jos De Roo
-% See background paper https://arxiv.org/pdf/2010.12027.pdf
+% See background paper arxiv.org/pdf/2010.12027.pdf
 
 % find paths in the state space from initial state to goal state within limits
-'https://idlabresearch.github.io/ns#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=
-    'https://idlabresearch.github.io/ns#findpaths'([],[Goal,[],0.0,0.0,1.0,1.0,Path,Duration,Cost,Belief,Comfort,Limits]).
+'idlabresearch.github.io/ns#findpath'(_SCOPE,[Goal,Path,Duration,Cost,Belief,Comfort,Limits]) <=
+    'idlabresearch.github.io/ns#findpaths'([],[Goal,[],0.0,0.0,1.0,1.0,Path,Duration,Cost,Belief,Comfort,Limits]).
 
-'https://idlabresearch.github.io/ns#findpaths'(_Maps,[Goal,Path,Duration,Cost,Belief,Comfort,Path,Duration,Cost,Belief,Comfort,_Limits]) <=
-    'https://idlabresearch.github.io/ns#builtin'(call(Goal),true),
-    'https://idlabresearch.github.io/ns#builtin'(!,true).
-'https://idlabresearch.github.io/ns#findpaths'(Maps_s,[Goal,Path_s,Duration_s,Cost_s,Belief_s,Comfort_s,Path,Duration,Cost,Belief,Comfort,Limits]) <=
-    'https://idlabresearch.github.io/ns#builtin'(Limits = [MaxDuration,MaxCost,MinBelief,MinComfort,MaxStagecount],true),
-    'https://idlabresearch.github.io/ns#builtin'(clause(
-        'https://idlabresearch.github.io/ns#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),
+'idlabresearch.github.io/ns#findpaths'(_Maps,[Goal,Path,Duration,Cost,Belief,Comfort,Path,Duration,Cost,Belief,Comfort,_Limits]) <=
+    'idlabresearch.github.io/ns#builtin'(call(Goal),true),
+    'idlabresearch.github.io/ns#builtin'(!,true).
+'idlabresearch.github.io/ns#findpaths'(Maps_s,[Goal,Path_s,Duration_s,Cost_s,Belief_s,Comfort_s,Path,Duration,Cost,Belief,Comfort,Limits]) <=
+    'idlabresearch.github.io/ns#builtin'(Limits = [MaxDuration,MaxCost,MinBelief,MinComfort,MaxStagecount],true),
+    'idlabresearch.github.io/ns#builtin'(clause(
+        'idlabresearch.github.io/ns#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),
         Where
     ),true),
-    'https://idlabresearch.github.io/ns#builtin'(call(From),true),
-    'https://idlabresearch.github.io/ns#builtin'(call(Where),true),
-    'https://idlabresearch.github.io/ns#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),
-    'https://idlabresearch.github.io/ns#builtin'(append(Maps_s,[Map],Maps_t),true),
-    'https://idlabresearch.github.io/ns#stagecount'(Maps_t,Stagecount),
-    'https://idlabresearch.github.io/ns#builtin'(Stagecount =< MaxStagecount,true),
-    'https://idlabresearch.github.io/ns#builtin'(Duration_t is Duration_s+Duration_n,true),
-    'https://idlabresearch.github.io/ns#builtin'(Duration_t =< MaxDuration,true),
-    'https://idlabresearch.github.io/ns#builtin'(Cost_t is Cost_s+Cost_n,true),
-    'https://idlabresearch.github.io/ns#builtin'(Cost_t =< MaxCost,true),
-    'https://idlabresearch.github.io/ns#builtin'(Belief_t is Belief_s*Belief_n,true),
-    'https://idlabresearch.github.io/ns#builtin'(Belief_t >= MinBelief,true),
-    'https://idlabresearch.github.io/ns#builtin'(Comfort_t is Comfort_s*Comfort_n,true),
-    'https://idlabresearch.github.io/ns#builtin'(Comfort_t >= MinComfort,true),
-    'https://idlabresearch.github.io/ns#builtin'(append(Path_s,[Action],Path_t),true),
-    'https://idlabresearch.github.io/ns#becomes'(From,To),
-    'https://idlabresearch.github.io/ns#builtin'(call_cleanup(
-        'https://idlabresearch.github.io/ns#findpaths'(Maps_t,[Goal,Path_t,Duration_t,Cost_t,Belief_t,Comfort_t,Path,Duration,Cost,Belief,Comfort,Limits]),
-        'https://idlabresearch.github.io/ns#becomes'(To,From)
+    'idlabresearch.github.io/ns#builtin'(call(From),true),
+    'idlabresearch.github.io/ns#builtin'(call(Where),true),
+    'idlabresearch.github.io/ns#description'(Map,[From,Transition,To,Action,Duration_n,Cost_n,Belief_n,Comfort_n]),
+    'idlabresearch.github.io/ns#builtin'(append(Maps_s,[Map],Maps_t),true),
+    'idlabresearch.github.io/ns#stagecount'(Maps_t,Stagecount),
+    'idlabresearch.github.io/ns#builtin'(Stagecount =< MaxStagecount,true),
+    'idlabresearch.github.io/ns#builtin'(Duration_t is Duration_s+Duration_n,true),
+    'idlabresearch.github.io/ns#builtin'(Duration_t =< MaxDuration,true),
+    'idlabresearch.github.io/ns#builtin'(Cost_t is Cost_s+Cost_n,true),
+    'idlabresearch.github.io/ns#builtin'(Cost_t =< MaxCost,true),
+    'idlabresearch.github.io/ns#builtin'(Belief_t is Belief_s*Belief_n,true),
+    'idlabresearch.github.io/ns#builtin'(Belief_t >= MinBelief,true),
+    'idlabresearch.github.io/ns#builtin'(Comfort_t is Comfort_s*Comfort_n,true),
+    'idlabresearch.github.io/ns#builtin'(Comfort_t >= MinComfort,true),
+    'idlabresearch.github.io/ns#builtin'(append(Path_s,[Action],Path_t),true),
+    'idlabresearch.github.io/ns#becomes'(From,To),
+    'idlabresearch.github.io/ns#builtin'(call_cleanup(
+        'idlabresearch.github.io/ns#findpaths'(Maps_t,[Goal,Path_t,Duration_t,Cost_t,Belief_t,Comfort_t,Path,Duration,Cost,Belief,Comfort,Limits]),
+        'idlabresearch.github.io/ns#becomes'(To,From)
     ),true).
 
 % counting the number of stages (a stage is a sequence of steps in the same map)
-'https://idlabresearch.github.io/ns#stagecount'([],1).
-'https://idlabresearch.github.io/ns#stagecount'([C,E|_],B) <=
-    'https://idlabresearch.github.io/ns#builtin'(C \= E,true),
-    'https://idlabresearch.github.io/ns#builtin'(!,true),
-    'https://idlabresearch.github.io/ns#stagecount'(_,G),
-    'https://idlabresearch.github.io/ns#builtin'(B is G+1,true).
-'https://idlabresearch.github.io/ns#stagecount'([_|D],B) <=
-    'https://idlabresearch.github.io/ns#stagecount'(D,B).
+'idlabresearch.github.io/ns#stagecount'([],1).
+'idlabresearch.github.io/ns#stagecount'([C,E|_],B) <=
+    'idlabresearch.github.io/ns#builtin'(C \= E,true),
+    'idlabresearch.github.io/ns#builtin'(!,true),
+    'idlabresearch.github.io/ns#stagecount'(_,G),
+    'idlabresearch.github.io/ns#builtin'(B is G+1,true).
+'idlabresearch.github.io/ns#stagecount'([_|D],B) <=
+    'idlabresearch.github.io/ns#stagecount'(D,B).
 
 % linear implication
-'https://idlabresearch.github.io/ns#becomes'(A,B) <=
-    'https://idlabresearch.github.io/ns#builtin'(catch(A,_,fail),true),
-    'https://idlabresearch.github.io/ns#conj_list'(A,C),
-    'https://idlabresearch.github.io/ns#builtin'(forall(
-        'https://idlabresearch.github.io/ns#builtin'(member(D,C),true),
-        'https://idlabresearch.github.io/ns#builtin'(retract(D),true)
+'idlabresearch.github.io/ns#becomes'(A,B) <=
+    'idlabresearch.github.io/ns#builtin'(catch(A,_,fail),true),
+    'idlabresearch.github.io/ns#conj_list'(A,C),
+    'idlabresearch.github.io/ns#builtin'(forall(
+        'idlabresearch.github.io/ns#builtin'(member(D,C),true),
+        'idlabresearch.github.io/ns#builtin'(retract(D),true)
     ),true),
-    'https://idlabresearch.github.io/ns#conj_list'(B,E),
-    'https://idlabresearch.github.io/ns#builtin'(forall(
-        'https://idlabresearch.github.io/ns#builtin'(member(F,E),true),
-        'https://idlabresearch.github.io/ns#builtin'(assertz(F),true)
+    'idlabresearch.github.io/ns#conj_list'(B,E),
+    'idlabresearch.github.io/ns#builtin'(forall(
+        'idlabresearch.github.io/ns#builtin'(member(F,E),true),
+        'idlabresearch.github.io/ns#builtin'(assertz(F),true)
     ),true).
 
-'https://idlabresearch.github.io/ns#conj_list'(true,[]).
-'https://idlabresearch.github.io/ns#conj_list'(A,[A]) <=
-    'https://idlabresearch.github.io/ns#builtin'(A \= (_,_),true),
-    'https://idlabresearch.github.io/ns#builtin'(A \= false,true),
-    'https://idlabresearch.github.io/ns#builtin'(!,true).
-'https://idlabresearch.github.io/ns#conj_list'((A,B),[A|C]) <=
-    'https://idlabresearch.github.io/ns#conj_list'(B,C).
+'idlabresearch.github.io/ns#conj_list'(true,[]).
+'idlabresearch.github.io/ns#conj_list'(A,[A]) <=
+    'idlabresearch.github.io/ns#builtin'(A \= (_,_),true),
+    'idlabresearch.github.io/ns#builtin'(A \= false,true),
+    'idlabresearch.github.io/ns#builtin'(!,true).
+'idlabresearch.github.io/ns#conj_list'((A,B),[A|C]) <=
+    'idlabresearch.github.io/ns#conj_list'(B,C).
 
 % test data
-'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#description'/2),true).
-'https://idlabresearch.github.io/ns#builtin'(dynamic('https://idlabresearch.github.io/ns#location'/2),true).
+'idlabresearch.github.io/ns#builtin'(dynamic('idlabresearch.github.io/ns#description'/2),true).
+'idlabresearch.github.io/ns#builtin'(dynamic('idlabresearch.github.io/ns#location'/2),true).
 
 % partial map of Belgium
-'https://idlabresearch.github.io/ns#description'(
-    'http://example.org/ns#map_be',
-    [   'https://idlabresearch.github.io/ns#location'(S,'http://example.org/ns#gent'),
+'idlabresearch.github.io/ns#description'(
+    'example.org/ns#map_be',
+    [   'idlabresearch.github.io/ns#location'(S,'example.org/ns#gent'),
         true,
-        'https://idlabresearch.github.io/ns#location'(S,'http://example.org/ns#brugge'),
-        'http://example.org/ns#drive_gent_brugge',
+        'idlabresearch.github.io/ns#location'(S,'example.org/ns#brugge'),
+        'example.org/ns#drive_gent_brugge',
         1500.0,
         0.006,
         0.96,
         0.99
     ]
 ).
-'https://idlabresearch.github.io/ns#description'(
-    'http://example.org/ns#map_be',
-    [   'https://idlabresearch.github.io/ns#location'(S,'http://example.org/ns#gent'),
+'idlabresearch.github.io/ns#description'(
+    'example.org/ns#map_be',
+    [   'idlabresearch.github.io/ns#location'(S,'example.org/ns#gent'),
         true,
-        'https://idlabresearch.github.io/ns#location'(S,'http://example.org/ns#kortrijk'),
-        'http://example.org/ns#drive_gent_kortrijk',
+        'idlabresearch.github.io/ns#location'(S,'example.org/ns#kortrijk'),
+        'example.org/ns#drive_gent_kortrijk',
         1600.0,
         0.007,
         0.96,
         0.99
     ]
 ).
-'https://idlabresearch.github.io/ns#description'(
-    'http://example.org/ns#map_be',
-    [   'https://idlabresearch.github.io/ns#location'(S,'http://example.org/ns#kortrijk'),
+'idlabresearch.github.io/ns#description'(
+    'example.org/ns#map_be',
+    [   'idlabresearch.github.io/ns#location'(S,'example.org/ns#kortrijk'),
         true,
-        'https://idlabresearch.github.io/ns#location'(S,'http://example.org/ns#brugge'),
-        'http://example.org/ns#drive_kortrijk_brugge',
+        'idlabresearch.github.io/ns#location'(S,'example.org/ns#brugge'),
+        'example.org/ns#drive_kortrijk_brugge',
         1600.0,
         0.007,
         0.96,
         0.99
     ]
 ).
-'https://idlabresearch.github.io/ns#description'(
-    'http://example.org/ns#map_be',
-    [   'https://idlabresearch.github.io/ns#location'(S,'http://example.org/ns#brugge'),
+'idlabresearch.github.io/ns#description'(
+    'example.org/ns#map_be',
+    [   'idlabresearch.github.io/ns#location'(S,'example.org/ns#brugge'),
         true,
-        'https://idlabresearch.github.io/ns#location'(S,'http://example.org/ns#oostende'),
-        'http://example.org/ns#drive_brugge_oostende',
+        'idlabresearch.github.io/ns#location'(S,'example.org/ns#oostende'),
+        'example.org/ns#drive_brugge_oostende',
         900.0,
         0.004,
         0.98,
@@ -122,12 +122,12 @@
 ).
 
 % current state
-true => 'https://idlabresearch.github.io/ns#location'('http://example.org/ns#i1','http://example.org/ns#gent').
+true => 'idlabresearch.github.io/ns#location'('example.org/ns#i1','example.org/ns#gent').
 
 % query
-'https://idlabresearch.github.io/ns#findpath'(
-    'http://example.org/ns#map_be',
-    [   'https://idlabresearch.github.io/ns#location'(_SUBJECT,'http://example.org/ns#oostende'),
+'idlabresearch.github.io/ns#findpath'(
+    'example.org/ns#map_be',
+    [   'idlabresearch.github.io/ns#location'(_SUBJECT,'example.org/ns#oostende'),
         _PATH,
         _DURATION,
         _COST,

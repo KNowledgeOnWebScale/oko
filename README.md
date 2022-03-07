@@ -5,13 +5,13 @@ It participates in dialogues leading to necessary and sufficient answers, suppor
 
 ## Webized reasoning
 
-[Webeye](https://github.com/IDLabResearch/Webeye) is using __n3p__ syntax:
+[Webeye](github.com/IDLabResearch/Webeye) is using __n3p__ syntax:
 
 TERM            | Examples
 ----------------|---------
-IRI             | `'http://example.org/ns#Socrates'`
+IRI             | `'example.org/ns#Socrates'`
 VARIABLE        | `X` `_abc`
-LITERAL         | `"abc"` `1.52` `1e-18` `pi` `dt("2022-01-15",'http://www.w3.org/2001/XMLSchema#date')`
+LITERAL         | `"abc"` `1.52` `1e-18` `pi` `dt("2022-01-15",'www.w3.org/2001/XMLSchema#date')`
 LIST            | `[TERM,...]` `[TERM,...\|LIST]`
 TRIPLE          | `IRI(TERM,TERM)`
 GRAPH           | `TRIPLE,...`
@@ -33,20 +33,20 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 
 The builtin triples are:
 
-- `'https://idlabresearch.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,true)`
-- `'https://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)`
+- `'idlabresearch.github.io/ns#builtin'(`[`Subject`](www.deransart.fr/prolog/bips.html)`,true)`
+- `'idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)`
 
 ## Installation and test
 
-Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) and then
+Install [Rust](www.rust-lang.org/tools/install) and [Scryer Prolog](github.com/mthom/scryer-prolog#installing-scryer-prolog) and then
 
 ```
-$ git clone https://github.com/IDLabResearch/Webeye
+$ git clone github.com/IDLabResearch/Webeye
 $ cd Webeye
 $ ./test
 ```
 
 ## Background
 
-- Personal notes by Tim Berners-Lee: [Design Issues](https://www.w3.org/DesignIssues/)
-- Book of Markus Triska: [The Power of Prolog](https://www.metalevel.at/prolog)
+- Personal notes by Tim Berners-Lee: [Design Issues](www.w3.org/DesignIssues/)
+- Book of Markus Triska: [The Power of Prolog](www.metalevel.at/prolog)

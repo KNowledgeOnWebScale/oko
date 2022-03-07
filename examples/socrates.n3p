@@ -1,8 +1,8 @@
 % Socrates is a mortal
 
-'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'('http://example.org/ns#Socrates','http://example.org/ns#Man').
+'www.w3.org/1999/02/22-rdf-syntax-ns#type'('example.org/ns#Socrates','example.org/ns#Man').
 
-'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'http://example.org/ns#Mortal') <= 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'http://example.org/ns#Man').
+'www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'example.org/ns#Mortal') <= 'www.w3.org/1999/02/22-rdf-syntax-ns#type'(X,'example.org/ns#Man').
 
 % query
-'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'(_WHO,_WHAT) => true.
+'www.w3.org/1999/02/22-rdf-syntax-ns#type'(_WHO,_WHAT) => true.
