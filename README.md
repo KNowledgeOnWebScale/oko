@@ -12,7 +12,7 @@ TERM            | Examples
 IRI             | `'example.org/ns#Socrates'`
 VARIABLE        | `X` `_abc`
 LITERAL         | `"abc"` `1.52` `1e-18` `pi` `dt("2022-01-15",'www.w3.org/2001/XMLSchema#date')`
-LIST            | `[TERM,...]` `[TERM,...\|LIST]`
+LIST            | `[TERM,...]` `[TERM,...`\|`LIST]` `[]`
 TRIPLE          | `IRI(TERM,TERM)`
 GRAPH           | `TRIPLE,...`
 
@@ -33,7 +33,7 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 
 The builtin triples are:
 
-- `'idlabresearch.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,true)`
+- `'idlabresearch.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,[])`
 - `'idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)`
 
 ## Installation and test
