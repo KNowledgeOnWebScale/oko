@@ -2,7 +2,12 @@
 
 [oko](https://github.com/josd/oko) is doing reasoning via forward and backward chaining.
 
-oko is using __n3p__ syntax:
+## Architecture and design
+
+The oko engine is processing __n3p__ code and it is itself implemented in __n3p__.
+It is running on top of [Scryer Prolog](https://github.com/mthom/scryer-prolog) which is implemented in [Rust](https://www.rust-lang.org/).
+
+__n3p__ syntax:
 
 TERM            | Examples
 ----------------|---------
@@ -22,7 +27,7 @@ ANSWER          | `GRAPH => true.`
 INFERENCE_FUSE  | `GRAPH => false.`
 BACKWARD_RULE   | `TRIPLE <= GRAPH.`
 
-oko performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
+The oko engine performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
 
 Queries are posed and answered as `GRAPH => true.` so the answers are also queries be it with
 some parts substituted and eventually containing more variables than in the original query.
