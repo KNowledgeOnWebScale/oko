@@ -7,9 +7,9 @@
 'idlabresearch.github.io/ns#pad'([1,_,A,_],A).
 'idlabresearch.github.io/ns#pad'([2,_,_,A],A).
 'idlabresearch.github.io/ns#pad'([A,B,C,D],E) <=
-    'idlabresearch.github.io/ns#builtin'(A > 2,true),
-    'idlabresearch.github.io/ns#builtin'(F is A-1,true),
-    'idlabresearch.github.io/ns#builtin'(G is B+C,true),
+    'idlabresearch.github.io/ns#builtin'(A > 2,[]),
+    'idlabresearch.github.io/ns#builtin'(F is A-1,[]),
+    'idlabresearch.github.io/ns#builtin'(G is B+C,[]),
     'idlabresearch.github.io/ns#pad'([F,C,D,G],E).
 
 % query 

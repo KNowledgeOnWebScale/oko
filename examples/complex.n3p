@@ -2,23 +2,23 @@
 
 'idlabresearch.github.io/ns#exp'([[A,B],[C,D]],[E,F]) <=
     'idlabresearch.github.io/ns#polar'([A,B],[G,H]),
-    'idlabresearch.github.io/ns#builtin'(E is G^C*exp(-D*H)*cos(D*log(G)+C*H),true),
-    'idlabresearch.github.io/ns#builtin'(F is G^C*exp(-D*H)*sin(D*log(G)+C*H),true).
+    'idlabresearch.github.io/ns#builtin'(E is G^C*exp(-D*H)*cos(D*log(G)+C*H),[]),
+    'idlabresearch.github.io/ns#builtin'(F is G^C*exp(-D*H)*sin(D*log(G)+C*H),[]).
 
 'idlabresearch.github.io/ns#log'([[A,B],[C,D]],[E,F]) <=
     'idlabresearch.github.io/ns#polar'([A,B],[G,H]),
     'idlabresearch.github.io/ns#polar'([C,D],[I,J]),
-    'idlabresearch.github.io/ns#builtin'(K is log(G),true),
-    'idlabresearch.github.io/ns#builtin'(L is log(I),true),
+    'idlabresearch.github.io/ns#builtin'(K is log(G),[]),
+    'idlabresearch.github.io/ns#builtin'(L is log(I),[]),
     'idlabresearch.github.io/ns#divide'([[L,J],[K,H]],[E,F]).
 
 'idlabresearch.github.io/ns#sin'([A,B],[C,D]) <=
-    'idlabresearch.github.io/ns#builtin'(C is sin(A)*(exp(B)+exp(-B))/2,true),
-    'idlabresearch.github.io/ns#builtin'(D is cos(A)*(exp(B)-exp(-B))/2,true).
+    'idlabresearch.github.io/ns#builtin'(C is sin(A)*(exp(B)+exp(-B))/2,[]),
+    'idlabresearch.github.io/ns#builtin'(D is cos(A)*(exp(B)-exp(-B))/2,[]).
 
 'idlabresearch.github.io/ns#cos'([A,B],[C,D]) <=
-    'idlabresearch.github.io/ns#builtin'(C is cos(A)*(exp(B)+exp(-B))/2,true),
-    'idlabresearch.github.io/ns#builtin'(D is -sin(A)*(exp(B)-exp(-B))/2,true).
+    'idlabresearch.github.io/ns#builtin'(C is cos(A)*(exp(B)+exp(-B))/2,[]),
+    'idlabresearch.github.io/ns#builtin'(D is -sin(A)*(exp(B)-exp(-B))/2,[]).
 
 'idlabresearch.github.io/ns#tan'(A,B) <=
     'idlabresearch.github.io/ns#sin'(A,C),
@@ -26,16 +26,16 @@
     'idlabresearch.github.io/ns#divide'([C,D],B).
 
 'idlabresearch.github.io/ns#asin'([A,B],[C,D]) <=
-    'idlabresearch.github.io/ns#builtin'(E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,true),
-    'idlabresearch.github.io/ns#builtin'(F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,true),
-    'idlabresearch.github.io/ns#builtin'(C is asin(E),true),
-    'idlabresearch.github.io/ns#builtin'(D is log(F+sqrt(F^2-1)),true).
+    'idlabresearch.github.io/ns#builtin'(E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,[]),
+    'idlabresearch.github.io/ns#builtin'(F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,[]),
+    'idlabresearch.github.io/ns#builtin'(C is asin(E),[]),
+    'idlabresearch.github.io/ns#builtin'(D is log(F+sqrt(F^2-1)),[]).
 
 'idlabresearch.github.io/ns#acos'([A,B],[C,D]) <=
-    'idlabresearch.github.io/ns#builtin'(E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,true),
-    'idlabresearch.github.io/ns#builtin'(F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,true),
-    'idlabresearch.github.io/ns#builtin'(C is acos(E),true),
-    'idlabresearch.github.io/ns#builtin'(D is -log(F+sqrt(F^2-1)),true).
+    'idlabresearch.github.io/ns#builtin'(E is (sqrt((1+A)^2+B^2)-sqrt((1-A)^2+B^2))/2,[]),
+    'idlabresearch.github.io/ns#builtin'(F is (sqrt((1+A)^2+B^2)+sqrt((1-A)^2+B^2))/2,[]),
+    'idlabresearch.github.io/ns#builtin'(C is acos(E),[]),
+    'idlabresearch.github.io/ns#builtin'(D is -log(F+sqrt(F^2-1)),[]).
 
 'idlabresearch.github.io/ns#atan'(A,B) <=
     'idlabresearch.github.io/ns#subtract'([[0,1],A],C),
@@ -45,46 +45,46 @@
     'idlabresearch.github.io/ns#divide'([F,[0,2]],B).
 
 'idlabresearch.github.io/ns#polar'([A,B],[C,D]) <=
-    'idlabresearch.github.io/ns#builtin'(C is sqrt(A^2+B^2),true),
-    'idlabresearch.github.io/ns#builtin'(E is acos(abs(A)/C),true),
+    'idlabresearch.github.io/ns#builtin'(C is sqrt(A^2+B^2),[]),
+    'idlabresearch.github.io/ns#builtin'(E is acos(abs(A)/C),[]),
     'idlabresearch.github.io/ns#angular'([A,B,E],D).
 
 'idlabresearch.github.io/ns#angular'([A,B,C],D) <=
-    'idlabresearch.github.io/ns#builtin'(A >= 0,true),
-    'idlabresearch.github.io/ns#builtin'(B >= 0,true),
-    'idlabresearch.github.io/ns#builtin'(D = C,true).
+    'idlabresearch.github.io/ns#builtin'(A >= 0,[]),
+    'idlabresearch.github.io/ns#builtin'(B >= 0,[]),
+    'idlabresearch.github.io/ns#builtin'(D = C,[]).
 'idlabresearch.github.io/ns#angular'([A,B,C],D) <=
-    'idlabresearch.github.io/ns#builtin'(A < 0,true),
-    'idlabresearch.github.io/ns#builtin'(B >= 0,true),
-    'idlabresearch.github.io/ns#builtin'(D is pi-C,true).
+    'idlabresearch.github.io/ns#builtin'(A < 0,[]),
+    'idlabresearch.github.io/ns#builtin'(B >= 0,[]),
+    'idlabresearch.github.io/ns#builtin'(D is pi-C,[]).
 'idlabresearch.github.io/ns#angular'([A,B,C],D) <=
-    'idlabresearch.github.io/ns#builtin'(A < 0,true),
-    'idlabresearch.github.io/ns#builtin'(B < 0,true),
-    'idlabresearch.github.io/ns#builtin'(D is C+pi,true).
+    'idlabresearch.github.io/ns#builtin'(A < 0,[]),
+    'idlabresearch.github.io/ns#builtin'(B < 0,[]),
+    'idlabresearch.github.io/ns#builtin'(D is C+pi,[]).
 'idlabresearch.github.io/ns#angular'([A,B,C],D) <=
-    'idlabresearch.github.io/ns#builtin'(A >= 0,true),
-    'idlabresearch.github.io/ns#builtin'(B < 0,true),
-    'idlabresearch.github.io/ns#builtin'(D is 2*pi-C,true).
+    'idlabresearch.github.io/ns#builtin'(A >= 0,[]),
+    'idlabresearch.github.io/ns#builtin'(B < 0,[]),
+    'idlabresearch.github.io/ns#builtin'(D is 2*pi-C,[]).
 
 'idlabresearch.github.io/ns#minus'([A,B],[C,D]) <=
-    'idlabresearch.github.io/ns#builtin'(C is -A,true),
-    'idlabresearch.github.io/ns#builtin'(D is -B,true).
+    'idlabresearch.github.io/ns#builtin'(C is -A,[]),
+    'idlabresearch.github.io/ns#builtin'(D is -B,[]).
 
 'idlabresearch.github.io/ns#subtract'([[A,B],[C,D]],[E,F]) <=
-    'idlabresearch.github.io/ns#builtin'(E is A-C,true),
-    'idlabresearch.github.io/ns#builtin'(F is B-D,true).
+    'idlabresearch.github.io/ns#builtin'(E is A-C,[]),
+    'idlabresearch.github.io/ns#builtin'(F is B-D,[]).
 
 'idlabresearch.github.io/ns#add'([[A,B],[C,D]],[E,F]) <=
-    'idlabresearch.github.io/ns#builtin'(E is A+C,true),
-    'idlabresearch.github.io/ns#builtin'(F is B+D,true).
+    'idlabresearch.github.io/ns#builtin'(E is A+C,[]),
+    'idlabresearch.github.io/ns#builtin'(F is B+D,[]).
 
 'idlabresearch.github.io/ns#multiply'([[A,B],[C,D]],[E,F]) <=
-    'idlabresearch.github.io/ns#builtin'(E is A*C-B*D,true),
-    'idlabresearch.github.io/ns#builtin'(F is A*D+B*C,true).
+    'idlabresearch.github.io/ns#builtin'(E is A*C-B*D,[]),
+    'idlabresearch.github.io/ns#builtin'(F is A*D+B*C,[]).
 
 'idlabresearch.github.io/ns#inverse'([A,B],[C,D]) <=
-    'idlabresearch.github.io/ns#builtin'(C is A/(A^2+B^2),true),
-    'idlabresearch.github.io/ns#builtin'(D is -B/(A^2+B^2),true).
+    'idlabresearch.github.io/ns#builtin'(C is A/(A^2+B^2),[]),
+    'idlabresearch.github.io/ns#builtin'(D is -B/(A^2+B^2),[]).
 
 'idlabresearch.github.io/ns#divide'([A,B],C) <=
     'idlabresearch.github.io/ns#inverse'(B,D),

@@ -1,6 +1,6 @@
 % Traversing graph paths
 
-'idlabresearch.github.io/ns#builtin'(dynamic('idlabresearch.github.io/ns#path'/2),true).
+'idlabresearch.github.io/ns#builtin'(dynamic('idlabresearch.github.io/ns#path'/2),[]).
 
 'idlabresearch.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#orleans').
 'idlabresearch.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#chartres').

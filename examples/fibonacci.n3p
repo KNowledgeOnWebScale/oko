@@ -6,9 +6,9 @@
 'idlabresearch.github.io/ns#fib'([0,A,_],A).
 'idlabresearch.github.io/ns#fib'([1,_,A],A).
 'idlabresearch.github.io/ns#fib'([A,B,C],D) <=
-    'idlabresearch.github.io/ns#builtin'(A > 1,true),
-    'idlabresearch.github.io/ns#builtin'(E is A-1,true),
-    'idlabresearch.github.io/ns#builtin'(F is B+C,true),
+    'idlabresearch.github.io/ns#builtin'(A > 1,[]),
+    'idlabresearch.github.io/ns#builtin'(E is A-1,[]),
+    'idlabresearch.github.io/ns#builtin'(F is B+C,[]),
     'idlabresearch.github.io/ns#fib'([E,C,F],D).
 
 % query
