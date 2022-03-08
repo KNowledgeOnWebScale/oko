@@ -1,6 +1,6 @@
 # oko
 
-[oko](https://github.com/josd/oko) is doing reasoning via forward and backward chaining.
+The [oko](https://github.com/josd/oko) reasoning engine is performing forward and backward chaining of __n3p__ data.
 
 ## Architecture and design
 
