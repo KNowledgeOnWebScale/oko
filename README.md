@@ -8,7 +8,7 @@ The oko engine is processing __n3p__ data and it is itself implemented as [n3p d
 
 It is running on top of [Scryer Prolog](https://github.com/mthom/scryer-prolog) which is implemented in [Rust](https://www.rust-lang.org/).
 
-The __n3p__ syntax:
+### n3p syntax
 
 TERM            | Examples
 ----------------|---------
