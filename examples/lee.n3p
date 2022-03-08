@@ -1,68 +1,68 @@
 % Lee routing for VLSI circuits
 % Code from the book "The Art of Prolog" Chapter 16
 
-'idlabresearch.github.io/ns#route'([Source,Destination,Obstacles],Path) <=
-    'idlabresearch.github.io/ns#waves'([Destination,[[Source],[]],Obstacles],Waves),
-    'idlabresearch.github.io/ns#path'([Source,Destination,Waves],Path).
+'josd.github.io/ns#route'([Source,Destination,Obstacles],Path) <=
+    'josd.github.io/ns#waves'([Destination,[[Source],[]],Obstacles],Waves),
+    'josd.github.io/ns#path'([Source,Destination,Waves],Path).
 
-% 'idlabresearch.github.io/ns#waves'([Destination,Wavessofar,Obstacles],Waves)
-'idlabresearch.github.io/ns#waves'([B,[Wave|Waves],_],Waves) <=
-    'idlabresearch.github.io/ns#builtin'(member(B,Wave),[]),
-    'idlabresearch.github.io/ns#builtin'(!,[]).
-'idlabresearch.github.io/ns#waves'([B,[Wave,LastWave|LastWaves],Obstacles],Waves) <=
-    'idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave),
-    'idlabresearch.github.io/ns#waves'([B,[NextWave,Wave,LastWave|LastWaves],Obstacles],Waves).
+% 'josd.github.io/ns#waves'([Destination,Wavessofar,Obstacles],Waves)
+'josd.github.io/ns#waves'([B,[Wave|Waves],_],Waves) <=
+    'josd.github.io/ns#builtin'(member(B,Wave),[]),
+    'josd.github.io/ns#builtin'(!,[]).
+'josd.github.io/ns#waves'([B,[Wave,LastWave|LastWaves],Obstacles],Waves) <=
+    'josd.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave),
+    'josd.github.io/ns#waves'([B,[NextWave,Wave,LastWave|LastWaves],Obstacles],Waves).
 
-% 'idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave)
-'idlabresearch.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave) <=
-    'idlabresearch.github.io/ns#builtin'(setof(X,'idlabresearch.github.io/ns#admissible'([X,Wave,LastWave],Obstacles),NextWave),[]).
+% 'josd.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave)
+'josd.github.io/ns#next_wave'([Wave,LastWave,Obstacles],NextWave) <=
+    'josd.github.io/ns#builtin'(setof(X,'josd.github.io/ns#admissible'([X,Wave,LastWave],Obstacles),NextWave),[]).
 
-'idlabresearch.github.io/ns#admissible'([X,Wave,LastWave],Obstacles) <=
-    'idlabresearch.github.io/ns#adjacent'([X,Wave],Obstacles),
-    'idlabresearch.github.io/ns#builtin'(\+ member(X,LastWave),[]),
-    'idlabresearch.github.io/ns#builtin'(\+ member(X,Wave),[]).
+'josd.github.io/ns#admissible'([X,Wave,LastWave],Obstacles) <=
+    'josd.github.io/ns#adjacent'([X,Wave],Obstacles),
+    'josd.github.io/ns#builtin'(\+ member(X,LastWave),[]),
+    'josd.github.io/ns#builtin'(\+ member(X,Wave),[]).
 
-'idlabresearch.github.io/ns#adjacent'([X,Wave],Obstacles) <=
-    'idlabresearch.github.io/ns#builtin'(member(X1,Wave),[]),
-    'idlabresearch.github.io/ns#neighbor'(X1,X),
-    'idlabresearch.github.io/ns#builtin'(\+ 'idlabresearch.github.io/ns#obstructed'(X,Obstacles),[]).
+'josd.github.io/ns#adjacent'([X,Wave],Obstacles) <=
+    'josd.github.io/ns#builtin'(member(X1,Wave),[]),
+    'josd.github.io/ns#neighbor'(X1,X),
+    'josd.github.io/ns#builtin'(\+ 'josd.github.io/ns#obstructed'(X,Obstacles),[]).
 
-'idlabresearch.github.io/ns#neighbor'([X1,Y],[X2,Y]) <=
-    'idlabresearch.github.io/ns#next_to'(X1,X2).
-'idlabresearch.github.io/ns#neighbor'([X,Y1],[X,Y2]) <=
-    'idlabresearch.github.io/ns#next_to'(Y1,Y2).
+'josd.github.io/ns#neighbor'([X1,Y],[X2,Y]) <=
+    'josd.github.io/ns#next_to'(X1,X2).
+'josd.github.io/ns#neighbor'([X,Y1],[X,Y2]) <=
+    'josd.github.io/ns#next_to'(Y1,Y2).
 
-'idlabresearch.github.io/ns#next_to'(X,X1) <=
-    'idlabresearch.github.io/ns#builtin'(X1 is X+1,[]).
-'idlabresearch.github.io/ns#next_to'(X,X1) <=
-    'idlabresearch.github.io/ns#builtin'(X > 0,[]),
-    'idlabresearch.github.io/ns#builtin'(X1 is X-1,[]).
+'josd.github.io/ns#next_to'(X,X1) <=
+    'josd.github.io/ns#builtin'(X1 is X+1,[]).
+'josd.github.io/ns#next_to'(X,X1) <=
+    'josd.github.io/ns#builtin'(X > 0,[]),
+    'josd.github.io/ns#builtin'(X1 is X-1,[]).
 
-'idlabresearch.github.io/ns#obstructed'(Point,Obstacles) <=
-    'idlabresearch.github.io/ns#builtin'(member(Obstacle,Obstacles),[]),
-    'idlabresearch.github.io/ns#obstructs'(Point,Obstacle).
+'josd.github.io/ns#obstructed'(Point,Obstacles) <=
+    'josd.github.io/ns#builtin'(member(Obstacle,Obstacles),[]),
+    'josd.github.io/ns#obstructs'(Point,Obstacle).
 
-'idlabresearch.github.io/ns#obstructs'([X,Y],[[X,Y1],[_,Y2]]) <=
-    'idlabresearch.github.io/ns#builtin'(Y1 =< Y,[]),
-    'idlabresearch.github.io/ns#builtin'(Y =< Y2,[]).
-'idlabresearch.github.io/ns#obstructs'([X,Y],[[_,Y1],[X,Y2]]) <=
-    'idlabresearch.github.io/ns#builtin'(Y1 =< Y,[]),
-    'idlabresearch.github.io/ns#builtin'(Y =< Y2,[]).
-'idlabresearch.github.io/ns#obstructs'([X,Y],[[X1,Y],[X2,_]]) <=
-    'idlabresearch.github.io/ns#builtin'(X1 =< X,[]),
-    'idlabresearch.github.io/ns#builtin'(X =< X2,[]).
-'idlabresearch.github.io/ns#obstructs'([X,Y],[[X1,_],[X2,Y]]) <=
-    'idlabresearch.github.io/ns#builtin'(X1 =< X,[]),
-    'idlabresearch.github.io/ns#builtin'(X =< X2,[]).
+'josd.github.io/ns#obstructs'([X,Y],[[X,Y1],[_,Y2]]) <=
+    'josd.github.io/ns#builtin'(Y1 =< Y,[]),
+    'josd.github.io/ns#builtin'(Y =< Y2,[]).
+'josd.github.io/ns#obstructs'([X,Y],[[_,Y1],[X,Y2]]) <=
+    'josd.github.io/ns#builtin'(Y1 =< Y,[]),
+    'josd.github.io/ns#builtin'(Y =< Y2,[]).
+'josd.github.io/ns#obstructs'([X,Y],[[X1,Y],[X2,_]]) <=
+    'josd.github.io/ns#builtin'(X1 =< X,[]),
+    'josd.github.io/ns#builtin'(X =< X2,[]).
+'josd.github.io/ns#obstructs'([X,Y],[[X1,_],[X2,Y]]) <=
+    'josd.github.io/ns#builtin'(X1 =< X,[]),
+    'josd.github.io/ns#builtin'(X =< X2,[]).
 
-% 'idlabresearch.github.io/ns#path'([Source,Destination,Waves],Path)
-'idlabresearch.github.io/ns#path'([A,A,_],[A]) <=
-    'idlabresearch.github.io/ns#builtin'(!,[]).
-'idlabresearch.github.io/ns#path'([A,B,[Wave|Waves]],[B|Path]) <=
-    'idlabresearch.github.io/ns#builtin'(member(B1,Wave),[]),
-    'idlabresearch.github.io/ns#neighbor'(B,B1),
-    'idlabresearch.github.io/ns#builtin'(!,[]),
-    'idlabresearch.github.io/ns#path'([A,B1,Waves],Path).
+% 'josd.github.io/ns#path'([Source,Destination,Waves],Path)
+'josd.github.io/ns#path'([A,A,_],[A]) <=
+    'josd.github.io/ns#builtin'(!,[]).
+'josd.github.io/ns#path'([A,B,[Wave|Waves]],[B|Path]) <=
+    'josd.github.io/ns#builtin'(member(B1,Wave),[]),
+    'josd.github.io/ns#neighbor'(B,B1),
+    'josd.github.io/ns#builtin'(!,[]),
+    'josd.github.io/ns#path'([A,B1,Waves],Path).
 
 % query
-'idlabresearch.github.io/ns#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],_ANSWER) => true.
+'josd.github.io/ns#route'([[1,1],[9,8],[[[2,3],[4,5]],[[6,6],[8,8]]]],_ANSWER) => true.

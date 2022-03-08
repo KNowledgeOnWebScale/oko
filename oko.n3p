@@ -1,0 +1,111 @@
+% --------------------
+% Webeye -- Jos De Roo
+% --------------------
+%
+% See https://josd.github.io/Webeye/
+%
+
+'josd.github.io/ns#builtin'(use_module(library(lists)),[]).
+'josd.github.io/ns#builtin'(use_module(library(terms)),[]).
+'josd.github.io/ns#builtin'(use_module(library(iso_ext)),[]).
+
+'josd.github.io/ns#builtin'(dynamic((=>)/2),[]).
+'josd.github.io/ns#builtin'(dynamic((<=)/2),[]).
+'josd.github.io/ns#builtin'(dynamic('josd.github.io/ns#brake'/2),[]).
+'josd.github.io/ns#builtin'(dynamic('josd.github.io/ns#label'/2),[]).
+'josd.github.io/ns#builtin'(dynamic('josd.github.io/ns#pred'/2),[]).
+'josd.github.io/ns#builtin'(dynamic('josd.github.io/ns#answer'/2),[]).
+'josd.github.io/ns#builtin'(dynamic('josd.github.io/ns#proof_step'/2),[]).
+
+%
+% run Webeye abstract machine with a list of options:
+%   - single_answer: output only one answer
+%   - proof_step: output proof steps
+%
+% 1/ select rule P => C
+% 2/ prove P and if it fails backtrack to 1/
+% 3/ if C = true answer with P => true and if single_answer stop, else backtrack to 2/
+%    else if ~C assert C, retract brake and backtrack to 2/
+%    else backtrack to 2/
+% 4/ if brake halt, else assert brake and start again at 1/
+%
+'josd.github.io/ns#main'(Options,[]) <=
+    'josd.github.io/ns#builtin'(call((Prem => Conc)),[]),
+    'josd.github.io/ns#builtin'(copy_term((Prem => Conc),Rule),[]),
+    'josd.github.io/ns#labelvars'(Rule,[]),
+    'josd.github.io/ns#builtin'(call(Prem),[]),
+    'josd.github.io/ns#options'(Options,[Prem,Conc,Rule]).
+'josd.github.io/ns#main'(_,[]) <=
+    'josd.github.io/ns#brake'([],[]),
+    'josd.github.io/ns#builtin'(halt,[]).
+'josd.github.io/ns#main'(Options,[]) <=
+    'josd.github.io/ns#builtin'(asserta('josd.github.io/ns#brake'([],[])),[]),
+    'josd.github.io/ns#main'(Options,[]).
+
+'josd.github.io/ns#options'(Options,[Prem,true,_]) <=
+    'josd.github.io/ns#labelvars'(Prem,[]),
+    'josd.github.io/ns#write_answer'(Prem,[]),
+    'josd.github.io/ns#builtin'(member(single_answer,Options),[]).
+'josd.github.io/ns#options'(Options,[Prem,Conc,Rule]) <=
+    'josd.github.io/ns#builtin'(\+Conc,[]),
+    'josd.github.io/ns#labelvars'(Conc,[]),
+    'josd.github.io/ns#astep'(Prem,Conc),
+    'josd.github.io/ns#write_proof_step'(Options,[Prem,Conc,Rule]),
+    'josd.github.io/ns#builtin'(retract('josd.github.io/ns#brake'([],[])),[]),
+    'josd.github.io/ns#builtin'(fail,[]).
+
+'josd.github.io/ns#write_answer'(Prem,[]) <=
+    'josd.github.io/ns#builtin'(\+'josd.github.io/ns#answer'((Prem => true),[]),[]),
+    'josd.github.io/ns#builtin'(assertz('josd.github.io/ns#answer'((Prem => true),[])),[]),
+    'josd.github.io/ns#builtin'(writeq(Prem),[]),
+    'josd.github.io/ns#builtin'(write(' => true.\n'),[]).
+'josd.github.io/ns#write_answer'(_,[]).
+
+'josd.github.io/ns#write_proof_step'(Options,[Prem,Conc,Rule]) <=
+    'josd.github.io/ns#builtin'(member(proof_step,Options),[]),
+    'josd.github.io/ns#builtin'(\+'josd.github.io/ns#proof_step'((Prem => Conc),[]),[]),
+    'josd.github.io/ns#builtin'(assertz('josd.github.io/ns#proof_step'((Prem => Conc),[])),[]),
+    'josd.github.io/ns#builtin'(writeq('josd.github.io/ns#proof_step'(Rule,(Prem => Conc))),[]),
+    'josd.github.io/ns#builtin'(write('.\n'),[]).
+'josd.github.io/ns#write_proof_step'(_,[_,_,_]).
+
+% create witnesses
+'josd.github.io/ns#labelvars'(Term,[]) <=
+    'josd.github.io/ns#builtin'(retract('josd.github.io/ns#label'(Current,[])),[]),
+    'josd.github.io/ns#builtin'(!,[]),
+    'josd.github.io/ns#builtin'(numbervars(Term,Current,Next),[]),
+    'josd.github.io/ns#builtin'(assertz('josd.github.io/ns#label'(Next,[])),[]).
+'josd.github.io/ns#labelvars'(Term,[]) <=
+    'josd.github.io/ns#builtin'(numbervars(Term,0,Next),[]),
+    'josd.github.io/ns#builtin'(assertz('josd.github.io/ns#label'(Next,[])),[]).
+
+% assert new step
+'josd.github.io/ns#astep'(A,(B,C)) <=
+    'josd.github.io/ns#astep'(A,B),
+    'josd.github.io/ns#astep'(A,C).
+'josd.github.io/ns#astep'(A,false) <=
+    'josd.github.io/ns#builtin'(writeq(A),[]),
+    'josd.github.io/ns#builtin'(write(' => false.\n'),[]),
+    'josd.github.io/ns#builtin'(halt,[]).
+'josd.github.io/ns#astep'(_,A) <=
+    'josd.github.io/ns#builtin'(\+A,[]),
+    'josd.github.io/ns#builtin'(asserta(A),[]),
+    'josd.github.io/ns#apred'(A,[]).
+'josd.github.io/ns#astep'(_,_).
+
+'josd.github.io/ns#apred'(A,[]) <=
+    'josd.github.io/ns#builtin'(functor(A,B,2),[]),
+    'josd.github.io/ns#builtin'(\+'josd.github.io/ns#pred'(B,[]),[]),
+    'josd.github.io/ns#builtin'(assertz('josd.github.io/ns#pred'(B,[])),[]).
+'josd.github.io/ns#apred'(_,[]).
+
+%
+% built-ins
+%
+'josd.github.io/ns#pso_triple'([P,S,O],Triple) <=
+    'josd.github.io/ns#builtin'(var(P),[]),
+    'josd.github.io/ns#builtin'(!,[]),
+    'josd.github.io/ns#pred'(P,[]),
+    'josd.github.io/ns#builtin'(Triple =.. [P,S,O],[]).
+'josd.github.io/ns#pso_triple'([P,S,O],Triple) <=
+    'josd.github.io/ns#builtin'(Triple =.. [P,S,O],[]).

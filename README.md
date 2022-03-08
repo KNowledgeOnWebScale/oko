@@ -1,11 +1,8 @@
-# Webeye
+# oko
 
-Webeye is doing webized reasoning via forward and backward chaining.
-It participates in dialogues leading to necessary and sufficient answers, supported by proof steps, so that action can take place.
+[oko](https://github.com/josd/oko) is doing reasoning via forward and backward chaining.
 
-## Webized reasoning
-
-[Webeye](https://github.com/IDLabResearch/Webeye) is using __n3p__ syntax:
+[oko](https://github.com/josd/oko) is using __n3p__ syntax:
 
 TERM            | Examples
 ----------------|---------
@@ -25,7 +22,7 @@ ANSWER          | `GRAPH => true.`
 INFERENCE_FUSE  | `GRAPH => false.`
 BACKWARD_RULE   | `TRIPLE <= GRAPH.`
 
-Webeye performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
+oko performs forward chaining for a `FORWARD_RULE` and backward chaining for a `BACKWARD_RULE`.
 
 Queries are posed and answered as `GRAPH => true.` so the answers are also queries be it with
 some parts substituted and eventually containing more variables than in the original query.
@@ -33,16 +30,16 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 
 The builtin triples are:
 
-- `'idlabresearch.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,[])`
-- `'idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)`
+- `'josd.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,[])`
+- `'josd.github.io/ns#pso_triple'([P,S,O],Triple)`
 
 ## Installation and test
 
 Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) and then
 
 ```
-$ git clone github.com/IDLabResearch/Webeye
-$ cd Webeye
+$ git clone github.com/josd/oko
+$ cd oko
 $ ./test
 ```
 

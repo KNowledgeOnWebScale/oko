@@ -1,20 +1,20 @@
 % Traversing graph paths
 
-'idlabresearch.github.io/ns#builtin'(dynamic('idlabresearch.github.io/ns#path'/2),[]).
+'josd.github.io/ns#builtin'(dynamic('josd.github.io/ns#path'/2),[]).
 
-'idlabresearch.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#orleans').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#chartres').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#amiens').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#orleans','example.org/ns#blois').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#orleans','example.org/ns#bourges').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#blois','example.org/ns#tours').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#chartres','example.org/ns#lemans').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#lemans','example.org/ns#angers').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#lemans','example.org/ns#tours').
-'idlabresearch.github.io/ns#oneway'('example.org/ns#angers','example.org/ns#nantes').
+'josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#orleans').
+'josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#chartres').
+'josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#amiens').
+'josd.github.io/ns#oneway'('example.org/ns#orleans','example.org/ns#blois').
+'josd.github.io/ns#oneway'('example.org/ns#orleans','example.org/ns#bourges').
+'josd.github.io/ns#oneway'('example.org/ns#blois','example.org/ns#tours').
+'josd.github.io/ns#oneway'('example.org/ns#chartres','example.org/ns#lemans').
+'josd.github.io/ns#oneway'('example.org/ns#lemans','example.org/ns#angers').
+'josd.github.io/ns#oneway'('example.org/ns#lemans','example.org/ns#tours').
+'josd.github.io/ns#oneway'('example.org/ns#angers','example.org/ns#nantes').
 
-'idlabresearch.github.io/ns#oneway'(A,B) => 'idlabresearch.github.io/ns#path'(A,B).
-'idlabresearch.github.io/ns#path'(A,B),'idlabresearch.github.io/ns#path'(B,C) => 'idlabresearch.github.io/ns#path'(A,C).
+'josd.github.io/ns#oneway'(A,B) => 'josd.github.io/ns#path'(A,B).
+'josd.github.io/ns#path'(A,B),'josd.github.io/ns#path'(B,C) => 'josd.github.io/ns#path'(A,C).
 
 % query
-'idlabresearch.github.io/ns#path'(_CITY,'example.org/ns#nantes') => true.
+'josd.github.io/ns#path'(_CITY,'example.org/ns#nantes') => true.
