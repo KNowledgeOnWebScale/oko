@@ -4,11 +4,11 @@
 
 ## Architecture and design
 
-The oko engine is processing __n3p__ code and it is itself implemented in __n3p__.
+The oko engine is processing __n3p__ data and it is itself implemented as [n3p data](https://github.com/josd/oko/blob/master/oko.n3p).
 
 It is running on top of [Scryer Prolog](https://github.com/mthom/scryer-prolog) which is implemented in [Rust](https://www.rust-lang.org/).
 
-__n3p__ syntax:
+The __n3p__ syntax:
 
 TERM            | Examples
 ----------------|---------
