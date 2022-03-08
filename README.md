@@ -2,7 +2,7 @@
 
 [oko](https://github.com/josd/oko) is doing reasoning via forward and backward chaining.
 
-[oko](https://github.com/josd/oko) is using __n3p__ syntax:
+oko is using __n3p__ syntax:
 
 TERM            | Examples
 ----------------|---------
