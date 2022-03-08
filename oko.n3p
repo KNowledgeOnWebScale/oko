@@ -1,8 +1,8 @@
-% --------------------
-% Webeye -- Jos De Roo
-% --------------------
+% -----------------
+% oko -- Jos De Roo
+% -----------------
 %
-% See https://josd.github.io/Webeye/
+% See https://josd.github.io/oko/
 %
 
 'josd.github.io/ns#builtin'(use_module(library(lists)),[]).
@@ -18,7 +18,7 @@
 'josd.github.io/ns#builtin'(dynamic('josd.github.io/ns#proof_step'/2),[]).
 
 %
-% run Webeye abstract machine with a list of options:
+% run oko abstract machine with a list of options:
 %   - single_answer: output only one answer
 %   - proof_step: output proof steps
 %
