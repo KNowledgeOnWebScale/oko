@@ -1,20 +1,20 @@
 % Traversing graph paths
 
-'josd.github.io/ns#builtin'(dynamic('josd.github.io/ns#path'/2),[]).
+'http://josd.github.io/ns#builtin'(dynamic('http://josd.github.io/ns#path'/2),[]).
 
-'josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#orleans').
-'josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#chartres').
-'josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#amiens').
-'josd.github.io/ns#oneway'('example.org/ns#orleans','example.org/ns#blois').
-'josd.github.io/ns#oneway'('example.org/ns#orleans','example.org/ns#bourges').
-'josd.github.io/ns#oneway'('example.org/ns#blois','example.org/ns#tours').
-'josd.github.io/ns#oneway'('example.org/ns#chartres','example.org/ns#lemans').
-'josd.github.io/ns#oneway'('example.org/ns#lemans','example.org/ns#angers').
-'josd.github.io/ns#oneway'('example.org/ns#lemans','example.org/ns#tours').
-'josd.github.io/ns#oneway'('example.org/ns#angers','example.org/ns#nantes').
+'http://josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#orleans').
+'http://josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#chartres').
+'http://josd.github.io/ns#oneway'('example.org/ns#paris','example.org/ns#amiens').
+'http://josd.github.io/ns#oneway'('example.org/ns#orleans','example.org/ns#blois').
+'http://josd.github.io/ns#oneway'('example.org/ns#orleans','example.org/ns#bourges').
+'http://josd.github.io/ns#oneway'('example.org/ns#blois','example.org/ns#tours').
+'http://josd.github.io/ns#oneway'('example.org/ns#chartres','example.org/ns#lemans').
+'http://josd.github.io/ns#oneway'('example.org/ns#lemans','example.org/ns#angers').
+'http://josd.github.io/ns#oneway'('example.org/ns#lemans','example.org/ns#tours').
+'http://josd.github.io/ns#oneway'('example.org/ns#angers','example.org/ns#nantes').
 
-'josd.github.io/ns#oneway'(A,B) => 'josd.github.io/ns#path'(A,B).
-'josd.github.io/ns#path'(A,B),'josd.github.io/ns#path'(B,C) => 'josd.github.io/ns#path'(A,C).
+'http://josd.github.io/ns#oneway'(A,B) => 'http://josd.github.io/ns#path'(A,B).
+'http://josd.github.io/ns#path'(A,B),'http://josd.github.io/ns#path'(B,C) => 'http://josd.github.io/ns#path'(A,C).
 
 % query
-'josd.github.io/ns#path'(_CITY,'example.org/ns#nantes') => true.
+'http://josd.github.io/ns#path'(_CITY,'example.org/ns#nantes') => true.

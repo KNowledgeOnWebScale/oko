@@ -1,20 +1,20 @@
 % See https://en.wikipedia.org/wiki/Padovan_sequence
 
-'josd.github.io/ns#padovan'(A,B) <=
-    'josd.github.io/ns#pad'([A,0,1,1],B).
+'http://josd.github.io/ns#padovan'(A,B) <=
+    'http://josd.github.io/ns#pad'([A,0,1,1],B).
 
-'josd.github.io/ns#pad'([0,A,_,_],A).
-'josd.github.io/ns#pad'([1,_,A,_],A).
-'josd.github.io/ns#pad'([2,_,_,A],A).
-'josd.github.io/ns#pad'([A,B,C,D],E) <=
-    'josd.github.io/ns#builtin'(A > 2,[]),
-    'josd.github.io/ns#builtin'(F is A-1,[]),
-    'josd.github.io/ns#builtin'(G is B+C,[]),
-    'josd.github.io/ns#pad'([F,C,D,G],E).
+'http://josd.github.io/ns#pad'([0,A,_,_],A).
+'http://josd.github.io/ns#pad'([1,_,A,_],A).
+'http://josd.github.io/ns#pad'([2,_,_,A],A).
+'http://josd.github.io/ns#pad'([A,B,C,D],E) <=
+    'http://josd.github.io/ns#builtin'(A > 2,[]),
+    'http://josd.github.io/ns#builtin'(F is A-1,[]),
+    'http://josd.github.io/ns#builtin'(G is B+C,[]),
+    'http://josd.github.io/ns#pad'([F,C,D,G],E).
 
 % query 
-'josd.github.io/ns#padovan'(1,_ANSWER) => true.
-'josd.github.io/ns#padovan'(10,_ANSWER) => true.
-'josd.github.io/ns#padovan'(100,_ANSWER) => true.
-'josd.github.io/ns#padovan'(1000,_ANSWER) => true.
-'josd.github.io/ns#padovan'(10000,_ANSWER) => true.
+'http://josd.github.io/ns#padovan'(1,_ANSWER) => true.
+'http://josd.github.io/ns#padovan'(10,_ANSWER) => true.
+'http://josd.github.io/ns#padovan'(100,_ANSWER) => true.
+'http://josd.github.io/ns#padovan'(1000,_ANSWER) => true.
+'http://josd.github.io/ns#padovan'(10000,_ANSWER) => true.

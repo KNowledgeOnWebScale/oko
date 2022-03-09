@@ -12,9 +12,9 @@ It is running on top of [Scryer Prolog](https://github.com/mthom/scryer-prolog) 
 
 TERM            | Examples
 ----------------|---------
-IRI             | `'example.org/ns#Socrates'`
+IRI             | `'http://example.org/ns#Socrates'`
 VARIABLE        | `X` `_abc`
-LITERAL         | `"abc"` `1.52` `1e-18` `pi` `dt("2022-01-15",'www.w3.org/2001/XMLSchema#date')`
+LITERAL         | `"abc"` `1.52` `1e-18` `pi` `dt("2022-01-15",'http://www.w3.org/2001/XMLSchema#date')`
 LIST            | `[TERM,...]` `[TERM,...`\|`LIST]` `[]`
 TRIPLE          | `IRI(TERM,TERM)`
 GRAPH           | `TRIPLE,...`
@@ -36,15 +36,15 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 
 The builtin triples are:
 
-- `'josd.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,[])`
-- `'josd.github.io/ns#pso_triple'([P,S,O],Triple)`
+- `'http://josd.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,[])`
+- `'http://josd.github.io/ns#pso_triple'([P,S,O],Triple)`
 
 ## Installation and test
 
 Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) and then
 
 ```
-$ git clone github.com/josd/oko
+$ git clone https://github.com/josd/oko
 $ cd oko
 $ ./test
 ```
