@@ -23,62 +23,62 @@
 'http://josd.github.io/ns#builtin'(dynamic('http://josd.github.io/ns#sdconot'/2),[]).
 
 % |R) = |0, 0) + |1, 1)
-'example.org/ns#r'(false,false).
-'example.org/ns#r'(true,true).
+'http://example.org/ns#r'(false,false).
+'http://example.org/ns#r'(true,true).
 
 % |S) = |0, 1) + |1, 0)
-'example.org/ns#s'(false,true).
-'example.org/ns#s'(true,false).
+'http://example.org/ns#s'(false,true).
+'http://example.org/ns#s'(true,false).
 
 % |U) = |0, 0) + |1, 0) + |1, 1)
-'example.org/ns#u'(false,false).
-'example.org/ns#u'(true,false).
-'example.org/ns#u'(true,true).
+'http://example.org/ns#u'(false,false).
+'http://example.org/ns#u'(true,false).
+'http://example.org/ns#u'(true,true).
 
 % |V ) = |0, 0) + |0, 1) + |1, 0)
-'example.org/ns#v'(false,false).
-'example.org/ns#v'(false,true).
-'example.org/ns#v'(true,false).
+'http://example.org/ns#v'(false,false).
+'http://example.org/ns#v'(false,true).
+'http://example.org/ns#v'(true,false).
 
 % ID |0) = |0)
-'example.org/ns#id'(false,false).
+'http://example.org/ns#id'(false,false).
 % ID |1) = |1)
-'example.org/ns#id'(true,true).
+'http://example.org/ns#id'(true,true).
 
 % G |0) = |1)
-'example.org/ns#g'(false,true).
+'http://example.org/ns#g'(false,true).
 % G |1) = |0)
-'example.org/ns#g'(true,false).
+'http://example.org/ns#g'(true,false).
 
 % K |0) = |0)
-'example.org/ns#k'(false,false).
+'http://example.org/ns#k'(false,false).
 % K |1) = |0) + |1)
-'example.org/ns#k'(true,false).
-'example.org/ns#k'(true,true).
+'http://example.org/ns#k'(true,false).
+'http://example.org/ns#k'(true,true).
 
 % KG
-'example.org/ns#kg'(X,Y) <= 'example.org/ns#g'(X,Z),'example.org/ns#k'(Z,Y).
+'http://example.org/ns#kg'(X,Y) <= 'http://example.org/ns#g'(X,Z),'http://example.org/ns#k'(Z,Y).
 
 % GK
-'example.org/ns#gk'(X,Y) <= 'example.org/ns#k'(X,Z),'example.org/ns#g'(Z,Y).
+'http://example.org/ns#gk'(X,Y) <= 'http://example.org/ns#k'(X,Z),'http://example.org/ns#g'(Z,Y).
 
 % alice
-'example.org/ns#alice'(0,[X,Y]) <= 'example.org/ns#id'(X,Y).
-'example.org/ns#alice'(1,[X,Y]) <= 'example.org/ns#g'(X,Y).
-'example.org/ns#alice'(2,[X,Y]) <= 'example.org/ns#k'(X,Y).
-'example.org/ns#alice'(3,[X,Y]) <= 'example.org/ns#kg'(X,Y).
+'http://example.org/ns#alice'(0,[X,Y]) <= 'http://example.org/ns#id'(X,Y).
+'http://example.org/ns#alice'(1,[X,Y]) <= 'http://example.org/ns#g'(X,Y).
+'http://example.org/ns#alice'(2,[X,Y]) <= 'http://example.org/ns#k'(X,Y).
+'http://example.org/ns#alice'(3,[X,Y]) <= 'http://example.org/ns#kg'(X,Y).
 
 % bob
-'example.org/ns#bob'([X,Y],0) <= 'example.org/ns#gk'(X,Y).
-'example.org/ns#bob'([X,Y],1) <= 'example.org/ns#k'(X,Y).
-'example.org/ns#bob'([X,Y],2) <= 'example.org/ns#g'(X,Y).
-'example.org/ns#bob'([X,Y],3) <= 'example.org/ns#id'(X,Y).
+'http://example.org/ns#bob'([X,Y],0) <= 'http://example.org/ns#gk'(X,Y).
+'http://example.org/ns#bob'([X,Y],1) <= 'http://example.org/ns#k'(X,Y).
+'http://example.org/ns#bob'([X,Y],2) <= 'http://example.org/ns#g'(X,Y).
+'http://example.org/ns#bob'([X,Y],3) <= 'http://example.org/ns#id'(X,Y).
 
 % superdense coding
 'http://josd.github.io/ns#sdc'(N,M) <=
-    'example.org/ns#r'(X,Y),
-    'example.org/ns#alice'(N,[X,B]),
-    'example.org/ns#bob'([B,Y],M),
+    'http://example.org/ns#r'(X,Y),
+    'http://example.org/ns#alice'(N,[X,B]),
+    'http://example.org/ns#bob'([B,Y],M),
     'http://josd.github.io/ns#sd'(N,M).
 
 % asserting sdcoding an odd number of times

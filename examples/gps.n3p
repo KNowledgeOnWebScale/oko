@@ -73,11 +73,11 @@
 
 % partial map of Belgium
 'http://josd.github.io/ns#description'(
-    'example.org/ns#map_be',
-    [   'http://josd.github.io/ns#location'(S,'example.org/ns#gent'),
+    'http://example.org/ns#map_be',
+    [   'http://josd.github.io/ns#location'(S,'http://example.org/ns#gent'),
         true,
-        'http://josd.github.io/ns#location'(S,'example.org/ns#brugge'),
-        'example.org/ns#drive_gent_brugge',
+        'http://josd.github.io/ns#location'(S,'http://example.org/ns#brugge'),
+        'http://example.org/ns#drive_gent_brugge',
         1500.0,
         0.006,
         0.96,
@@ -85,11 +85,11 @@
     ]
 ).
 'http://josd.github.io/ns#description'(
-    'example.org/ns#map_be',
-    [   'http://josd.github.io/ns#location'(S,'example.org/ns#gent'),
+    'http://example.org/ns#map_be',
+    [   'http://josd.github.io/ns#location'(S,'http://example.org/ns#gent'),
         true,
-        'http://josd.github.io/ns#location'(S,'example.org/ns#kortrijk'),
-        'example.org/ns#drive_gent_kortrijk',
+        'http://josd.github.io/ns#location'(S,'http://example.org/ns#kortrijk'),
+        'http://example.org/ns#drive_gent_kortrijk',
         1600.0,
         0.007,
         0.96,
@@ -97,11 +97,11 @@
     ]
 ).
 'http://josd.github.io/ns#description'(
-    'example.org/ns#map_be',
-    [   'http://josd.github.io/ns#location'(S,'example.org/ns#kortrijk'),
+    'http://example.org/ns#map_be',
+    [   'http://josd.github.io/ns#location'(S,'http://example.org/ns#kortrijk'),
         true,
-        'http://josd.github.io/ns#location'(S,'example.org/ns#brugge'),
-        'example.org/ns#drive_kortrijk_brugge',
+        'http://josd.github.io/ns#location'(S,'http://example.org/ns#brugge'),
+        'http://example.org/ns#drive_kortrijk_brugge',
         1600.0,
         0.007,
         0.96,
@@ -109,11 +109,11 @@
     ]
 ).
 'http://josd.github.io/ns#description'(
-    'example.org/ns#map_be',
-    [   'http://josd.github.io/ns#location'(S,'example.org/ns#brugge'),
+    'http://example.org/ns#map_be',
+    [   'http://josd.github.io/ns#location'(S,'http://example.org/ns#brugge'),
         true,
-        'http://josd.github.io/ns#location'(S,'example.org/ns#oostende'),
-        'example.org/ns#drive_brugge_oostende',
+        'http://josd.github.io/ns#location'(S,'http://example.org/ns#oostende'),
+        'http://example.org/ns#drive_brugge_oostende',
         900.0,
         0.004,
         0.98,
@@ -122,12 +122,12 @@
 ).
 
 % current state
-true => 'http://josd.github.io/ns#location'('example.org/ns#i1','example.org/ns#gent').
+true => 'http://josd.github.io/ns#location'('http://example.org/ns#i1','http://example.org/ns#gent').
 
 % query
 'http://josd.github.io/ns#findpath'(
-    'example.org/ns#map_be',
-    [   'http://josd.github.io/ns#location'(_SUBJECT,'example.org/ns#oostende'),
+    'http://example.org/ns#map_be',
+    [   'http://josd.github.io/ns#location'(_SUBJECT,'http://example.org/ns#oostende'),
         _PATH,
         _DURATION,
         _COST,
