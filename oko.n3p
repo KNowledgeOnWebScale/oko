@@ -2,20 +2,20 @@
 % oko -- Jos De Roo
 % -----------------
 %
-% See https://josd.github.io/oko/
+% See https://idlabresearch.github.io/oko/
 %
 
-'http://josd.github.io/ns#builtin'(use_module(library(lists)),[]).
-'http://josd.github.io/ns#builtin'(use_module(library(terms)),[]).
-'http://josd.github.io/ns#builtin'(use_module(library(iso_ext)),[]).
+'http://idlabresearch.github.io/ns#builtin'(use_module(library(lists)),[]).
+'http://idlabresearch.github.io/ns#builtin'(use_module(library(terms)),[]).
+'http://idlabresearch.github.io/ns#builtin'(use_module(library(iso_ext)),[]).
 
-'http://josd.github.io/ns#builtin'(dynamic((=>)/2),[]).
-'http://josd.github.io/ns#builtin'(dynamic((<=)/2),[]).
-'http://josd.github.io/ns#builtin'(dynamic('http://josd.github.io/ns#brake'/2),[]).
-'http://josd.github.io/ns#builtin'(dynamic('http://josd.github.io/ns#label'/2),[]).
-'http://josd.github.io/ns#builtin'(dynamic('http://josd.github.io/ns#pred'/2),[]).
-'http://josd.github.io/ns#builtin'(dynamic('http://josd.github.io/ns#answer'/2),[]).
-'http://josd.github.io/ns#builtin'(dynamic('http://josd.github.io/ns#proof_step'/2),[]).
+'http://idlabresearch.github.io/ns#builtin'(dynamic((=>)/2),[]).
+'http://idlabresearch.github.io/ns#builtin'(dynamic((<=)/2),[]).
+'http://idlabresearch.github.io/ns#builtin'(dynamic('http://idlabresearch.github.io/ns#brake'/2),[]).
+'http://idlabresearch.github.io/ns#builtin'(dynamic('http://idlabresearch.github.io/ns#label'/2),[]).
+'http://idlabresearch.github.io/ns#builtin'(dynamic('http://idlabresearch.github.io/ns#pred'/2),[]).
+'http://idlabresearch.github.io/ns#builtin'(dynamic('http://idlabresearch.github.io/ns#answer'/2),[]).
+'http://idlabresearch.github.io/ns#builtin'(dynamic('http://idlabresearch.github.io/ns#proof_step'/2),[]).
 
 %
 % run oko abstract machine with a list of options:
@@ -29,83 +29,83 @@
 %    else backtrack to 2/
 % 4/ if brake halt, else assert brake and start again at 1/
 %
-'http://josd.github.io/ns#main'(Options,[]) <=
-    'http://josd.github.io/ns#builtin'(call((Prem => Conc)),[]),
-    'http://josd.github.io/ns#builtin'(copy_term((Prem => Conc),Rule),[]),
-    'http://josd.github.io/ns#labelvars'(Rule,[]),
-    'http://josd.github.io/ns#builtin'(call(Prem),[]),
-    'http://josd.github.io/ns#options'(Options,[Prem,Conc,Rule]).
-'http://josd.github.io/ns#main'(_,[]) <=
-    'http://josd.github.io/ns#brake'([],[]),
-    'http://josd.github.io/ns#builtin'(halt,[]).
-'http://josd.github.io/ns#main'(Options,[]) <=
-    'http://josd.github.io/ns#builtin'(asserta('http://josd.github.io/ns#brake'([],[])),[]),
-    'http://josd.github.io/ns#main'(Options,[]).
+'http://idlabresearch.github.io/ns#main'(Options,[]) <=
+    'http://idlabresearch.github.io/ns#builtin'(call((Prem => Conc)),[]),
+    'http://idlabresearch.github.io/ns#builtin'(copy_term((Prem => Conc),Rule),[]),
+    'http://idlabresearch.github.io/ns#labelvars'(Rule,[]),
+    'http://idlabresearch.github.io/ns#builtin'(call(Prem),[]),
+    'http://idlabresearch.github.io/ns#options'(Options,[Prem,Conc,Rule]).
+'http://idlabresearch.github.io/ns#main'(_,[]) <=
+    'http://idlabresearch.github.io/ns#brake'([],[]),
+    'http://idlabresearch.github.io/ns#builtin'(halt,[]).
+'http://idlabresearch.github.io/ns#main'(Options,[]) <=
+    'http://idlabresearch.github.io/ns#builtin'(asserta('http://idlabresearch.github.io/ns#brake'([],[])),[]),
+    'http://idlabresearch.github.io/ns#main'(Options,[]).
 
-'http://josd.github.io/ns#options'(Options,[Prem,true,_]) <=
-    'http://josd.github.io/ns#labelvars'(Prem,[]),
-    'http://josd.github.io/ns#write_answer'(Prem,[]),
-    'http://josd.github.io/ns#builtin'(member(single_answer,Options),[]).
-'http://josd.github.io/ns#options'(Options,[Prem,Conc,Rule]) <=
-    'http://josd.github.io/ns#builtin'(\+Conc,[]),
-    'http://josd.github.io/ns#labelvars'(Conc,[]),
-    'http://josd.github.io/ns#astep'(Prem,Conc),
-    'http://josd.github.io/ns#write_proof_step'(Options,[Prem,Conc,Rule]),
-    'http://josd.github.io/ns#builtin'(retract('http://josd.github.io/ns#brake'([],[])),[]),
-    'http://josd.github.io/ns#builtin'(fail,[]).
+'http://idlabresearch.github.io/ns#options'(Options,[Prem,true,_]) <=
+    'http://idlabresearch.github.io/ns#labelvars'(Prem,[]),
+    'http://idlabresearch.github.io/ns#write_answer'(Prem,[]),
+    'http://idlabresearch.github.io/ns#builtin'(member(single_answer,Options),[]).
+'http://idlabresearch.github.io/ns#options'(Options,[Prem,Conc,Rule]) <=
+    'http://idlabresearch.github.io/ns#builtin'(\+Conc,[]),
+    'http://idlabresearch.github.io/ns#labelvars'(Conc,[]),
+    'http://idlabresearch.github.io/ns#astep'(Prem,Conc),
+    'http://idlabresearch.github.io/ns#write_proof_step'(Options,[Prem,Conc,Rule]),
+    'http://idlabresearch.github.io/ns#builtin'(retract('http://idlabresearch.github.io/ns#brake'([],[])),[]),
+    'http://idlabresearch.github.io/ns#builtin'(fail,[]).
 
-'http://josd.github.io/ns#write_answer'(Prem,[]) <=
-    'http://josd.github.io/ns#builtin'(\+'http://josd.github.io/ns#answer'((Prem => true),[]),[]),
-    'http://josd.github.io/ns#builtin'(assertz('http://josd.github.io/ns#answer'((Prem => true),[])),[]),
-    'http://josd.github.io/ns#builtin'(writeq(Prem),[]),
-    'http://josd.github.io/ns#builtin'(write(' => true.\n'),[]).
-'http://josd.github.io/ns#write_answer'(_,[]).
+'http://idlabresearch.github.io/ns#write_answer'(Prem,[]) <=
+    'http://idlabresearch.github.io/ns#builtin'(\+'http://idlabresearch.github.io/ns#answer'((Prem => true),[]),[]),
+    'http://idlabresearch.github.io/ns#builtin'(assertz('http://idlabresearch.github.io/ns#answer'((Prem => true),[])),[]),
+    'http://idlabresearch.github.io/ns#builtin'(writeq(Prem),[]),
+    'http://idlabresearch.github.io/ns#builtin'(write(' => true.\n'),[]).
+'http://idlabresearch.github.io/ns#write_answer'(_,[]).
 
-'http://josd.github.io/ns#write_proof_step'(Options,[Prem,Conc,Rule]) <=
-    'http://josd.github.io/ns#builtin'(member(proof_step,Options),[]),
-    'http://josd.github.io/ns#builtin'(\+'http://josd.github.io/ns#proof_step'((Prem => Conc),[]),[]),
-    'http://josd.github.io/ns#builtin'(assertz('http://josd.github.io/ns#proof_step'((Prem => Conc),[])),[]),
-    'http://josd.github.io/ns#builtin'(writeq('http://josd.github.io/ns#proof_step'(Rule,(Prem => Conc))),[]),
-    'http://josd.github.io/ns#builtin'(write('.\n'),[]).
-'http://josd.github.io/ns#write_proof_step'(_,[_,_,_]).
+'http://idlabresearch.github.io/ns#write_proof_step'(Options,[Prem,Conc,Rule]) <=
+    'http://idlabresearch.github.io/ns#builtin'(member(proof_step,Options),[]),
+    'http://idlabresearch.github.io/ns#builtin'(\+'http://idlabresearch.github.io/ns#proof_step'((Prem => Conc),[]),[]),
+    'http://idlabresearch.github.io/ns#builtin'(assertz('http://idlabresearch.github.io/ns#proof_step'((Prem => Conc),[])),[]),
+    'http://idlabresearch.github.io/ns#builtin'(writeq('http://idlabresearch.github.io/ns#proof_step'(Rule,(Prem => Conc))),[]),
+    'http://idlabresearch.github.io/ns#builtin'(write('.\n'),[]).
+'http://idlabresearch.github.io/ns#write_proof_step'(_,[_,_,_]).
 
 % create witnesses
-'http://josd.github.io/ns#labelvars'(Term,[]) <=
-    'http://josd.github.io/ns#builtin'(retract('http://josd.github.io/ns#label'(Current,[])),[]),
-    'http://josd.github.io/ns#builtin'(!,[]),
-    'http://josd.github.io/ns#builtin'(numbervars(Term,Current,Next),[]),
-    'http://josd.github.io/ns#builtin'(assertz('http://josd.github.io/ns#label'(Next,[])),[]).
-'http://josd.github.io/ns#labelvars'(Term,[]) <=
-    'http://josd.github.io/ns#builtin'(numbervars(Term,0,Next),[]),
-    'http://josd.github.io/ns#builtin'(assertz('http://josd.github.io/ns#label'(Next,[])),[]).
+'http://idlabresearch.github.io/ns#labelvars'(Term,[]) <=
+    'http://idlabresearch.github.io/ns#builtin'(retract('http://idlabresearch.github.io/ns#label'(Current,[])),[]),
+    'http://idlabresearch.github.io/ns#builtin'(!,[]),
+    'http://idlabresearch.github.io/ns#builtin'(numbervars(Term,Current,Next),[]),
+    'http://idlabresearch.github.io/ns#builtin'(assertz('http://idlabresearch.github.io/ns#label'(Next,[])),[]).
+'http://idlabresearch.github.io/ns#labelvars'(Term,[]) <=
+    'http://idlabresearch.github.io/ns#builtin'(numbervars(Term,0,Next),[]),
+    'http://idlabresearch.github.io/ns#builtin'(assertz('http://idlabresearch.github.io/ns#label'(Next,[])),[]).
 
 % assert new step
-'http://josd.github.io/ns#astep'(A,(B,C)) <=
-    'http://josd.github.io/ns#astep'(A,B),
-    'http://josd.github.io/ns#astep'(A,C).
-'http://josd.github.io/ns#astep'(A,false) <=
-    'http://josd.github.io/ns#builtin'(writeq(A),[]),
-    'http://josd.github.io/ns#builtin'(write(' => false.\n'),[]),
-    'http://josd.github.io/ns#builtin'(halt,[]).
-'http://josd.github.io/ns#astep'(_,A) <=
-    'http://josd.github.io/ns#builtin'(\+A,[]),
-    'http://josd.github.io/ns#builtin'(asserta(A),[]),
-    'http://josd.github.io/ns#apred'(A,[]).
-'http://josd.github.io/ns#astep'(_,_).
+'http://idlabresearch.github.io/ns#astep'(A,(B,C)) <=
+    'http://idlabresearch.github.io/ns#astep'(A,B),
+    'http://idlabresearch.github.io/ns#astep'(A,C).
+'http://idlabresearch.github.io/ns#astep'(A,false) <=
+    'http://idlabresearch.github.io/ns#builtin'(writeq(A),[]),
+    'http://idlabresearch.github.io/ns#builtin'(write(' => false.\n'),[]),
+    'http://idlabresearch.github.io/ns#builtin'(halt,[]).
+'http://idlabresearch.github.io/ns#astep'(_,A) <=
+    'http://idlabresearch.github.io/ns#builtin'(\+A,[]),
+    'http://idlabresearch.github.io/ns#builtin'(asserta(A),[]),
+    'http://idlabresearch.github.io/ns#apred'(A,[]).
+'http://idlabresearch.github.io/ns#astep'(_,_).
 
-'http://josd.github.io/ns#apred'(A,[]) <=
-    'http://josd.github.io/ns#builtin'(functor(A,B,2),[]),
-    'http://josd.github.io/ns#builtin'(\+'http://josd.github.io/ns#pred'(B,[]),[]),
-    'http://josd.github.io/ns#builtin'(assertz('http://josd.github.io/ns#pred'(B,[])),[]).
-'http://josd.github.io/ns#apred'(_,[]).
+'http://idlabresearch.github.io/ns#apred'(A,[]) <=
+    'http://idlabresearch.github.io/ns#builtin'(functor(A,B,2),[]),
+    'http://idlabresearch.github.io/ns#builtin'(\+'http://idlabresearch.github.io/ns#pred'(B,[]),[]),
+    'http://idlabresearch.github.io/ns#builtin'(assertz('http://idlabresearch.github.io/ns#pred'(B,[])),[]).
+'http://idlabresearch.github.io/ns#apred'(_,[]).
 
 %
 % built-ins
 %
-'http://josd.github.io/ns#pso_triple'([P,S,O],Triple) <=
-    'http://josd.github.io/ns#builtin'(var(P),[]),
-    'http://josd.github.io/ns#builtin'(!,[]),
-    'http://josd.github.io/ns#pred'(P,[]),
-    'http://josd.github.io/ns#builtin'(Triple =.. [P,S,O],[]).
-'http://josd.github.io/ns#pso_triple'([P,S,O],Triple) <=
-    'http://josd.github.io/ns#builtin'(Triple =.. [P,S,O],[]).
+'http://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple) <=
+    'http://idlabresearch.github.io/ns#builtin'(var(P),[]),
+    'http://idlabresearch.github.io/ns#builtin'(!,[]),
+    'http://idlabresearch.github.io/ns#pred'(P,[]),
+    'http://idlabresearch.github.io/ns#builtin'(Triple =.. [P,S,O],[]).
+'http://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple) <=
+    'http://idlabresearch.github.io/ns#builtin'(Triple =.. [P,S,O],[]).

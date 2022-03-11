@@ -1,10 +1,10 @@
 # oko
 
-The [oko](https://github.com/josd/oko) reasoning engine is performing forward and backward chaining of __n3p__ data.
+The [oko](https://github.com/idlabresearch/oko) reasoning engine is performing forward and backward chaining of __n3p__ data.
 
 ## Architecture and design
 
-The oko engine is processing __n3p__ data and it is itself implemented as [n3p data](https://github.com/josd/oko/blob/master/oko.n3p).
+The oko engine is processing __n3p__ data and it is itself implemented as [n3p data](https://github.com/idlabresearch/oko/blob/master/oko.n3p).
 
 It is running on top of [Scryer Prolog](https://github.com/mthom/scryer-prolog) which is implemented in [Rust](https://www.rust-lang.org/).
 
@@ -36,15 +36,15 @@ This forms a dialogue leading to necessary and sufficient answers, supported by 
 
 The builtin triples are:
 
-- `'http://josd.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,[])`
-- `'http://josd.github.io/ns#pso_triple'([P,S,O],Triple)`
+- `'http://idlabresearch.github.io/ns#builtin'(`[`Subject`](https://www.deransart.fr/prolog/bips.html)`,[])`
+- `'http://idlabresearch.github.io/ns#pso_triple'([P,S,O],Triple)`
 
 ## Installation and test
 
 Install [Rust](https://www.rust-lang.org/tools/install) and [Scryer Prolog](https://github.com/mthom/scryer-prolog#installing-scryer-prolog) and then
 
 ```
-$ git clone https://github.com/josd/oko
+$ git clone https://github.com/idlabresearch/oko
 $ cd oko
 $ ./test
 ```
